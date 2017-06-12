@@ -14,3 +14,21 @@ The map can be viewed from theftmap.html and the notebooks only need to be used 
 --CrimeData--:
 Folder contains the spreadsheets for the 15 aldermanic districts as well as several publically avaiable shape files
 that were used at various stages of map drawing.
+
+##Framework##
+-Based on Flask framework found in app.py
+-Sandbox dir contains various standalone scripts for exploring/experimenting
+-Maps dir has all map data, my app works with alderman.geojson
+-crime_data dir holds Milwaukee crime dataset
+    -- crime_data/Full_Dataset.csv is the full dataset with latitude and longitude
+    
+##Map##
+-Using leaflet.js library to build interactive map
+-Super easy to plug in geojson data and build up visuals quickly
+
+##DATA##
+- http://itmdapps.milwaukee.gov/publicApplication_QD/queryDownload/login.faces
+-I used https://mygeodata.cloud to convert GIS files into geoJSON
+
+Run 'python3 app.py'
+Go to localhost:5000
