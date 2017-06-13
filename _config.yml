@@ -1,13 +1,13 @@
 # Setup
 title:        The Ethics of Algorithms
 tagline:      An exploration of automation, black boxes, and their impacts
-baseurl:      ""
+baseurl:      "/clusteredcrimemaps/"
 paginate:     1
 
 # About/contact
 author:
   name:       Marquette Computational Social Science Lab
-  url:        https://github.com/marquettecomputationalsocialscience 
+  url:        https://github.com/marquettecomputationalsocialscience
 
 # Gems
 gems:
