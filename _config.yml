@@ -1,3 +1,17 @@
-name: The Ethics of Algorithms
-theme: jekyll-theme-cayman
+# Setup
+title:        The Ethics of Algorithms
+tagline:      An exploration of automation, black boxes, and their impacts
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       Marquette Computational Social Science Lab
+  url:        https://github.com/marquettecomputationalsocialscience 
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
 markdown: kramdown

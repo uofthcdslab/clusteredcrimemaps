@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-<hmtl>
-        <head>
-                <title>{{ page.title}}</title>
-                <!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-        </head>
-        <body>
-                <nav>
-                <ul>
-                        <li><a href="/clusteredcrimemaps/">Home</a></li>
-                        <li><a href="/clusteredcrimemaps/about">About</a></li>
-                        <li><a href="/clusteredcrimemaps/maps">Maps</a></li>
-                </ul>
-                </nav>
-                <div class="container">
+<html lang="en-us">
+  
+  {% include head.html %}
 
-                {{ content}}
+  <body>
+    {% include page-header.html %}
 
-                </div><!-- /.container -->
-                <footer>
-                <p> placeholder footer </p>
-            </footer>
-        </body>
-        </html>
+    <section class="main-content">
+      
+      {{ content }}
+
+      {% include page-footer.html %}
+
+    </section>
+
+  </body>
+</html>
