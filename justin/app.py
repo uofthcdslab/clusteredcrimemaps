@@ -2,15 +2,36 @@ import json
 import csv
 from datetime import datetime
 from flask import Flask, render_template, request
+from sklearn.cluster import KMeans
+import numpy as np
+
 app = Flask(__name__)
 
 previous_data = []
 prev_bool = False
 
-colors = ['#ff7800', '#42a1f4', '#0ad81f', '#d80909', '#c407c4']
+colors = ['#ff7800', '#42a1f4', '#0ad81f', '#d80909', '#c407c4', 'yellow', 'black', 'white', 'brown']
 color_idx = 0
 
 crimes_selected = []
+coordinate_array = []
+
+def get_clusters(selected_crime):
+    global coordinate_array
+
+    with open('crime_data/Full_Dataset.csv') as csv_file:
+        for row in csv.reader(csv_file, delimiter=','):
+            if row[4] != selected_crime:
+                continue
+
+            coordinate_array.append([row[10], row[11]])
+
+    if len(coordinate_array) == 0:
+        return None
+
+    np_array = np.array(coordinate_array)
+    kmeans = KMeans(n_clusters=9).fit(np_array)
+    return kmeans
 
 def get_coors(selected_crime):
     global color_idx
@@ -23,10 +44,16 @@ def get_coors(selected_crime):
         "features": []
     }
 
+    kmeans = get_clusters(selected_crime)
+
     with open('crime_data/Full_Dataset.csv') as csv_file:
         for row in csv.reader(csv_file, delimiter=','):
             if row[4] != selected_crime:
                 continue
+
+            np_array = np.array([row[10], row[11]])
+            np_array = np_array.reshape(1, -1)
+            cluster = kmeans.predict(np_array)
 
             coors['features'].append({
             "geometry": {
@@ -38,7 +65,7 @@ def get_coors(selected_crime):
             },
             "type": "Feature",
             "properties": {
-                "fillColor": colors[color_idx],
+                "fillColor": colors[int(cluster)],
                 "popupContent": "District: " + row[12].strip('/crime_data/') + "\nCrime: " + selected_crime + '\n' + "Time occurred: " + row[1] + ' ' + row[2]
             },
             })
