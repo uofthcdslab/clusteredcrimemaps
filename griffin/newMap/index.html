@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script src="d3/d3.js"></script>
+    <script src='./cityLimit.js'> </script>
+    <script src="tPoints.js"></script>
+    <script src="mPoints.js"></script>
+</head>
+<style>
+    div.tooltip {
+        position: absolute;
+        text-align: left;
+        width: 200px;
+        height: 60px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: lightsteelblue;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+        line-height: 40%
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .button rect {
+        stroke: #999faa; /* navy 40% */
+        stroke-width: 2px;
+        fill: steelblue;
+    }
+
+    .button text {
+        font-size: 12px;
+        fill: black;
+        pointer-events: none;
+        text-anchor: middle;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    .hull {
+        stroke: black;
+        stroke-width: 3px;
+        stroke-linejoin: round;
+        opacity: .3;
+        pointer-events: none;
+    }
+
+</style>
+<body>
+
+
+<script src='./d3/d3.js'> </script>
+<script type="text/javascript">
+
+    var margin = {top: -5, right: -5, bottom: -5, left: -5},
+        width = 750 - margin.left - margin.right,
+        height = 750 - margin.top - margin.bottom,
+        border = 2, bordercolor = 'black';
+
+    var currentK = 'K0';
+
+    var colorList = ['#e0291d','#9b21b8','#53bd6f','#075e8c','#d84837',
+                    '#b0395e','#3da292','#cffc55','#a48d57','#8159b2'];
+
+    var frame = d3.select('body').append('svg')
+        .attr('width', width + 110)
+        .attr('height', height +60);
+
+    var svg = d3.select('body')
+        .append('svg');
+
+    var child = svg.append('g');
+
+    svg
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+        .call(d3.zoom().scaleExtent([1, 10])
+            .translateExtent([[-290, -100], [width + 180, height + 120]])
+            .on('zoom', function(){
+                var transform = d3.zoomTransform(this);
+                child.attr("transform", "translate(" +
+                    (transform.x) + "," + (transform.y)
+                    + ") scale(" + transform.k + ")")
+            }));
+
+
+    var div = d3.select('body')
+        .append('div')
+        .attr('class', 'tooltip')
+        .style('opacity',0);
+
+
+    var city = child.append('g');
+
+    var albersProjection = d3.geoAlbers()
+        .scale(130000)
+        .rotate([87.96,0])
+        .center([0,43.05])
+        .translate([width/2, height/2]);
+
+    var geoPath = d3.geoPath().projection(albersProjection)
+        .pointRadius(4);
+
+    city.selectAll('path')
+        .data(city_limit.features)
+        .enter()
+        .append('path')
+        .attr('fill', '#ccc')
+        .attr('d', geoPath)
+        .style("stroke", 'black')
+        .style("stroke-width", .25);;
+
+    var crime_points = child.append('g');
+    crime_points.selectAll('path')
+        .data(tPoints.features)
+        .enter()
+        .append('path')
+        .attr('fill', colorAssign)
+        .attr('stroke', '#999')
+        .attr('d', geoPath)
+        .on('mouseover',handleMouseOver)
+        .on('mouseout', handleMouseOut);
+
+
+
+    function handleMouseOver(d,i) {
+        d3.select(this)
+            .attr("fill",'#008080');
+
+        var message = "<p>" +"Offense: " + d['properties']['Offense 1'] + "</p>" +
+            "<p>"+ "Time: " + d['properties']['Date'] + " " + d['properties']['Time'] +"</p>" +
+            "<p>" + "Address: " + d['properties']['Address']+ "</p>";
+        div.transition()
+            .duration(200)
+            .style("opacity", .9)
+            .duration(70)
+            .style('width', adjustDisplay(message) + 'px');
+        div.html(message)
+            .style("left", (d3.event.pageX + 7) + "px")
+            .style("top", (d3.event.pageY - 28) + "px");
+    }
+    function handleMouseOut(d, i){
+        d3.select(this)
+            .attr('fill',colorAssign);
+        div.transition()
+            .duration(500)
+            .style("opacity",0)
+    }
+
+    function adjustDisplay(word){
+        var lines = word.split('</p>');
+        var len = lines[0].length / 2;
+        return (len + 3) * 12;
+    }
+
+    frame.append('text')
+        .attr('x',(width / 2))
+        .attr('y', height+10)
+        .attr('text-anchor','middle')
+        .style('font-size', '18px')
+        .text('Theft In Milwaukee');
+
+
+    pointArrayX = [];
+    pointArrayY = [];
+    crime_points.selectAll('path').each(function(d){
+        pointArrayX.push(d['properties']['Location'][1]);
+        pointArrayY.push(d['properties']['Location'][0]);
+
+    });
+
+    var xScale = d3.scaleLinear()
+        .domain([d3.min(pointArrayX), d3.max(pointArrayX)])
+        .range([0,width]);
+
+    var yScale = d3.scaleLinear()
+        .domain([d3.min(pointArrayY), d3.max(pointArrayY)])
+        .range([height,0]);
+
+    var xAxis = d3.axisBottom(xScale);
+
+    var yAxis = d3.axisLeft(yScale);
+
+    child.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + (height -30)+ ")")
+        .call(xAxis);
+
+    child.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(" + 35 + ",0)")
+        .call(yAxis);
+
+    var borderPath = svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("height", height + margin.bottom + margin.top)
+        .attr("width", width + margin.left + margin.right)
+        .style("stroke", bordercolor)
+        .style("fill", "none")
+        .style("stroke-width", border);
+
+    function colorAssign(d){
+        if(currentK.includes('K0')){
+            return '#900';
+        }
+        var val = d['properties'][currentK];
+      return colorList[val];
+    }
+    function setAllColors(){
+        crime_points.selectAll('path').transition()
+            .duration(400)
+            .attr('fill', colorAssign);
+    }
+
+    var buttonData = [
+        {label: 'No Clusters',  k:'K0'},
+        {label: 'Two Clusters',  k:'K2'},
+        {label: 'Three Clusters', k:'K3'},
+        {label: 'Four Clusters',  k:'K4'},
+        {label: 'Five Clusters', k:'K5'},
+        {label: 'Six Clusters', k:'K6'},
+        {label: 'Seven Clusters',  k:'K7'},
+        {label: 'Eight Clusters', k:'K8'},
+        {label: 'Nine Clusters', k:'K9'},
+        {label: 'Ten Clusters', k:'K10'}
+    ];
+
+    function buttonPress(d){
+        var random = Math.floor(Math.random()*9);
+        currentK = d['k'] + "-" + random;
+        setAllColors();
+
+
+        child.selectAll('.hull').remove();
+            hullCreation();
+
+
+        }
+
+    var allButtons= frame.append("g")
+        .attr("id","allButtons");
+
+    var buttonGroups= allButtons.selectAll("g.button")
+        .data(buttonData)
+        .enter()
+        .append("g")
+        .attr("class","button")
+        .style("cursor","pointer")
+        .on('click', buttonPress);
+
+    var bWidth= 75; //button width
+    var bHeight= 25; //button height
+    var bSpace= 20; //space between buttons
+    var x0= width + 12; //x offset
+    var y0= 10; //y offset
+
+    buttonGroups.append("rect")
+        .attr("class","buttonRect")
+        .attr("width",bWidth)
+        .attr("height",bHeight)
+        .attr("x",x0)
+        .attr("y",function(d,i){
+            return y0+(bHeight+bSpace)*i;
+        })
+        .attr("rx",5)
+        .attr("ry",5)
+        .attr("fill","Black");
+
+    buttonGroups.append("text")
+        .attr("class","buttonText")
+        .attr("font-family","FontAwesome")
+        .attr("x",function(d,i) {
+            return x0 + bWidth/2;
+        })
+        .attr("y",function(d,i){
+            return y0 + (bHeight + bSpace)*i + bHeight/2;
+        })
+        .attr("text-anchor","middle")
+        .attr("dominant-baseline","central")
+        .attr("fill","black")
+        .text(function(d) {return d['label'];});
+
+
+    function hullCreation(){
+        child.selectAll('.hull').remove();
+        var k = parseInt(currentK.charAt(1));
+        if(currentK.includes('K10')){
+            k=10;
+        }
+        for(var i =0; i < k;i++){
+
+            var points = [];
+            crime_points.selectAll('path')
+                .each(function(d){
+                    var cluster = d['properties'][currentK];
+                    if (cluster === i){
+                        var coord = d['properties']['Location'];
+                        coord = coord.reverse();
+                        points.push(coord);
+                    }}
+                );
+            var hullPoints = d3.polygonHull(points);
+            console.log(points);
+            console.log(hullPoints);
+
+            var mappedPoints = hullPoints.map(function (d) {
+                return albersProjection(d);
+            });
+
+            while(mappedPoints[0][0] > 2000){
+                points = [];
+                crime_points.selectAll('path')
+                    .each(function(d){
+                        var cluster = d['properties'][currentK];
+                        if (cluster === i){
+                            var coord = d['properties']['Location'];
+                            coord = coord.reverse();
+                            points.push(coord);
+                        }}
+                    );
+                hullPoints = d3.polygonHull(points);
+
+                mappedPoints = hullPoints.map(function (d) {
+                    return albersProjection(d);
+                });
+            }
+           console.log(mappedPoints);
+
+            var hull = child.append('path')
+                .attr('class', 'hull')
+                .attr('id', k)
+                .datum(mappedPoints)
+                .attr('d', function(d){
+                    return 'M' + d.join('L') + 'Z';
+                })
+                .attr('fill',colorList[i])
+                .style('opacity',0);
+
+            hull.transition()
+                .duration(400)
+                .style('opacity',.3);
+
+
+        }
+
+
+
+    }
+
+</script>
+
+
+</body>
+</html>
