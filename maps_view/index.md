@@ -12,5 +12,7 @@ Here you can find the maps created for the project.
 
 [Motor Vehicle Theft in Milwaukee Clustered](./motorTheftMapd3.html) -- An interactive map of motor vehicle theft from 1/1/2015 to 1/30/2015 with dynamic clustering
 
-
 [Simple Assault and Robbery in Milwaukee](./assault_and_robbery.html) -- An interactive map of simple assault and robbery from 1/1/2015 to 1/30/2015
+
+[Robbery in Milwaukee](./robbery.html) -- An interactive map of robbery from 1/1/2015 to 1/30/2015
+
