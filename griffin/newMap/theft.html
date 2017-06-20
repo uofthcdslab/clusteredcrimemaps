@@ -59,7 +59,7 @@
         width = 800 - margin.left - margin.right,
         height = 750 - margin.top - margin.bottom,
         border = 2, bordercolor = 'black',
-        currentK = 'K0', label = 'Motor Vehicle Theft in Milwaukee';
+        currentK = 'K0', label = 'Theft in Milwaukee';
 
     var colorList = ['#e0291d','#9b21b8','#53bd6f','#075e8c','#d84837',
         '#b0395e','#3da292','#cffc55','#a48d57','#8159b2'];
@@ -136,7 +136,7 @@
 
     var crime_points = child.append('g');
     crime_points.selectAll('path')
-        .data(mPoints.features)
+        .data(tPoints.features)
         .enter()
         .append('path')
         .attr('fill', colorAssign)
