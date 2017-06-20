@@ -2,7 +2,8 @@ import os
 import csv
 import requests
 
-full_csv = open('../crime_data/Full_Dataset.csv', 'w')
+crime = 'SIMPLE ASSAULT'
+full_csv = open('../crime_data/Full_' + crime + '.csv', 'w')
 
 def get_long_lat(addr):
     response = requests.get(
@@ -11,9 +12,14 @@ def get_long_lat(addr):
     return resp_json_payload['results'][0]['geometry']['location']
 
 def add_long_lat(fn):
+    global crime
+    global full_csv
+
     try:
         with open(fn) as csv_file:
             for row in csv.reader(csv_file, delimiter=','):
+                if row[4] != crime:
+                    continue
                 if row[9] != '' and row[9] != 'LOCATION':
                     addr = row[9].replace(' ', '+')
                     print(addr)
