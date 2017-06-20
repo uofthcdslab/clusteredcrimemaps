@@ -9,7 +9,7 @@ from scipy.spatial import ConvexHull
 coordinate_array = []
 data_array = []
 num_clusters = 2
-selected_crime = 'ROBBERY'
+selected_crime = 'SIMPLE ASSAULT'
 
 def get_clusters(selected_crime):
     global coordinate_array
@@ -149,7 +149,6 @@ print('Number of clusters: ' + str(num_clusters))
 
 #create javascript geoJSON file for each cluster
 fn = open('../static/' + selected_crime + '_CLUSTERS_' + str(num_clusters) + '.js', 'w')
-
 
 for i in range(0,num_clusters):
     new_var = build_js(i)
