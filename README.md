@@ -1,38 +1,24 @@
-# clusteredcrimemaps
-This repository will contain all the maps and code for the algorithmic discrimination project.
+# Clustered Crime Maps
+This repository will contain all the maps and code for the algorithmic discrimination project. 
+The results can be viewed at https://marquettecomputationalsocialscience.github.io/clusteredcrimemaps/
 
-**June 13:** Have 1st exemplars of interactive crime maps up.
+## Data  
+All the data used for this project are publically available on the Milwaukee city website.
+* The crime data are available at: http://itmdapps.milwaukee.gov/publicApplication_QD/queryDownload/login.faces
+* The city shape files are available at: http://city.milwaukee.gov/DownloadMapData3497.htm#.WVL5eojyuUk
 
---Theft Maps--
-Data Conversion and Formatting notebook takes the spreadsheets and converts them into a single pandas document
-which can then be saved as a csv file to be used later. It also handles the geocoding of the addresses.
-
-Theft Map notebook displays a rudimentary version of the map, which still needs some heavy editing.
-
-The map can be viewed from theftmap.html and the notebooks only need to be used if one wishes to alter elements of the map.
-
---CrimeData--:
-Folder contains the spreadsheets for the 15 aldermanic districts as well as several publically avaiable shape files
-that were used at various stages of map drawing.
-
-##Framework##
--Based on Flask framework found in app.py
--Sandbox dir contains various standalone scripts for exploring/experimenting
--Maps dir has all map data, my app works with alderman.geojson
--crime_data dir holds Milwaukee crime dataset
-    -- crime_data/Full_Dataset.csv is the full dataset with latitude and longitude
-    
-##Map##
--Using leaflet.js library to build interactive map
--Super easy to plug in geojson data and build up visuals quickly
-
-##DATA##
-- http://itmdapps.milwaukee.gov/publicApplication_QD/queryDownload/login.faces
--I used https://mygeodata.cloud to convert GIS files into geoJSON
-
-Run 'python3 app.py'
-Go to localhost:5000
+https://mygeodata.cloud and https://ogre.adc4gis.com/ were used to convert shape files to geoJSON
 
 
-##WEBSITE##
-Link: https://marquettecomputationalsocialscience.github.io/clusteredcrimemaps/
+## Maps
+The tools used to create maps are in the folders labeled "griffin" and "justin"
+
+Griffin's maps are presented using D3 with python being used to cluster the data and store in a geoJSON frame.
+* CrimeData folder contains the data sets used and the shapefiles
+* newMap folder contains the javascript used to create the D3 maps
+
+Justin's maps are presented usind leaflet library with python and the flask framework.
+* maps directory has the shape files used to draw the maps
+* sandbox contains standalone scrips from exploration and eperimentation
+* crime_data contains the crime data sets plotted on the maps
+
