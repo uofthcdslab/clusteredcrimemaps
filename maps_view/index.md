@@ -20,3 +20,5 @@ Here you can find the maps created for the project.
 [Robbery in Milwaukee](./robbery.html) -- An interactive map of robbery from 1/1/2015 to 1/30/2015
 
 [Simple Assault in Milwaukee](./simple_assault.html) -- An interactive map of simple assault from 1/1/2015 to 1/30/2015
+
+[Euclidean vs Geodesic Clustering -- Robbery](./robbery-geodesic.html) -- An interactive map comparing kmeans clustering algorithm using two different distance metrics from 1/1/2015 to 1/30/2015
