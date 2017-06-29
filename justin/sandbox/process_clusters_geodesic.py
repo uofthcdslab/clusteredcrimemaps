@@ -9,7 +9,7 @@ from scipy.spatial import ConvexHull
 coordinate_array = []
 data_array = []
 num_clusters = 2
-selected_crime = 'SIMPLE ASSAULT'
+selected_crime = 'ROBBERY'
 
 def get_clusters():
     global coordinate_array
@@ -29,11 +29,6 @@ def get_clusters():
     return KMeans
 
 def add_data():
-    global coordinate_array
-    global data_array
-    global num_clusters
-    global selected_crime
-
     clusters = get_clusters()
 
     fn = open('../crime_data/geodesic/' + selected_crime + '/' + selected_crime + '_CLUSTER_' + str(num_clusters) + '.csv', 'w')
@@ -47,36 +42,6 @@ def add_data():
         print("Latitiude: {0}   Longitude: {1}  Cluster:{2}".format(coor[0],coor[1],c))
 
     fn.close()
-
-def get_coors():
-    global selected_crime
-
-    coors = {
-        "type": "FeatureCollection",
-        "features": []
-    }
-
-    with open('../crime_data/Full_' + selected_crime + '.csv') as csv_file:
-        for row in csv.reader(csv_file, delimiter=','):
-            if row[4] != selected_crime:
-                continue
-
-            coors['features'].append({
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    float(row[11]),
-                    float(row[10])
-                ]
-            },
-            "type": "Feature",
-            "properties": {
-                "fillColor": 'white',
-                "popupContent": "District: " + row[12].strip('/crime_data/') + "\nCrime: " + selected_crime + '\n' + "Time occurred: " + row[1] + ' ' + row[2]
-            },
-            })
-
-    return coors
 
 def build_js(cluster):
     global selected_crime
@@ -95,7 +60,6 @@ def build_js(cluster):
             pointList.append([float(lat), float(lon)])
 
 
-    print(len(pointList))
     cv = ConvexHull(pointList)
     hullPoints = cv.vertices
 
@@ -121,11 +85,11 @@ def build_js(cluster):
         "properties": {
             "popupContent": "This is cluster " + str(cluster) + ' for ' + selected_crime,
             "style": {
-                "weight": 2,
-                "color": "#ff7800",
+                "weight": 3,
+                "color": "black",
                 "opacity": 1,
                 "fillColor": "#0ad81f",
-                "fillOpacity": 0.8
+                "fillOpacity": 0
             }
         },
         "geometry": geo
@@ -135,27 +99,13 @@ def build_js(cluster):
 
 def build_cluster_data():
     # create javascript geoJSON file for each cluster
-    fn = open('../static/geodesic/' + selected_crime + '_CLUSTERS_' + str(num_clusters) + '.js', 'w')
+    fn = open('../static/geodesic/' + selected_crime + '_GEODESIC_CLUSTERS_' + str(num_clusters) + '.js', 'w')
 
     for i in range(0, num_clusters):
         new_var = build_js(i)
-        fn.write(' var cluster_' + str(num_clusters) + '_' + str(i) + ' = ')
+        fn.write(' var geodesic_cluster_' + str(num_clusters) + '_' + str(i) + ' = ')
         fn.write(new_var)
         fn.write(';\n\n')
-
-    # add alderman boundaries variable
-    json_file = open('../maps/alderman.geojson')
-    geo_json = json.load(json_file)
-    fn.write('var alderman_' + str(num_clusters) + ' = ')
-    fn.write(json.dumps(geo_json))
-    fn.write(';\n\n')
-    json_file.close()
-
-    # add points
-    crimes = get_coors()
-    fn.write('var crimes_' + str(num_clusters) + ' = ')
-    fn.write(json.dumps(crimes))
-    fn.write(';\n\n')
 
     fn.close()
 
@@ -167,6 +117,6 @@ def build_cluster_data():
     add_data()
 exit()'''
 
-num_clusters = int(sys.argv[1])
-print('Number of clusters: ' + str(num_clusters))
-build_cluster_data()
+for i in range(2,11):
+    num_clusters = i
+    build_cluster_data()
