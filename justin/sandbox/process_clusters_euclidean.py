@@ -1,4 +1,4 @@
-from sklearn.cluster import KMeans
+from kmeans_euclidean import kmeans, predict
 import numpy as np
 import csv
 from osgeo import ogr
@@ -21,12 +21,11 @@ def get_clusters(selected_crime):
             if row[4] != selected_crime:
                 continue
 
-            coordinate_array.append([row[10], row[11]])
+            coordinate_array.append([float(row[10]), float(row[11])])
             data_array.append(row)
 
-    np_array = np.array(coordinate_array)
-    kmeans = KMeans(n_clusters=num_clusters, init='random').fit(np_array)
-    return kmeans
+    KMeans = kmeans(points=coordinate_array, k=num_clusters)
+    return KMeans
 
 def add_data():
     global coordinate_array
@@ -36,17 +35,14 @@ def add_data():
 
     clusters = get_clusters(selected_crime)
 
-    fn = open('../crime_data/' + selected_crime + '/' + selected_crime + '_CLUSTER_' + str(num_clusters) + '.csv', 'w')
+    fn = open('../crime_data/euclidean/' + selected_crime + '/' + selected_crime + '_CLUSTER_' + str(num_clusters) + '.csv', 'w')
     for coor, data in zip(coordinate_array, data_array):
+        c = predict(num_clusters, clusters, [float(coor[0]), float(coor[1])])
 
-        np_array = np.array([float(coor[0]), float(coor[1])])
-        np_array = np_array.reshape(1, -1)
-        c = clusters.predict(np_array)
-
-        data.append(str(c[0]))
+        data.append(str(c))
         data.append('\n')
         fn.write(",".join(data))
-        print("Latitiude: {0}   Longitude: {1}  Cluster:{2}".format(coor[0],coor[1],c[0]))
+        print("Latitiude: {0}   Longitude: {1}  Cluster:{2}".format(coor[0],coor[1],c))
 
     fn.close()
 
@@ -122,16 +118,14 @@ def build_js(cluster):
             "popupContent": "This is cluster " + str(cluster) + ' for ' + selected_crime,
             "style": {
                 "weight": 2,
-                "color": "#ff7800",
+                "color": "red",
                 "opacity": 1,
                 "fillColor": "#0ad81f",
-                "fillOpacity": 0.8
+                "fillOpacity": 0
             }
         },
         "geometry": geo
     }
-
-    #print(json.dumps(data, indent=1))
 
     return json.dumps(data, indent=1)
 
@@ -147,21 +141,13 @@ num_clusters = int(sys.argv[1])
 print('Number of clusters: ' + str(num_clusters))
 
 #create javascript geoJSON file for each cluster
-fn = open('../static/euclidean/' + selected_crime + '_CLUSTERS_' + str(num_clusters) + '.js', 'w')
+fn = open('../static/euclidean/' + selected_crime + '_EUCLIDEAN_CLUSTERS_' + str(num_clusters) + '.js', 'w')
 
 for i in range(0,num_clusters):
     new_var = build_js(i)
-    fn.write(' var cluster_' + str(num_clusters) + '_' + str(i) + ' = ')
+    fn.write(' var euclidean_cluster_' + str(num_clusters) + '_' + str(i) + ' = ')
     fn.write(new_var)
     fn.write(';\n\n')
-
-#add alderman boundaries variable
-json_file = open('../maps/alderman.geojson')
-geo_json = json.load(json_file)
-fn.write('var alderman_' + str(num_clusters) + ' = ')
-fn.write(json.dumps(geo_json))
-fn.write(';\n\n')
-json_file.close()
 
 #add points
 crimes = get_coors()

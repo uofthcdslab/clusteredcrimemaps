@@ -11,15 +11,11 @@ layout: page
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
-
+    <script src="../justin/static/leaflet.js"></script>
+	<script src="../justin/static/plotly.js"></script>
 
 	<style>
 		#robbery {
-			width: 800px;
-			height: 600px;
-		}
-		#assault {
 			width: 800px;
 			height: 600px;
 		}
@@ -28,6 +24,21 @@ layout: page
     		border: 1px solid black;
     		cursor: pointer;
 		}
+		#analysis {
+    		background: white;
+    		border: 1px solid black;
+    		cursor: pointer;
+		}
+		table {
+			border-collapse:separate;
+    		border:solid black 1px;
+    		border-radius:6px;
+    		-moz-border-radius:6px;
+		}
+		th, td {
+    		border: 1px solid black;
+    		-moz-border-radius:6px;
+		}
 	</style>
 
 
@@ -35,37 +46,60 @@ layout: page
 <body>
 
 <h1>Milwaukee Crime Cluster Analysis</h1>
-<p>Select between 2 and 10 clusters:</p>
 <!--<input type="text" id="myText">-->
-<select id="myText">
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-	<option value="5">5</option>
-	<option value="6">6</option>
-	<option value="7">7</option>
-	<option value="8">8</option>
-	<option value="9">9</option>
-	<option value="10">10</option>
-</select>
-
-<button id="add-btn" onclick="createClusters()">Submit</button>
 
 <p></p>
 
-<h2>Milwauke Crime Map -- Robbery</h2>
-<hr />
-<div id='robbery'></div>
+<table height="100%" align="center" style="width:100%">
+	<td  style="width:50%" valign="top">
+		<h2 align="center">Milwauke Crime Map -- Robbery</h2>
+		<hr />
+		<p>The black outlines represent geodesic clusters and the colored points are euclidean clusters</p>
+		<p>Select between 2 and 10 clusters:</p>
+		<select id="myText">
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
 
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_2.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_3.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_4.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_5.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_6.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_7.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_8.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_9.js"></script>
-<script src="../justin/static/geodesic/ROBBERY_CLUSTERS_10.js"></script>
+		<button id="add-btn" onclick="createClusters()">Submit</button>
+		<div id='robbery'></div>
+	</td>
+	<td style="width:50%" valign="top">
+		<h2 align="center">Cluster Analysis</h2>
+		<hr />
+		<p>Compare euclidean and geodesic clustering results by selecting a geodesic cluster to analyze:</p>
+		<select id="clusterVal">
+		</select>
+
+		<button id="analysis" onclick="analyzeCluster()">Submit</button>
+
+		<p><b>Geodesic Cluster Purity:</b></p>
+		<div id="myDiv" style="width: 480px; height: 380px;">
+		<p id="stats"></p>
+	</td>
+</table>
+
+
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_2.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_3.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_4.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_5.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_6.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_7.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_8.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_9.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_10.js"></script>
+
+<script src="../justin/static/alderman.js"></script>
+<script src="../justin/static/crimes-euclidean.js"></script>
+<script src="../justin/static/crimes-geodesic.js"></script>
 
 <script>
 	var map = L.map('robbery').setView([43.0389, -87.9065], 11);
@@ -83,10 +117,26 @@ layout: page
 		var x = document.getElementById("myText").value;
 		var num_clusters = parseInt(x);
 
+		console.log(document.getElementById("clusterVal").options.length);
+		var len = document.getElementById("clusterVal").options.length;
+		for(var j=0; j<len; j++){
+		    document.getElementById("clusterVal").remove(0);
+		    //console.log(j);
+		}
+
+		for(var i=0; i < num_clusters; i++){
+		    console.log(i);
+		    var z = document.createElement("option");
+   	 		z.setAttribute("value", i.toString());
+    		var t = document.createTextNode("Geodesic Cluster " + i.toString());
+    		z.appendChild(t);
+    		document.getElementById("clusterVal").appendChild(z);
+		}
+
 		geo_list = new Array(num_clusters);
 
 		for (var i=0; i < geo_list.length; i++) {
-			geo_list[i] = eval("cluster_" + x + "_" + i);
+			geo_list[i] = eval("geodesic_cluster_" + x + "_" + i);
 		}
 
 		if (geojson != 0) {
@@ -113,6 +163,137 @@ layout: page
 			});
 		}
 		}).addTo(map);
+
+		var geodesic_crime_data = eval("crimes_geodesic_" + num_clusters);
+		var euclidean_crime_data = eval("crimes_euclidean_" + num_clusters);
+		//add points of selected crime on top of alderban districts
+		L.geoJSON([euclidean_crime_data], {
+
+			style: function (feature) {
+				return feature.properties && feature.properties.style;
+			},
+
+			onEachFeature: onEachFeature,
+
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, {
+					radius: 8,
+					fillColor: feature.properties.fillColor,
+					color: "#000",
+					weight: 1,
+					opacity: 1,
+					fillOpacity: 0.8
+				});
+			}
+		}).addTo(map);
+	}
+
+	function analyzeCluster() {
+		var y = document.getElementById("myText").value;
+		var num_clusters = parseInt(y);
+
+	    var x = document.getElementById("clusterVal").value;
+		var cluster_selected = parseInt(x);
+
+		var geodesic_crime_data = eval("crimes_geodesic_" + num_clusters);
+		var euclidean_crime_data = eval("crimes_euclidean_" + num_clusters);
+
+	    var cluster_data = new Array(num_clusters);
+		var euclidean_data = new Array(num_clusters).fill(0);
+
+		//initialize cluster data
+		for(var m=0; m < cluster_data.length; m++){
+		    cluster_data[m] = {'num_clusters': 0,
+							   'clusters': new Array(num_clusters),
+							   'num_points': 0
+							   }
+			for(var p = 0; p < num_clusters; p++){
+		        cluster = m.toString();
+		        cluster_data[m]['clusters'][p] = {'cluster': p,
+												  'count': 0}
+			}
+		}
+
+		//boolean for first run through euclid data
+		var euclid_bool = true;
+		for (var i=0; i <= geodesic_crime_data['features'].length - 1; i++){
+			for (var j=0; j <= euclidean_crime_data['features'].length - 1; j++) {
+			    var geo_crime = geodesic_crime_data['features'][i]['geometry']['coordinates'];
+			    var euclid_crime = euclidean_crime_data['features'][j]['geometry']['coordinates'];
+
+			    //if the geodesic coordinates match the euclidean coordinates
+			    if (geo_crime[0] == euclid_crime[0] && geo_crime[1] == euclid_crime[1]) {
+			        //clusters of respective points
+			        var euclid_cluster = euclidean_crime_data['features'][j]['properties']['cluster'];
+			        var geo_cluster = geodesic_crime_data['features'][i]['properties']['cluster'];
+
+			        if(cluster_data[geo_cluster]['clusters'][euclid_cluster]['count'] == 0)
+			            cluster_data[geo_cluster]['num_clusters'] += 1;
+
+					cluster_data[geo_cluster]['clusters'][euclid_cluster]['count'] += 1;
+					cluster_data[geo_cluster]['num_points'] += 1;
+
+			    	if(euclid_bool = true)
+			        	euclidean_data[euclid_cluster] += 1;
+			    }
+			}
+			euclid_bool = false;
+		}
+
+		//console.log(cluster_data);
+
+		//console.log(euclidean_data);
+
+		var data_string = ""
+		document.getElementById("stats").innerHTML = "";
+
+		//build pie chart of euclidean clusters
+		var pie_data_values = new Array(num_clusters);
+		var pie_data_names = new Array(num_clusters);
+		for (var i=0; i < pie_data_names.length; i++){
+		    pie_data_values[i] = cluster_data[cluster_selected]['clusters'][i]['count'];
+		    pie_data_names[i] = "Cluster " + i.toString();
+		}
+
+		var data = [{
+  			values: pie_data_values,
+  			labels: pie_data_names,
+			type: 'pie',
+			marker: {
+  			    colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'white', 'cyan', 'brown'],
+				opacity: 0.5
+			},
+			textfont: {
+  			    color: "black"
+			}
+		}];
+
+		var layout = {
+  			height: 380,
+  			width: 480
+		};
+
+		Plotly.newPlot('myDiv', data, layout);
+
+		data_string += "Percent of euclidean cluster points in this cluster: <br />"
+		var euclid_cluster_count = 0;
+		var sim_score = 0;
+		for(var i=0; i < num_clusters; i++){
+		    if(cluster_data[cluster_selected]["clusters"][i]["count"] != 0){
+		        euclid_cluster_count += 1;
+				var cluster_ratio = cluster_data[cluster_selected]["clusters"][i]["count"] / euclidean_data[i] * cluster_data[cluster_selected]["clusters"][i]["count"] / cluster_data[cluster_selected]["num_points"];
+		    	sim_score += cluster_ratio;
+		    }
+
+		    var pct = Math.round(cluster_data[cluster_selected]["clusters"][i]["count"] / euclidean_data[i] * 100);
+		    if (pct > 0)
+		    	data_string += "<b>Cluster " + i.toString() + ":</b> " + pct.toString() + "%<br />";
+		}
+
+		data_string += "<br /><br /><b>Simliarity Score: </b>" + sim_score.toString();
+		data_string += "<br />***Similarity score is calculated by weighting the percentage of each euclidean cluster found in the geodesic cluster. Weight is based on number of euclidean points in the cluster vs total number of euclidean points for that cluster";
+
+		document.getElementById("stats").innerHTML = data_string;
 	}
 
 	function onEachFeature(feature, layer) {
@@ -126,28 +307,7 @@ layout: page
 	}
 
     //build alderban districts
-	L.geoJSON([alderman_2], {
-		style: function (feature) {
-			return feature.properties && feature.properties.style;
-		},
-
-		onEachFeature: onEachFeature,
-
-		pointToLayer: function (feature, latlng) {
-			return L.circleMarker(latlng, {
-				radius: 8,
-				fillColor: feature.properties.fillColor,
-				color: "#000",
-				weight: 1,
-				opacity: 1,
-				fillOpacity: 0.8
-			});
-		}
-	}).addTo(map);
-
-	//add points of selected crime on top of alderban districts
-	L.geoJSON([crimes_2], {
-
+	L.geoJSON([alderman_boundaries], {
 		style: function (feature) {
 			return feature.properties && feature.properties.style;
 		},
