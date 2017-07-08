@@ -84,6 +84,7 @@ def build_js(cluster):
         "type": "Feature",
         "properties": {
             "popupContent": "This is cluster " + str(cluster) + ' for ' + selected_crime,
+            "cluster": cluster,
             "style": {
                 "weight": 3,
                 "color": "black",
