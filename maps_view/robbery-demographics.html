@@ -1,0 +1,257 @@
+---
+layout: page
+---
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Milwaukee Crime Map Data</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
+    <script src="../justin/static/leaflet.js"></script>
+	<script src="../justin/static/plotly.js"></script>
+
+	<style>
+		#robbery {
+			width: 800px;
+			height: 600px;
+		}
+		#cluster_map {
+			width: 400px;
+			height: 300px;
+		}
+		#add-btn {
+    		background: white;
+    		border: 1px solid black;
+    		cursor: pointer;
+		}
+		#analysis {
+    		background: white;
+    		border: 1px solid black;
+    		cursor: pointer;
+		}
+		#full_table {
+			border-collapse:separate;
+    		border:solid black 1px;
+    		border-radius:6px;
+    		-moz-border-radius:6px;
+		}
+		#full_th, #full_td {
+    		border: 1px solid black;
+    		-moz-border-radius:6px;
+		}
+	</style>
+
+
+</head>
+<body>
+
+<h1>Milwaukee Crime Cluster Analysis</h1>
+<!--<input type="text" id="myText">-->
+
+<p></p>
+
+<table id="full_table" height="100%" align="center" style="width:100%">
+	<td  style="width:50%" valign="top" id="full_td">
+		<h2 align="center">Milwauke Crime Map -- Robbery</h2>
+		<hr />
+		<p>The black outlines represent geodesic clusters and the colored points are euclidean clusters</p>
+		<p>Select between 2 and 10 clusters:</p>
+		<select id="myText">
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+
+		<button id="add-btn" onclick="createClusters()">Submit</button>
+
+		<p>Click on a cluster for analysis</p>
+		<div id='robbery'></div>
+
+	</td>
+	<td style="width:50%" valign="top" id="full_td">
+		<h2 align="center">Analysis</h2>
+		<hr />
+
+		<p></p>
+
+		<hr />
+		<nav>
+			<button onclick="analyzeEuclidean()">Euclidean Analysis</button>
+			<button onclick="analyzeDemographic()">Demographic Analysis</button>
+		</nav>
+		<hr />
+
+		<div id="euclidean_analysis" style="display: none">
+			<div id="myDiv" style="width: 480px; height: 380px;">
+				<p id="stats"></p>
+			</div>
+		</div>
+
+		<div id="demographic_analysis" style="display: none">
+			<div id="demo_stats"></div>
+
+			<table>
+				<th>
+					<div id="cluster_map"></div>
+				</th>
+				<th>
+					<p id="demo_nums"></p>
+				</th>
+			</table>
+		</div>
+	</td>
+</table>
+
+
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_2.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_3.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_4.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_5.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_6.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_7.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_8.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_9.js"></script>
+<script src="../justin/static/geodesic/ROBBERY_GEODESIC_CLUSTERS_10.js"></script>
+
+<script src="../justin/static/crimes-euclidean.js"></script>
+<script src="../justin/static/crimes-geodesic.js"></script>
+<script src="../justin/static/euclidean.js"></script>
+<script src="../justin/static/demographic.js"></script>
+<script src="../justin/static/zipcodes.js"></script>
+<script src="../justin/static/tract_data.js"></script>
+
+<script>
+	var map = L.map('robbery').setView([43.0389, -87.9065], 11);
+	var geojson = 0;
+	var mymapgeojson = 0;
+	var clustergeojson = 0;
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+	var mymap = L.map('cluster_map').setView([43.0389, -87.9065], 11);
+	var lastCluster = 0;
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+
+	function createClusters() {
+		var x = document.getElementById("myText").value;
+		var num_clusters = parseInt(x);
+
+		var geo_list = new Array(num_clusters);
+
+		for (var i=0; i < geo_list.length; i++) {
+			geo_list[i] = eval("geodesic_cluster_" + x + "_" + i);
+		}
+
+		if (geojson != 0) {
+			geojson.eachLayer(function(layer) {
+  				geojson.removeLayer(layer);
+			});
+		}
+
+		geojson = L.geoJSON(geo_list, {
+		style: function (feature) {
+			return feature.properties && feature.properties.style;
+		},
+
+		onEachFeature: function onEachFeat(feature, layer) {
+			var popupContent = "<p></p>";
+
+			if (feature.properties && feature.properties.popupContent) {
+				popupContent += feature.properties.popupContent;
+			}
+
+			layer.bindPopup(popupContent);
+			console.log(feature.properties.cluster);
+			layer.on('click', function e() {
+			    analyzeDemographic(feature.properties.cluster);
+			});
+		},
+
+		pointToLayer: function (feature, latlng) {
+			return L.circleMarker(latlng, {
+				radius: 8,
+				fillColor: feature.properties.fillColor,
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.8
+			});
+		}
+		}).addTo(map);
+
+		var geodesic_crime_data = eval("crimes_geodesic_" + num_clusters);
+		var euclidean_crime_data = eval("crimes_euclidean_" + num_clusters);
+		//add points of selected crime on top of alderban districts
+		L.geoJSON([euclidean_crime_data], {
+
+			style: function (feature) {
+				return feature.properties && feature.properties.style;
+			},
+
+			onEachFeature: onEachFeature,
+
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, {
+					radius: 8,
+					fillColor: feature.properties.fillColor,
+					color: "#000",
+					weight: 1,
+					opacity: 1,
+					fillOpacity: 0.8
+				});
+			}
+		}).addTo(map);
+	}
+
+	function onEachFeature(feature, layer) {
+		var popupContent = "<p></p>";
+
+		if (feature.properties && feature.properties.popupContent) {
+			popupContent += feature.properties.popupContent;
+		}
+
+		layer.bindPopup(popupContent);
+	}
+
+    //build alderban districts
+	L.geoJSON([zipcodes], {
+		style: function (feature) {
+			return feature.properties && feature.properties.style;
+		},
+
+		onEachFeature: function onEachFeat(feature, layer){
+		    var popupContent = "<p></p>";
+		    popupContent += 'Tract #' +feature.properties.TRACTCE10;
+
+			layer.bindPopup(popupContent);
+		},
+
+		pointToLayer: function (feature, latlng) {
+			return L.circleMarker(latlng, {
+				radius: 8,
+				fillColor: feature.properties.fillColor,
+				color: "#000",
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 0.8
+			});
+		}
+	}).addTo(map);
+</script>
+</body>
+</html>

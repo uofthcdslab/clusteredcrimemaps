@@ -1,15 +1,16 @@
  var geodesic_cluster_3_0 = {
- "type": "Feature",
  "properties": {
+  "cluster": 0,
   "popupContent": "This is cluster 0 for ROBBERY",
   "style": {
    "opacity": 1,
-   "fillOpacity": 0,
+   "color": "black",
    "fillColor": "#0ad81f",
-   "weight": 3,
-   "color": "black"
+   "fillOpacity": 0,
+   "weight": 3
   }
  },
+ "type": "Feature",
  "geometry": {
   "type": "Polygon",
   "coordinates": [
@@ -68,17 +69,18 @@
 };
 
  var geodesic_cluster_3_1 = {
- "type": "Feature",
  "properties": {
+  "cluster": 1,
   "popupContent": "This is cluster 1 for ROBBERY",
   "style": {
    "opacity": 1,
-   "fillOpacity": 0,
+   "color": "black",
    "fillColor": "#0ad81f",
-   "weight": 3,
-   "color": "black"
+   "fillOpacity": 0,
+   "weight": 3
   }
  },
+ "type": "Feature",
  "geometry": {
   "type": "Polygon",
   "coordinates": [
@@ -129,17 +131,18 @@
 };
 
  var geodesic_cluster_3_2 = {
- "type": "Feature",
  "properties": {
+  "cluster": 2,
   "popupContent": "This is cluster 2 for ROBBERY",
   "style": {
    "opacity": 1,
-   "fillOpacity": 0,
+   "color": "black",
    "fillColor": "#0ad81f",
-   "weight": 3,
-   "color": "black"
+   "fillOpacity": 0,
+   "weight": 3
   }
  },
+ "type": "Feature",
  "geometry": {
   "type": "Polygon",
   "coordinates": [
