@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potential Bias Index</title>
+    <script src='d3/d3.js'></script>
+    <link rel="stylesheet" href="billboard/billboard.css">
+    <script src='billboard/billboard.js'></script>
+    <script src='pbIndex.js'></script>
+</head>
+<body>
+<div id="chart"></div>
+<script type="text/javascript">
+
+    var full_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var short_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+    motor.unshift('Motor Vehicle Theft');
+    theft.unshift('Theft');
+
+    var chart = bb.generate({
+        'size':{
+            'height': 700,
+            'width': 1000
+        },
+        'data': {
+            'columns': [
+                theft,
+                motor
+            ]
+        },
+        'axis':{
+            'x':{
+                label: {
+                    text:'Month',
+                    position:'outer-center'
+                },
+                'type':'category',
+                'categories':full_names,
+                tick:{
+                    centered:true,
+                    multiline:true,
+                    fit:true
+                }
+//                'height':20
+            },
+            y:{
+                label:{
+                    text: 'Potential Bias Index',
+                    position: 'outer-middle'
+                }
+            }
+
+
+        },
+        color:{
+            pattern:[
+                '#3949ab',
+                '#d81b60',
+                '#e53935',
+                '#43a047',
+                '#d81b60',
+                '#8e24aa',
+                '#5e35b1',
+                '#3949ab',
+                '#1e88e5',
+                '#039be5',
+                '#00acc1',
+                '#00897b',
+                '#43a047',
+                '#7cb342',
+                '#c0ca33',
+                '#fdd835',
+                '#ffb300',
+                '#fb8c00',
+                '#f4511e',
+                '#6d4c41',
+                '#757575',
+                '#546e7a'
+            ]
+        },
+        'bindto': '#chart'
+    });
+
+
+</script>
+</body>
+</html>
