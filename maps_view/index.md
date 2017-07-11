@@ -14,7 +14,7 @@ Here you can find the maps created for the project.
 
 [Motor Vehicle Theft in Milwaukee Clustered](./motorTheftMapd3.html) -- An interactive map of motor vehicle theft from 1/1/2015 to 1/30/2015 with dynamic clustering
 
-[Geodesic Vs Euclidean Comparison](./motorTheftMapd3.html) -- An map of theft in 2015, with a side by side comparison between Geodesic and Euclidean Clusterings.
+[Geodesic Vs Euclidean Comparison](./comparisonMapd3.html) -- An map of theft in 2015, with a side by side comparison between Geodesic and Euclidean Clusterings.
 
 
 ## Justin's Maps
