@@ -14,8 +14,19 @@ https://mygeodata.cloud and https://ogre.adc4gis.com/ were used to convert shape
 The tools used to create maps are in the folders labeled "griffin" and "justin"
 
 Griffin's maps are presented using D3 with python being used to cluster the data and store in a geoJSON frame.
-* CrimeData folder contains the data sets used and the shapefiles
-* newMap folder contains the javascript used to create the D3 maps
+* Earlier Prototypes
+** The Jupyter Notebooks used to create the first protoype map with Bokeh and process data are in the earlier_prototypes folder
+** CrimeData folder contains the original datasets and shapefiles, some of which may no longer be used
+** d3map folder contains the javascript used to create the original d3 cluster map for January 2015
+* KMeans Folder
+** Contains the Juypter notebook files for clustering the full dataset and outputting it to a usable format
+** Contains the complete version of the crime map allowing for side-by-side clustering and demographic analysis
+* Demographic Overlay
+** The Demographic data, shapefiles, and Juypter notebook used to process the data are present in Demograpic Overlay
+* Data
+** The full data set is present in data_2015 and is processed and grouped with the Jupyter notebooks present
+** The raw data is present in 15 excel spreadsheets per month and the data is later grouped into one .csv per month
+** The Index folder contains an earlier version of the potential bias index calculation done with Python based on a pair-wise cluster comparison
 
 Justin's maps are presented usind leaflet library with python and the flask framework.
 * maps directory has the shape files used to draw the maps
