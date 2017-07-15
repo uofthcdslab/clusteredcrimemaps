@@ -18,7 +18,7 @@
       <file leaf-file-name="zipTest.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zipTest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1956">
+            <state relative-caret-position="4114">
               <caret line="316" column="35" lean-forward="false" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
               <folding>
                 <element signature="e#3125#4708#0" expanded="false" />
@@ -40,23 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="altGraph-fasterExperiment.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/altGraph-fasterExperiment.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2239">
-              <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-              <folding>
-                <element signature="e#11123#11763#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="altGraph-areaSimilarity.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/altGraph-areaSimilarity.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="452" column="24" lean-forward="true" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
+            <state relative-caret-position="7684">
+              <caret line="452" column="24" lean-forward="false" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -65,19 +53,35 @@
       <file leaf-file-name="zipcodes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zipcodes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
+            <state relative-caret-position="119">
               <caret line="7" column="384" lean-forward="false" selection-start-line="7" selection-start-column="384" selection-end-line="7" selection-end-column="384" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zipTest-altsim.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zipTest-altsim.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zipTest-altsim.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="601">
-              <caret line="904" column="5" lean-forward="true" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
+              <caret line="904" column="5" lean-forward="false" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph-experiment.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graph-experiment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="326" column="30" lean-forward="true" selection-start-line="326" selection-start-column="30" selection-end-line="326" selection-end-column="30" />
+              <folding>
+                <element signature="e#1289#3221#0" expanded="false" />
+                <element signature="e#3386#4038#0" expanded="false" />
+                <element signature="e#4094#4254#0" expanded="false" />
+                <element signature="e#4305#5353#0" expanded="false" />
+                <element signature="e#5396#6571#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,8 +89,8 @@
       <file leaf-file-name="altGraph-pointSimilarity.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/altGraph-pointSimilarity.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-319">
-              <caret line="374" column="31" lean-forward="true" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+            <state relative-caret-position="6358">
+              <caret line="374" column="31" lean-forward="false" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
               <folding>
                 <element signature="e#14004#15489#0" expanded="false" />
               </folding>
@@ -135,8 +139,8 @@
       <find>k</find>
       <find>confusion</find>
       <find>hull</find>
-      <find>k</find>
       <find>demographic</find>
+      <find>h=</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -183,6 +187,7 @@
         <option value="$PROJECT_DIR$/altGraph-fasterExperiment-getClever.html" />
         <option value="$PROJECT_DIR$/altGraph-areaSimilarity.html" />
         <option value="$PROJECT_DIR$/altGraph-fasterExperiment.html" />
+        <option value="$PROJECT_DIR$/graph-experiment.html" />
       </list>
     </option>
   </component>
@@ -212,6 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -227,7 +233,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,16 +366,18 @@
       <workItem from="1499736092170" duration="434000" />
       <workItem from="1499781508416" duration="1117000" />
       <workItem from="1499783379929" duration="13861000" />
+      <workItem from="1499886114085" duration="1953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152514000" />
+    <option name="totallyTimeSpent" value="154467000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24893162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24893162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -396,12 +403,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="34" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ABsideBySide.html" />
     <entry file="file://$PROJECT_DIR$/euclidsideBySide.html" />
     <entry file="file://$PROJECT_DIR$/sideBySide.html" />
     <entry file="file://$PROJECT_DIR$/../zipcodes.js" />
@@ -442,13 +448,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m_theft_mar.js" />
-    <entry file="file://$PROJECT_DIR$/TheftData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TheftData.csv" />
     <entry file="file://$PROJECT_DIR$/theft_jan.js" />
     <entry file="file://$PROJECT_DIR$/bothClone.js" />
     <entry file="file://$PROJECT_DIR$/m_april.html" />
@@ -481,13 +481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/2D.js" />
     <entry file="file://$PROJECT_DIR$/all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -515,13 +509,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/altGraph-altMethod.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8211">
-          <caret line="483" column="28" lean-forward="false" selection-start-line="483" selection-start-column="28" selection-end-line="483" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-altMethod.html" />
     <entry file="file://$PROJECT_DIR$/altGraph.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -538,7 +526,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zipcodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
+        <state relative-caret-position="119">
           <caret line="7" column="384" lean-forward="false" selection-start-line="7" selection-start-column="384" selection-end-line="7" selection-end-column="384" />
           <folding />
         </state>
@@ -546,7 +534,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zipTest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1956">
+        <state relative-caret-position="4114">
           <caret line="316" column="35" lean-forward="false" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
           <folding>
             <element signature="e#3125#4708#0" expanded="false" />
@@ -569,8 +557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/altGraph-pointSimilarity.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="374" column="31" lean-forward="true" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+        <state relative-caret-position="6358">
+          <caret line="374" column="31" lean-forward="false" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
           <folding>
             <element signature="e#14004#15489#0" expanded="false" />
           </folding>
@@ -579,27 +567,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/altGraph-areaSimilarity.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="452" column="24" lean-forward="true" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
+        <state relative-caret-position="7684">
+          <caret line="452" column="24" lean-forward="false" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/altGraph-fasterExperiment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2239">
-          <caret line="183" column="0" lean-forward="true" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding>
-            <element signature="e#11123#11763#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-fasterExperiment.html" />
     <entry file="file://$PROJECT_DIR$/zipTest-altsim.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="601">
-          <caret line="904" column="5" lean-forward="true" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
+          <caret line="904" column="5" lean-forward="false" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph-experiment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="326" column="30" lean-forward="true" selection-start-line="326" selection-start-column="30" selection-end-line="326" selection-end-column="30" />
+          <folding>
+            <element signature="e#1289#3221#0" expanded="false" />
+            <element signature="e#3386#4038#0" expanded="false" />
+            <element signature="e#4094#4254#0" expanded="false" />
+            <element signature="e#4305#5353#0" expanded="false" />
+            <element signature="e#5396#6571#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
