@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Milwaukee Theft Map</title>
-    <script src='d3/d3.js'></script>
+    <script src='d3/d3.min.js'></script>
     <link rel="stylesheet" href="billboard/billboard.css">
     <script src='billboard/billboard.js'></script>
     <script src='cityLimit.js'> </script>
@@ -11,7 +11,7 @@
     <script src='geodesic.js'></script>-->
     <script src='zipcodes.js'></script>
     <script src='turf.min.js'></script>
-    <script src='all.js'></script>
+    <script src='all.js'></script>  
 </head>
 <style>
     div.tooltip {
@@ -58,13 +58,12 @@
     .bar {
         fill: steelblue;
     }
-    select{
-    }
+    
 
 </style>
 <body>
 <div>
-<select id="inds">
+<select id="cluster">
     <option value="K0" selected="selected">0</option>
     <option value="K2">2</option>
     <option value="K3">3</option>
@@ -95,12 +94,28 @@
     <option value="0" selected="selected">Theft</option>
     <option value="1">Motor Theft</option>
 </select>
+<select id="year">
+    <option value="0" selected="selected">2005</option>
+    <option value="1">2006</option>
+    <option value="2">2007</option>
+    <option value="3">2008</option>
+    <option value="4">2009</option>
+    <option value="5">2010</option>
+    <option value="6">2011</option>
+    <option value="7">2012</option>
+    <option value="8">2013</option>
+    <option value="9">2014</option>
+    <option value="10">2015</option>
+    <option value="11">2016</option>
+</select>
 </div>
-
+    
+<!-- <script type='text/javascript' src=all.js></script> -->
 <script type="text/javascript">
 
-
+    
     var both = complete_data[0];
+    
 
     var margin = {top: -5, right: -5, bottom: -5, left: -5},
         width = 450 - margin.left - margin.right,
@@ -329,7 +344,7 @@
 
         var message = '<p>' +'Offense: ' + d['properties']['Offense 1'] + '</p>' +
             '<p>'+ 'Time: ' + d['properties']['Date'] + ' ' + d['properties']['Time'] +'</p>' +
-            '<p>' + 'Address: ' + d['properties']['Address,']+ '</p>';
+            '<p>' + 'Address: ' + d['properties']['Address']+ '</p>';
 
         div.transition()
             .duration(200)
@@ -494,21 +509,13 @@
 
     drawPoints(crime_points,crime_points_g);
 
-    var points = [];
-    crime_points.selectAll('path')
-        .each(function (d) {
-                var coord = d['properties']['e_cluster' + currentK];
-                points.push(coord);
-            }
-        );
-
-    var k = d3.max(points) + 1;
+    var k = parseInt(currentK.split('K')[1]);
     setAllColors(crime_points,'e_cluster' + currentK);
     setAllColors(crime_points_g,'g_cluster'+ currentK);
 
-d3.select('#inds')
+d3.select('#cluster')
     .on('change', function(){
-        var sect = document.getElementById('inds');
+        var sect = document.getElementById('cluster');
         currentK = sect.options[sect.selectedIndex].value;
         console.log(parseInt(currentK.split('K')[1]));
 
@@ -539,17 +546,20 @@ d3.select('#months')
     .on('change', function(){
         var sect = document.getElementById('months');
         var index = parseInt(sect.options[sect.selectedIndex].value);
+
         var crime_sect = document.getElementById('crime');
         var c_type = parseInt(crime_sect.options[crime_sect.selectedIndex].value);
 
+        var year_sect = document.getElementById('year');
+        var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
 
 
         crime_points.selectAll('path').remove();
         crime_points_g.selectAll('path').remove();
 
-        both = complete_data[index + 12*c_type];
+        both = complete_data[24* year + 12*c_type + index];
         drawPoints(crime_points,crime_points_g);
-        d3.select('#inds').dispatch('change');
+        d3.select('#cluster').dispatch('change');
 
     });
 d3.select('#crime')
@@ -557,7 +567,10 @@ d3.select('#crime')
         d3.select('#months').dispatch('change');
     });
 
-
+d3.select('#year')
+.on('change', function(){
+    d3.select('#months').dispatch('change');
+})
 
     function overlapCalculation(cluster, polygon){
         var inter = turf.intersect(cluster,polygon);
