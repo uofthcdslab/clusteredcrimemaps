@@ -228,6 +228,11 @@
         .attr('class','graphDisplay')
         .attr('id','chart');
 
+    var biasDiv = d3.select('body')
+        .append('div')
+        .attr('class','biasDisplay')
+        .attr('id','biasChart');
+
     var div = d3.select('body')
         .append('div')
         .attr('class', 'tooltip')
