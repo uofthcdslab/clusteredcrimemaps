@@ -1,6 +1,8 @@
 # Clustered Crime Maps
 This repository will contain all the maps and code for the algorithmic discrimination project. 
-The results can be viewed at https://marquettecomputationalsocialscience.github.io/clusteredcrimemaps/
+
+## Website
+The results can be viewed at https://marquettecomputationalsocialscience.github.io/clusteredcrimemaps/, which contains interactive maps and graphs from our research.
 
 ## Data  
 All the data used for this project are publically available on the Milwaukee city website.
