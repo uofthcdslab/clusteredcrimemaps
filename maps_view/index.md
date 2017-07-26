@@ -29,4 +29,4 @@ Here you can find the maps created for the project.
 
 ## Griffin's Graphs
 
-[Potential Bias Index - Both](./pbindexDisplay.html) -- An interactive graph of the potential bias index by year and number of clusters specified.
+[Potential Bias Index - Both](./bothgraph.html) -- An interactive graph of the potential bias index by year and number of clusters specified.
