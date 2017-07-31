@@ -1,16 +1,23 @@
 function analyzeEuclidean() {
 		var demographic_div = document.getElementById('demographic_analysis');
-    	var euclidean_div = document.getElementById('euclidean_analysis');
+		var euclidean_div = document.getElementById('euclidean_analysis');
+    	var bias_div = document.getElementById('bias_analysis');
     	demographic_div.style.display = 'none';
-    	euclidean_div.style.display = "block";
+		euclidean_div.style.display = "block";
+    	bias_div.style.display = 'none';
 
-		var y = document.getElementById("myText").value;
-		var num_clusters = parseInt(y);
+		var x = document.getElementById("myText").value;
+		var num_clusters = parseInt(x);
 
-		var cluster_selected = lastCluster;
+		var cluster_selected = 0;
 
-		var geodesic_crime_data = eval("crimes_geodesic_" + num_clusters);
-		var euclidean_crime_data = eval("crimes_euclidean_" + num_clusters);
+		var y = document.getElementById("monthID").value;
+		var monthID = parseInt(y);
+
+		var geodesic_crime_data = eval("crimes_geodesic_" + monthID + "_" + num_clusters);
+		var euclidean_crime_data = eval("crimes_euclidean_" + monthID + "_" + num_clusters);
+
+		//var cluster_data =
 
 	    var cluster_data = new Array(num_clusters);
 		var euclidean_data = new Array(num_clusters).fill(0);
@@ -95,7 +102,6 @@ Plotly.newPlot('myDiv', data, layout);
 		data_string += "Percent of euclidean cluster points in this cluster: <br />"
 		var euclid_cluster_count = 0;
 		var sim_score = 0;
-		var confusion_data = [];
 
 		for(var i=0; i < num_clusters; i++){
 		    if(cluster_data[cluster_selected]["clusters"][i]["count"] != 0){
@@ -105,10 +111,6 @@ Plotly.newPlot('myDiv', data, layout);
 		    }
 
 		    var pct = Math.round(cluster_data[cluster_selected]["clusters"][i]["count"] / euclidean_data[i] * 100);
-		    //predicted geodesic, actual not geodesic
-		    confusion_data[0] = euclidean_data[i] - cluster_data[cluster_selected]["clusters"][i]["count"];
-		    //predicted geogesic, actual geodesic
-			confusion_data[1] = cluster_data[cluster_selected]["clusters"][i]["count"];
 		    if (pct > 0)
 		    	data_string += "<b>Cluster " + i.toString() + ":</b> " + pct.toString() + "%<br />";
 		}
