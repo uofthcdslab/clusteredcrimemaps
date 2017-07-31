@@ -32,13 +32,13 @@ Griffin's maps are presented using D3 with python being used to cluster the data
 
 Justin's maps are presented usind leaflet library. 
 * maps directory has the shape files used to draw the maps
-sandbox 
+* sandbox 
   * contains standalone scrips from exploration and experimentation
   * process_clusters.py does the heavy lifting, creating all cluster data used on the front end
-crime_data 
+* crime_data 
   * contains the crime data sets plotted on the maps
   * raw data pulled from Milwauke crime dataset and location coordniates added from arcGIS
-static
+* static
   * all javascript files used on the front end
   * individual files for potential bias analysis, demographic analysis and euclidean cluster analysis
 
