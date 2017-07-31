@@ -1,9 +1,10 @@
 function analyzeDemographic(cluster_selected){
-
     var demographic_div = document.getElementById('demographic_analysis');
     var euclidean_div = document.getElementById('euclidean_analysis');
+    var bias_div = document.getElementById('bias_analysis');
     demographic_div.style.display = 'block';
     euclidean_div.style.display = "none";
+    bias_div.style.display = 'none';
 
     if(cluster_selected == undefined){
         cluster_selected = lastCluster;
@@ -65,16 +66,19 @@ function analyzeDemographic(cluster_selected){
     };
 
     Plotly.newPlot('demo_stats', stats_data, layout);
-
-    clustermap(cluster_selected, data);
 }
 
 function buildDemographicData(cluster_tracts) {
     var x = document.getElementById("myText").value;
     var num_clusters = parseInt(x);
 
+    var y = document.getElementById("monthID").value;
+    var monthID = parseInt(y);
+
+    var year = document.getElementById("year").value;
+
     for(var i=0; i < num_clusters; i++){
-        var geodesic_crime_data = eval("geodesic_cluster_" + num_clusters + '_' + i);
+        var geodesic_crime_data = geodesic_json[year][monthID][num_clusters][i];
         var cluster_vector = geodesic_crime_data['geometry']['coordinates'][0];
 
         //loop through each tract
@@ -97,7 +101,7 @@ function buildDemographicData(cluster_tracts) {
 
             if (partial_area > 0 && full_area > 0){
                 cluster_tracts[i].push({
-                    'tract_num': tract_num,//.replace(/^0+/, ''),
+                    'tract_num': tract_num,
                     'ratio': partial_area / full_area,
                     'White': zipcodes['features'][j]['properties']['White'] * partial_area/full_area,
                     'Black or African American': zipcodes['features'][j]['properties']['Black or African American'] * partial_area/full_area,
@@ -153,96 +157,4 @@ function calcPolygonArea(vertices) {
     }
 
     return Math.abs(total);
-}
-
-function clustermap(selectedCluster, tractData){
-	var labels = ['White', 'Black or African American', 'American Indian and Ala Native', 'Native Hawaiian\/other Pac Isl', 'Asian', 'Multiple Race', 'Other Race'];
-
-	var x = document.getElementById("myText").value;
-    var num_clusters = parseInt(x);
-
-    if (mymapgeojson != 0) {
-			mymapgeojson.eachLayer(function(layer) {
-  				mymapgeojson.removeLayer(layer);
-			});
-		}
-
-    if (clustergeojson != 0) {
-			clustergeojson.eachLayer(function(layer) {
-  				clustergeojson.removeLayer(layer);
-			});
-		}
-
-	function onEachFeature(feature, layer) {
-		var popupContent = "<p></p>";
-
-		if (feature.properties && feature.properties.popupContent) {
-			popupContent += feature.properties.popupContent;
-		}
-
-		layer.bindPopup(popupContent);
-	}
-
-	tractList = {"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4269" } }, "features": []};
-
-	for(var i=0; i<tractData[selectedCluster].length; i++){
-	    for(var j=0; j<zipcodes['features'].length; j++){
-	        if (zipcodes['features'][j]['properties']['TRACTCE10'] == tractData[selectedCluster][i]['tract_num']){
-	            tractList['features'].push(zipcodes['features'][j]);
-            }
-        }
-    }
-
-    clustergeojson = L.geoJSON([eval("geodesic_cluster_" + x + "_" + selectedCluster)], {
-		style: function (feature) {
-			return feature.properties && feature.properties.style;
-		},
-
-		onEachFeature: onEachFeature,
-
-		pointToLayer: function (feature, latlng) {
-			return L.circleMarker(latlng, {
-				radius: 8,
-				fillColor: feature.properties.fillColor,
-				color: "#000",
-				weight: 1,
-				opacity: 1,
-				fillOpacity: 0.8
-			});
-		}
-		}).addTo(mymap);
-
-    //build alderban districts
-	mymapgeojson = L.geoJSON([tractList], {
-		style: function (feature) {
-			return feature.properties && feature.properties.style;
-		},
-
-		onEachFeature: function onEachFeat(feature, layer){
-		    var popupContent = "<p></p>";
-		    popupContent += 'Tract #' +feature['properties']['TRACTCE10'] + "<br />";
-		    var total = 0;
-		    for(var i=0; i<labels.length; i++){
-		        total += feature['properties'][labels[i]];
-            }
-
-            for(var j=0; j<labels.length; j++){
-		        popupContent += 'Percent ' + labels[j] + ': ' + ((feature['properties'][labels[j]] / total).toFixed(4) * 100) + '%<br />';
-            }
-
-			layer.bindPopup(popupContent);
-		},
-
-		pointToLayer: function (feature, latlng) {
-			return L.circleMarker(latlng, {
-				radius: 8,
-				fillColor: feature.properties.fillColor,
-				color: "#000",
-				weight: 1,
-				opacity: 1,
-				fillOpacity: 0.8
-			});
-		}
-	}).addTo(mymap);
 }
