@@ -19,11 +19,15 @@ Here you can find the maps created for the project.
 
 ## Justin's Maps
 
-[Robbery in Milwaukee](./robbery.html) -- An interactive map of robbery from 1/1/2015 to 1/30/2015
-
-[Simple Assault in Milwaukee](./simple_assault.html) -- An interactive map of simple assault from 1/1/2015 to 1/30/2015
-
-[Euclidean vs Geodesic Clustering -- Robbery](./robbery-geodesic.html) -- An interactive map comparing kmeans clustering algorithm using two different distance metrics from 1/1/2015 to 1/30/2015
+[Robbery in Milwaukee](./robbery-bias.html) -- An interactive map of robbery
+      Features: 
+          - Contains data from 2005 - 2016
+          - Visualize geodesic and euclidean kmeans clusters by month and year
+          - See demographic break-down for each cluster
+          - Potential Bias Analysis Tool
+              - View PBI month-by-month over entire dataset for selected numbers of clusters
+              - Hisogram of PBI for selected clusters over entire dataset
+              - View trends for selected cluster over each year in dataset
 
 # Graphs
 
