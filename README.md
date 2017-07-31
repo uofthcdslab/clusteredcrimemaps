@@ -30,8 +30,15 @@ Griffin's maps are presented using D3 with python being used to cluster the data
   * The raw data is present in 15 excel spreadsheets per month and the data is later grouped into one .csv per month
   * The Index folder contains an earlier version of the potential bias index calculation done with Python based on a pair-wise cluster comparison
 
-Justin's maps are presented usind leaflet library with python and the flask framework.
+Justin's maps are presented usind leaflet library. 
 * maps directory has the shape files used to draw the maps
-* sandbox contains standalone scrips from exploration and eperimentation
-* crime_data contains the crime data sets plotted on the maps
+sandbox 
+  * contains standalone scrips from exploration and experimentation
+  * process_clusters.py does the heavy lifting, creating all cluster data used on the front end
+crime_data 
+  * contains the crime data sets plotted on the maps
+  * raw data pulled from Milwauke crime dataset and location coordniates added from arcGIS
+static
+  * all javascript files used on the front end
+  * individual files for potential bias analysis, demographic analysis and euclidean cluster analysis
 
