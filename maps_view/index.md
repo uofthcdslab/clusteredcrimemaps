@@ -19,7 +19,7 @@ Here you can find the maps created for the project.
 
 ## Justin's Maps
 
-[Robbery in Milwaukee](./robbery-bias.html) -- An interactive map of robbery
+[Robbery in Milwaukee](./robbery-bias.html) -- An interactive map of robbery <br />
       Features: <br />
           - Contains data from 2005 - 2016 <br />
           - Visualize geodesic and euclidean kmeans clusters by month and year <br />
