@@ -20,14 +20,14 @@ Here you can find the maps created for the project.
 ## Justin's Maps
 
 [Robbery in Milwaukee](./robbery-bias.html) -- An interactive map of robbery
-      Features: 
-          - Contains data from 2005 - 2016
-          - Visualize geodesic and euclidean kmeans clusters by month and year
-          - See demographic break-down for each cluster
-          - Potential Bias Analysis Tool
-              - View PBI month-by-month over entire dataset for selected numbers of clusters
-              - Hisogram of PBI for selected clusters over entire dataset
-              - View trends for selected cluster over each year in dataset
+      Features: <br />
+          - Contains data from 2005 - 2016 <br />
+          - Visualize geodesic and euclidean kmeans clusters by month and year <br />
+          - See demographic break-down for each cluster <br />
+          - Potential Bias Analysis Tool <br />
+              - View PBI month-by-month over entire dataset for selected numbers of clusters <br />
+              - Hisogram of PBI for selected clusters over entire dataset <br />
+              - View trends for selected cluster over each year in dataset <br />
 
 # Graphs
 
