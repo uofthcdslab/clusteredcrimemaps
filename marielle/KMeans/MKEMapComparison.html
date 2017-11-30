@@ -16,11 +16,11 @@
     <script src='turf.min.js'></script>
     <script src='halfA.js'></script>
     <script src='halfB.js'></script> 
-	<script src='data1.js'></script>
+<!--	<script src='data1.js'></script>
 	<script src='data2.js'></script>
 	<script src='data3.js'></script>
 	<script src='data4.js'></script>
-	<script src='data5.js'></script>
+	<script src='data5.js'></script> -->
     <script src='bias.js'></script>
 
 </head>
@@ -38,31 +38,31 @@
         pointer-events: none;
         line-height: 40%
     }
-
+<!--
     .boxland {
         position: absolute;
-        left: 960px;
-        top: 450px;
+        left: 600px;
+        top: 800px;
         width: 600px;
         font: 10px sans-serif;
     }
 
     div.graphDisplay {
         position: absolute;
-        left: 960px;
-        top: 10px;
+        left: 10px;
+        top: 900px;
         height: 150px;
         width: 150px;
     }
 
     div.biasDisplay {
         position: absolute;
-        left: 930px;
-        top: 300px;
+        left: 600px;
+        top: 900px;
         height: 150px;
         width: 150px;
     }
-
+-->
     svg {
         position: absolute;
     }
@@ -116,6 +116,8 @@
         <select id="crime">
     <option value="0" selected="selected">Theft</option>
     <option value="1">Motor Theft</option>
+	<option value="2">Simple Assault</option>
+	<option value="3">Robbery</option>
 </select>
         <select id="year">
     <option value="0" selected="selected">2005</option>
@@ -135,6 +137,7 @@
 
     <!-- <script type='text/javascript' src=all.js></script> -->
     <script type="text/javascript">
+		// dataA is the name of the variable in the halfA.js file
         var both = dataA[0];
 
         var margin = { top: -5, right: -5, bottom: -5, left: -5 },
@@ -148,10 +151,11 @@
                 '#b0395e', '#3da292', '#cffc55', '#a48d57', '#8159b2',
                 '#99ccff', '#cc00cc', '#80ff80', '#ffe6b3', '#ffb399',
                 '#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
+				
 
         var frame = d3.select('body').append('svg')
-            .attr('width', width * 3 + 100)
-            .attr('height', height + 60)
+            .attr('width', width * 4 + 100)
+            .attr('height', 2*height + 60)
             .on('click', function (d) {
                 var loc = d3.mouse(this);
                 var locSub = [loc[0] - width - gap, loc[1]];
@@ -182,9 +186,12 @@
                     var e = d3.select('#cluster-e' + idNum);
                     var g = d3.select('#cluster-g' + idNum);
 					var m = d3.select('#cluster-m' + idNum);
+					// TEMP UNTIL STREET IS IMPLEMENTED
+					var s = m
                     var e_results = 0;
                     var g_results = 0;
 					var m_results = 0;
+					var s_results = 0;
 
                     e.each(function (d) {
 
@@ -201,45 +208,44 @@
                         m_results = demographicCalculation(d);
                     })
                         .style('opacity', .65);
+						
+					s.each(function (d) {
+                        s_results = demographicCalculation(d);
+                    })
+                        .style('opacity', .65);
 
 
 
-                    //     drawConfusionMatrix(comparison_box, parseInt(idNum), currentK);
+                    drawConfusionMatrix(comparison_box, parseInt(idNum), currentK);
 
-                    //     drawProbDist(prob_box, e_results, g_results);
-                    draw_graph(calculateProbabiltyDistribution(e_results), calculateProbabiltyDistribution(m_results));
+                    drawProbDist(prob_box, e_results, g_results);
+                    draw_graph(calculateProbabiltyDistribution(e_results), calculateProbabiltyDistribution(g_results));
 
                 }
             });
 
 
-        var svg = frame
-            .append('svg');
-
-        var child = svg.append('g');
-
-
-        svg.attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
-            .call(d3.zoom().scaleExtent([1, 10])
-                .translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
-                .on('zoom', function () {
-                    var transform = d3.zoomTransform(this);
-                    child.attr('transform', 'translate(' +
-                        (transform.x) + ',' + (transform.y)
-                        + ') scale(' + transform.k + ')');
-                }));
 
 
 
+
+
+/*
         var otherDiv = d3.select('body')
             .append('div')
             .attr('class', 'graphDisplay')
-            .attr('id', 'chart');
+            .attr('id', 'chart')
+			.style('position', 'absolute')
+			.style('left', margin.left + "px")
+			.style('top', height + 2*gap + 2*margin.top + "px");
+			
         var biasDiv = d3.select('body')
             .append('div')
             .attr('class', 'biasDisplay')
-            .attr('id', 'biasChart');
+            .attr('id', 'biasChart')
+			.style('position', 'absolute')
+			.style('left', 2*width + margin.left + "px")
+			.style('top', height + gap + 2*margin.top + "px");
 
         var year_strings = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013',
             '2014', '2015', '2016'];
@@ -247,7 +253,10 @@
         var checkDiv = d3.select('body')
             .append('div')
             .attr('class', 'boxland')
-            .attr('id', 'div-box');
+            .attr('id', 'div-box')
+			.style('position', 'absolute')
+			.style('left', 2*width + margin.left + "px")
+			.style('top', height + gap + margin.top + "px");
 
         for (var counter = 0; counter < year_strings.length; counter++) {
             d3.selectAll('#div-box')
@@ -264,8 +273,12 @@
                 console.log(year_strings[i]);
                 draw_bias_graph();
             });
+*/
 
-
+		var div = d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip')
+            .style('opacity', 0);
 
 
         // checkDiv
@@ -283,20 +296,7 @@
 
         //d3.selectAll('#checkbax').on('change',console.log('tweeeee'));
 
-
-
-
-        var div = d3.select('body')
-            .append('div')
-            .attr('class', 'tooltip')
-            .style('opacity', 0);
-
-
-
-
-        var city = child.append('g');
-
-        var albersProjection = d3.geoAlbers()
+		var albersProjection = d3.geoAlbers()
             .scale(145000)
             .rotate([87.96, 0])
             .center([0, 43.05])
@@ -304,7 +304,12 @@
 
         var geoPath = d3.geoPath().projection(albersProjection)
             .pointRadius(4);
-
+				
+		
+		var svg = frame
+            .append('svg');
+        var child = svg.append('g');
+        var city = child.append('g');
         city.selectAll('path')
             .data(city_limit.features)
             .enter()
@@ -313,29 +318,27 @@
             .attr('d', geoPath)
             .style('stroke', 'black')
             .style('stroke-width', .4);
-
         var crime_points = child.append('g');
 
-
+		svg.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .call(d3.zoom().scaleExtent([1, 10])
+                .translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+                .on('zoom', function () {
+                    var transform = d3.zoomTransform(this);
+                    child.attr('transform', 'translate(' +
+                        (transform.x) + ',' + (transform.y)
+                        + ') scale(' + transform.k + ')');
+                }));
+		
+		
         var svg_g = frame
             .append('svg');
-
         var child_g = svg_g.append('g');
-
         svg_g.attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
             .attr('x', width + gap)
-    /*.call(d3.zoom().scaleExtent([1, 10])
-     .translateExtent([[-width/3.1, -height/5], [width *4, height *1.2]])
-     .on('zoom', function(){
-     var transform = d3.zoomTransform(this);
-     child_g.attr('transform', 'translate(' +
-     (transform.x) + ',' + (transform.y)
-     + ') scale(' + transform.k + ')');
-     }))*/;
-
         var city_g = child_g.append('g');
-
         city_g.selectAll('path')
             .data(city_limit.features)
             .enter()
@@ -345,13 +348,78 @@
             .attr('id', 'point')
             .style('stroke', 'black')
             .style('stroke-width', .4);
-
         var crime_points_g = child_g.append('g');
+		
+		svg_g.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .call(d3.zoom().scaleExtent([1, 10])
+                .translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+                .on('zoom', function () {
+                    var transform = d3.zoomTransform(this);
+                    child_g.attr('transform', 'translate(' +
+                        (transform.x) + ',' + (transform.y)
+                        + ') scale(' + transform.k + ')');
+                }));
 
-
-
-        var zipCodes = child.append('g');
-        zipCodes.selectAll('path')
+	
+        var svg_m = frame
+            .append('svg');
+        var child_m = svg_m.append('g');
+        svg_m.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('x', 2*width + 2*gap)
+        var city_m = child_m.append('g');
+        city_m.selectAll('path')
+            .data(city_limit.features)
+            .enter()
+            .append('path')
+            .attr('fill', '#ccc')
+            .attr('d', geoPath)
+            .attr('id', 'point')
+            .style('stroke', 'black')
+            .style('stroke-width', .4);
+        var crime_points_m = child_m.append('g');
+		svg_m.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .call(d3.zoom().scaleExtent([1, 10])
+                .translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+                .on('zoom', function () {
+                    var transform = d3.zoomTransform(this);
+                    child_m.attr('transform', 'translate(' +
+                        (transform.x) + ',' + (transform.y)
+                        + ') scale(' + transform.k + ')');
+                }));
+		
+		var svg_s = frame
+            .append('svg');
+        var child_s = svg_s.append('g');
+        svg_s.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('x', 3*width + 3*gap)
+        var city_s = child_s.append('g');
+        city_s.selectAll('path')
+            .data(city_limit.features)
+            .enter()
+            .append('path')
+            .attr('fill', '#ccc')
+            .attr('d', geoPath)
+            .attr('id', 'point')
+            .style('stroke', 'black')
+            .style('stroke-width', .4);
+        var crime_points_s = child_s.append('g');		
+		svg_s.attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .call(d3.zoom().scaleExtent([1, 10])
+                .translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+                .on('zoom', function () {
+                    var transform = d3.zoomTransform(this);
+                    child_s.attr('transform', 'translate(' +
+                        (transform.x) + ',' + (transform.y)
+                        + ') scale(' + transform.k + ')');
+                }));
+		
+		var zipCodes = child.append('g');	
+		zipCodes.selectAll('path')
             .data(zipcodes.features)
             .enter()
             .append('path')
@@ -362,24 +430,9 @@
             .style('opacity', 0)
             .style('pointer-events', 'none');
 
-
-
-        function drawPoints(crime_points, crime_points_g) {
-
-            crime_points_g.selectAll('path')
-                .data(both.features)
-                .enter()
-                .append('path')
-                .each(function (d) {
-                    //d3.select(this).attr('fill', colorAssign(d, 'g_cluster'))
-					d3.select(this).attr('fill', colorAssign(d, 'm_cluster'))
-                })
-                .attr('stroke', '#999')
-                .attr('d', geoPath)
-                .attr('id', 'point')
-                .on('mouseover', handleMouseOver)
-                .on('mouseout', handleMouseOutG);
-
+			
+			
+        function drawPoints(crime_points, crime_points_g, crime_points_m, crime_points_s) {
             crime_points.selectAll('path')
                 .data(both.features)
                 .enter()
@@ -390,7 +443,48 @@
                 .on('mouseout', handleMouseOutE)
                 .each(function (d) {
                     d3.select(this).attr('fill', colorAssign(d, 'e_cluster'))
-                });
+                });		
+		
+            crime_points_g.selectAll('path')
+                .data(both.features)
+                .enter()
+                .append('path')
+                .each(function (d) {
+                    d3.select(this).attr('fill', colorAssign(d, 'g_cluster'))
+                })
+                .attr('stroke', '#999')
+                .attr('d', geoPath)
+                .attr('id', 'point')
+                .on('mouseover', handleMouseOver)
+                .on('mouseout', handleMouseOutG);
+				
+				
+			crime_points_m.selectAll('path')
+                .data(both.features)
+                .enter()
+                .append('path')
+                .each(function (d) {
+					d3.select(this).attr('fill', colorAssign(d, 'm_cluster'))
+                })
+                .attr('stroke', '#999')
+                .attr('d', geoPath)
+                .attr('id', 'point')
+                .on('mouseover', handleMouseOver)
+                .on('mouseout', handleMouseOutM);
+				
+			crime_points_s.selectAll('path')
+                .data(both.features)
+                .enter()
+                .append('path')
+                .each(function (d) {
+                    d3.select(this).attr('fill', colorAssign(d, 's_cluster'))
+                })
+                .attr('stroke', '#999')
+                .attr('d', geoPath)
+                .attr('id', 'point')
+                .on('mouseover', handleMouseOver)
+                .on('mouseout', handleMouseOutS);
+
         }
 
         function handleMouseOver(d, i) {
@@ -422,7 +516,22 @@
         }
         function handleMouseOutG(d, i) {
             d3.select(this)
+                .attr('fill', colorAssign(d, 'g_cluster' + currentK));
+            div.transition()
+                .duration(500)
+                .style('opacity', 0)
+        }
+		
+		function handleMouseOutM(d, i) {
+            d3.select(this)
                 .attr('fill', colorAssign(d, 'm_cluster' + currentK));
+            div.transition()
+                .duration(500)
+                .style('opacity', 0)
+        }
+		function handleMouseOutS(d, i) {
+            d3.select(this)
+                .attr('fill', colorAssign(d, 's_cluster' + currentK));
             div.transition()
                 .duration(500)
                 .style('opacity', 0)
@@ -448,8 +557,22 @@
             .attr('y', height + 10)
             .attr('text-anchor', 'middle')
             .style('font-size', '18px')
-            //.text("Geodesic Distance");
-			.text("Manhattan Distance");
+            .text("Geodesic Distance");
+			
+		frame.append('text')
+            .attr('x', width + 3*((width / 2) + gap))
+            .attr('y', height + 10)
+            .attr('text-anchor', 'middle')
+            .style('font-size', '18px')
+            .text("Manhattan Distance");
+			
+		frame.append('text')
+            .attr('x', width + 5*((width / 2) + gap))
+            .attr('y', height + 10)
+            .attr('text-anchor', 'middle')
+            .style('font-size', '18px')
+            .text("Street Distance");
+			
 
         var comparison_box = frame.append('svg')
             .attr('width', width * 1.5)
@@ -558,17 +681,16 @@
                 hull.transition()
                     .duration(400)
                     .style('opacity', .3);
-
             }
-
         }
 
-        drawPoints(crime_points, crime_points_g);
+        drawPoints(crime_points, crime_points_g, crime_points_m, crime_points_s);
 
         var k = parseInt(currentK.split('K')[1]);
         setAllColors(crime_points, 'e_cluster' + currentK);
-        //setAllColors(crime_points_g, 'g_cluster' + currentK);
-		setAllColors(crime_points_g, 'm_cluster' + currentK);
+		setAllColors(crime_points_g, 'g_cluster' + currentK);
+		setAllColors(crime_points_m, 'm_cluster' + currentK);
+		setAllColors(crime_points_s, 's_cluster' + currentK);
 
         d3.select('#cluster')
             .on('change', function () {
@@ -579,10 +701,12 @@
                 var k = parseInt(currentK.split('K')[1]);
                 setAllColors(crime_points, 'e_cluster' + currentK);
 				hullCreation(child, k, crime_points, 'e_cluster' + currentK);
-                //setAllColors(crime_points_g, 'g_cluster' + currentK);
-                //hullCreation(child_g, k, crime_points_g, 'g_cluster' + currentK);
-				setAllColors(crime_points_g, 'm_cluster' + currentK);
-                hullCreation(child_g, k, crime_points_g, 'm_cluster' + currentK);
+                setAllColors(crime_points_g, 'g_cluster' + currentK);
+                hullCreation(child_g, k, crime_points_g, 'g_cluster' + currentK);
+				setAllColors(crime_points_m, 'm_cluster' + currentK);
+                hullCreation(child_m, k, crime_points_m, 'm_cluster' + currentK);
+				setAllColors(crime_points_s, 's_cluster' + currentK);
+                hullCreation(child_s, k, crime_points_s, 's_cluster' + currentK);
                 
                 child.selectAll('.hull')
                     .each(function (d, i) {
@@ -592,6 +716,16 @@
                 child_g.selectAll('.hull')
                     .each(function (d, i) {
                         d3.select(this).attr('id', 'cluster-g' + i);
+                    });
+					
+				child_m.selectAll('.hull')
+                    .each(function (d, i) {
+                        d3.select(this).attr('id', 'cluster-m' + i);
+                    });
+					
+				child_s.selectAll('.hull')
+                    .each(function (d, i) {
+                        d3.select(this).attr('id', 'cluster-s' + i);
                     });
 
                 comparison_box.selectAll('rect').remove();
@@ -620,6 +754,8 @@
 
                 crime_points.selectAll('path').remove();
                 crime_points_g.selectAll('path').remove();
+				crime_points_m.selectAll('path').remove();
+				crime_points_s.selectAll('path').remove();
 
                 if (year > 5) {
                     both = dataB[24 * (year - 6) + 12 * c_type + index];
@@ -627,7 +763,7 @@
                     both = dataA[24 * year + 12 * c_type + index];
                 }
 
-                drawPoints(crime_points, crime_points_g);
+                drawPoints(crime_points, crime_points_g, crime_points_m, crime_points_s);
                 d3.select('#cluster').dispatch('change');
 
             });
@@ -675,22 +811,20 @@
 
                 });
 
-            /*results= results.map(Math.floor);
+            results= results.map(Math.floor);
             var id = this.id;
             console.log(id);
             d3.selectAll('#' + id).style('opacity',.5);
             console.log(results);
             draw_graph(euclid_graph, results);
             draw_graph(geodesic_graph,results);
-            */
+            
 
             results = results.map(Math.floor);
             return results;
         }
 
         function draw_graph(e_results, g_results) {
-
-
             e_results.unshift('Euclidean');
             g_results.unshift('Geodesic');
             var axis_labels = ['White', 'Black or African American',
@@ -742,6 +876,7 @@
                     var e_val = d['properties']['e_cluster' + currentK];
                     var g_val = d['properties']['g_cluster' + currentK];
 					var m_val = d['properties']['m_cluster' + currentK];
+					var s_val = d['properties']['s_cluster' + currentK];
                     if ((e_val === g_val) && (e_val === hullNum)) {
                         TP += 1;
                     } else if (e_val === hullNum && g_val !== hullNum) {
@@ -969,6 +1104,7 @@
                     var e_val = d['properties']['e_cluster' + currentK];
                     var g_val = d['properties']['g_cluster' + currentK];
 					var m_val = d['properties']['m_cluster' + currentK];
+					var s_val = d['properties']['s_cluster' + currentK];
                     e_total_list[e_val] += 1;
                     if (g_val === geo_hull) {
                         total += 1;
