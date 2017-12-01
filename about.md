@@ -9,4 +9,4 @@ being conducted out of Marquette University.
 
 
 Researchers:
-Griffin Berlstein, Justin Miller, and Dr. Shion Guha.
+Griffin Berlstein, Marielle Billig, Justin Miller, and Dr. Shion Guha.

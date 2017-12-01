@@ -6,6 +6,9 @@ title: {{ site.name }}
 
 Here you can find the maps created for the project.
 
+## Distance Metric Comparison
+[Crime in Milwaukee](../marielle/KMeans/MKEMapComparison.html) -- An interactive map comparing Euclidean, Geodesic, Manhattan and Street distance metrics
+
 ## Griffin's Maps
 
 [Theft in Milwaukee](./theftmap.html) -- An interactive map of theft from 1/1/2015 to 1/30/2015
