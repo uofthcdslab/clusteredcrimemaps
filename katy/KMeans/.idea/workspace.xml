@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae7a6eb4-47bc-4a04-9796-9a30015c5757" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="zipTest.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zipTest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4114">
+              <caret line="316" column="35" lean-forward="false" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
+              <folding>
+                <element signature="e#3125#4708#0" expanded="false" />
+                <element signature="e#4792#5516#0" expanded="false" />
+                <element signature="e#9707#9888#0" expanded="false" />
+                <element signature="e#9923#10104#0" expanded="false" />
+                <element signature="e#10138#10309#0" expanded="false" />
+                <element signature="e#11982#12174#0" expanded="false" />
+                <element signature="e#12236#14252#0" expanded="false" />
+                <element signature="e#16456#16538#0" expanded="false" />
+                <element signature="e#16578#18226#0" expanded="false" />
+                <element signature="e#19475#20127#0" expanded="false" />
+                <element signature="e#20191#23695#0" expanded="false" />
+                <element signature="e#20596#20740#0" expanded="false" />
+                <element signature="e#23754#26350#0" expanded="false" />
+                <element signature="e#26404#26568#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="altGraph-areaSimilarity.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/altGraph-areaSimilarity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7684">
+              <caret line="452" column="24" lean-forward="false" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zipcodes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zipcodes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="384" lean-forward="false" selection-start-line="7" selection-start-column="384" selection-end-line="7" selection-end-column="384" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zipTest-altsim.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zipTest-altsim.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="904" column="5" lean-forward="false" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph-experiment.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/graph-experiment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="326" column="30" lean-forward="true" selection-start-line="326" selection-start-column="30" selection-end-line="326" selection-end-column="30" />
+              <folding>
+                <element signature="e#1289#3221#0" expanded="false" />
+                <element signature="e#3386#4038#0" expanded="false" />
+                <element signature="e#4094#4254#0" expanded="false" />
+                <element signature="e#4305#5353#0" expanded="false" />
+                <element signature="e#5396#6571#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="altGraph-pointSimilarity.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/altGraph-pointSimilarity.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6358">
+              <caret line="374" column="31" lean-forward="false" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+              <folding>
+                <element signature="e#14004#15489#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>001000</find>
+      <find>001400</find>
+      <find>000148</find>
+      <find>014800</find>
+      <find>013700</find>
+      <find>tract</find>
+      <find>tooltip</find>
+      <find>block</find>
+      <find>colorAssign</find>
+      <find>text</find>
+      <find>crime_points</find>
+      <find>pointer-events</find>
+      <find>pointer</find>
+      <find>div</find>
+      <find>mouse</find>
+      <find>draw_graph</find>
+      <find>prob</find>
+      <find>2085 N COMMERCE ST</find>
+      <find>location</find>
+      <find>results</find>
+      <find>_list</find>
+      <find>t_list</find>
+      <find>m_list</find>
+      <find>both</find>
+      <find>mouseover</find>
+      <find>k</find>
+      <find>confusion</find>
+      <find>hull</find>
+      <find>demographic</find>
+      <find>h=</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/geodesic.js" />
+        <option value="$PROJECT_DIR$/euclid.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/displayB.html" />
+        <option value="$PROJECT_DIR$/KMeans.ipynb" />
+        <option value="$PROJECT_DIR$/displayA.html" />
+        <option value="$PROJECT_DIR$/displayC.html" />
+        <option value="$PROJECT_DIR$/displayD.html" />
+        <option value="$PROJECT_DIR$/geoSideBySide.html" />
+        <option value="$PROJECT_DIR$/Results/displayAggregate.html" />
+        <option value="$PROJECT_DIR$/displayAggregate.html" />
+        <option value="$PROJECT_DIR$/ABsideBySide.html" />
+        <option value="$PROJECT_DIR$/divergeSideBySide.html" />
+        <option value="$PROJECT_DIR$/euclidsideBySide.html" />
+        <option value="$PROJECT_DIR$/geosideBySide.html" />
+        <option value="$PROJECT_DIR$/sideBySide.html" />
+        <option value="$PROJECT_DIR$/gradientsideBySide.html" />
+        <option value="$PROJECT_DIR$/CDsideBySide.html" />
+        <option value="$PROJECT_DIR$/../zipcodes.js" />
+        <option value="$PROJECT_DIR$/zipcodes.js" />
+        <option value="$PROJECT_DIR$/both.js" />
+        <option value="$PROJECT_DIR$/zipAttempt.js" />
+        <option value="$PROJECT_DIR$/bothClone.js" />
+        <option value="$PROJECT_DIR$/theft_jan.js" />
+        <option value="$PROJECT_DIR$/copy.js" />
+        <option value="$PROJECT_DIR$/m_april.html" />
+        <option value="$PROJECT_DIR$/m_aug.html" />
+        <option value="$PROJECT_DIR$/visualization_experiments/pbIndexDisplay.css" />
+        <option value="$PROJECT_DIR$/visualization_experiments/pbIndexDipslay.html" />
+        <option value="$PROJECT_DIR$/pbIndexDipslay.html" />
+        <option value="$PROJECT_DIR$/zipDownload.html" />
+        <option value="$PROJECT_DIR$/downloader.html" />
+        <option value="$PROJECT_DIR$/altGraph.html" />
+        <option value="$PROJECT_DIR$/altGraph-altMethod.html" />
+        <option value="$PROJECT_DIR$/all.js" />
+        <option value="$PROJECT_DIR$/../data_2015/index/pbIndex.js" />
+        <option value="$PROJECT_DIR$/zipTest.html" />
+        <option value="$PROJECT_DIR$/zipTest-altsim.html" />
+        <option value="$PROJECT_DIR$/altGraph-fasterExperiment-getClever.html" />
+        <option value="$PROJECT_DIR$/altGraph-areaSimilarity.html" />
+        <option value="$PROJECT_DIR$/altGraph-fasterExperiment.html" />
+        <option value="$PROJECT_DIR$/graph-experiment.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KMeans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KMeans" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="nodejs_interpreter_path" value="D:/Nodejs/node" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\griff\Desktop\Computer Science\Ethics of Algorithms Code\KMeans" />
+      <recent name="C:\Users\griff\Desktop\Computer Science\KMeans" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\griff\Desktop\Computer Science\Ethics of Algorithms Code\KMeans" />
+      <recent name="C:\Users\griff\Desktop\Computer Science\KMeans" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae7a6eb4-47bc-4a04-9796-9a30015c5757" name="Default" comment="" />
+      <created>1498243259781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498243259781</updated>
+      <workItem from="1498243260964" duration="7245000" />
+      <workItem from="1498488626995" duration="7936000" />
+      <workItem from="1498572659426" duration="5590000" />
+      <workItem from="1498703577382" duration="261000" />
+      <workItem from="1498764975381" duration="3868000" />
+      <workItem from="1498838365416" duration="17291000" />
+      <workItem from="1498926141732" duration="4562000" />
+      <workItem from="1499095003524" duration="16764000" />
+      <workItem from="1499114400925" duration="7706000" />
+      <workItem from="1499178022002" duration="13193000" />
+      <workItem from="1499273170885" duration="817000" />
+      <workItem from="1499350782590" duration="12741000" />
+      <workItem from="1499438452089" duration="16586000" />
+      <workItem from="1499468490907" duration="80000" />
+      <workItem from="1499468858820" duration="5232000" />
+      <workItem from="1499697343704" duration="17196000" />
+      <workItem from="1499735324582" duration="34000" />
+      <workItem from="1499736092170" duration="434000" />
+      <workItem from="1499781508416" duration="1117000" />
+      <workItem from="1499783379929" duration="13861000" />
+      <workItem from="1499886114085" duration="1953000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="154467000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="953" y="0" width="974" height="1047" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24893162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="36" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/euclidsideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/sideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/../zipcodes.js" />
+    <entry file="file://$PROJECT_DIR$/turf.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divergeSideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/gradientsideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/geosideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/billboard/billboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127160">
+          <caret line="7488" column="220" lean-forward="false" selection-start-line="7488" selection-start-column="215" selection-end-line="7488" selection-end-column="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geodesic.js" />
+    <entry file="file://$PROJECT_DIR$/CDsideBySide.html" />
+    <entry file="file://$PROJECT_DIR$/Intersection.js" />
+    <entry file="file://$PROJECT_DIR$/zipAttempt.js" />
+    <entry file="file://$PROJECT_DIR$/theft_oct.js" />
+    <entry file="file://$PROJECT_DIR$/m_theft_july.js" />
+    <entry file="file://$PROJECT_DIR$/m_theft_feb.js" />
+    <entry file="file://$PROJECT_DIR$/m_theft_aug.js" />
+    <entry file="file://$PROJECT_DIR$/theft_june.js" />
+    <entry file="file://$PROJECT_DIR$/theft_july.js" />
+    <entry file="file://$PROJECT_DIR$/theft_sep.js" />
+    <entry file="file://$PROJECT_DIR$/m_theft_jan.js" />
+    <entry file="file://$PROJECT_DIR$/debug.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m_theft_mar.js" />
+    <entry file="file://$PROJECT_DIR$/TheftData.csv" />
+    <entry file="file://$PROJECT_DIR$/theft_jan.js" />
+    <entry file="file://$PROJECT_DIR$/bothClone.js" />
+    <entry file="file://$PROJECT_DIR$/m_april.html" />
+    <entry file="file://$PROJECT_DIR$/m_aug.html" />
+    <entry file="file://$PROJECT_DIR$/copy.js" />
+    <entry file="file://$PROJECT_DIR$/both.js" />
+    <entry file="file://$PROJECT_DIR$/m_theft_april.js" />
+    <entry file="file://$PROJECT_DIR$/visualization_experiments/pbIndexDisplay.html" />
+    <entry file="file://$PROJECT_DIR$/downloader.html" />
+    <entry file="file://$PROJECT_DIR$/theft_feb.js" />
+    <entry file="file://$PROJECT_DIR$/theft_mar.js" />
+    <entry file="file://$PROJECT_DIR$/zipbackup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5746">
+          <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pbIndexDipslay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="83" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2D.js" />
+    <entry file="file://$PROJECT_DIR$/all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="75910">
+          <caret line="1305" column="53" lean-forward="true" selection-start-line="1305" selection-start-column="53" selection-end-line="1305" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../data_2015/index/pbIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cityLimit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-altMethod.html" />
+    <entry file="file://$PROJECT_DIR$/altGraph.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="65" column="26" lean-forward="false" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datamound/m_theft_jan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zipcodes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="384" lean-forward="false" selection-start-line="7" selection-start-column="384" selection-end-line="7" selection-end-column="384" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zipTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4114">
+          <caret line="316" column="35" lean-forward="false" selection-start-line="316" selection-start-column="35" selection-end-line="316" selection-end-column="35" />
+          <folding>
+            <element signature="e#3125#4708#0" expanded="false" />
+            <element signature="e#4792#5516#0" expanded="false" />
+            <element signature="e#9707#9888#0" expanded="false" />
+            <element signature="e#9923#10104#0" expanded="false" />
+            <element signature="e#10138#10309#0" expanded="false" />
+            <element signature="e#11982#12174#0" expanded="false" />
+            <element signature="e#12236#14252#0" expanded="false" />
+            <element signature="e#16456#16538#0" expanded="false" />
+            <element signature="e#16578#18226#0" expanded="false" />
+            <element signature="e#19475#20127#0" expanded="false" />
+            <element signature="e#20191#23695#0" expanded="false" />
+            <element signature="e#20596#20740#0" expanded="false" />
+            <element signature="e#23754#26350#0" expanded="false" />
+            <element signature="e#26404#26568#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-pointSimilarity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6358">
+          <caret line="374" column="31" lean-forward="false" selection-start-line="374" selection-start-column="31" selection-end-line="374" selection-end-column="31" />
+          <folding>
+            <element signature="e#14004#15489#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-areaSimilarity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7684">
+          <caret line="452" column="24" lean-forward="false" selection-start-line="452" selection-start-column="24" selection-end-line="452" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/altGraph-fasterExperiment.html" />
+    <entry file="file://$PROJECT_DIR$/zipTest-altsim.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="904" column="5" lean-forward="false" selection-start-line="904" selection-start-column="5" selection-end-line="904" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph-experiment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="326" column="30" lean-forward="true" selection-start-line="326" selection-start-column="30" selection-end-line="326" selection-end-column="30" />
+          <folding>
+            <element signature="e#1289#3221#0" expanded="false" />
+            <element signature="e#3386#4038#0" expanded="false" />
+            <element signature="e#4094#4254#0" expanded="false" />
+            <element signature="e#4305#5353#0" expanded="false" />
+            <element signature="e#5396#6571#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
