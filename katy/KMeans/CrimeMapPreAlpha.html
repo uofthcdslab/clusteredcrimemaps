@@ -112,7 +112,7 @@
         <select id="crime">
    <option value="0">Theft</option>
    <option value="1">Motor Theft</option>
-   <option value="2">Simple Assault</option>
+   <option value="2" selected='selected'>Simple Assault</option>
    <option value="3">Robbery</option>
 </select>
 </p>
@@ -160,7 +160,7 @@
 
  <div>
 <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
-<h2>Milwaukee Crime Map </h2>
+<h2>Milwaukee Crime Clusters</h2>
 
 </div>
 <div>
@@ -169,6 +169,7 @@
 
     <!-- <script type='text/javascript' src=all.js></script> -->
     <script type="text/javascript">
+	    rename()
 		// dataA is the name of the variable in the halfA.js file
         var both = dataA[0];
 
@@ -747,6 +748,8 @@
             });
         d3.select('#months')
             .on('change', function () {
+		rename();
+		    
                 var sect = document.getElementById('months');
                 var index = parseInt(sect.options[sect.selectedIndex].value);
 
@@ -777,12 +780,14 @@
         d3.select('#crime')
             .on('change', function () {
                 d3.select('#months').dispatch('change');
+		rename();    
             });
 
         d3.select('#year')
             .on('change', function () {
                 d3.select('#months').dispatch('change');
-            })
+           	rename();
+	    })
 
 
 
@@ -1345,6 +1350,29 @@ function svgString2Image( svgString, width, height, format, callback ) {
 image.src = imgsrc;
 };
 
+//dynamically changes the displayed title on the page
+	    function rename(){
+var crimeSel=document.getElementById('crime')
+var strCrime=crimeSel.options[crimeSel.selectedIndex].text
+
+
+var monthSel=document.getElementById('months');
+	    var strMonth=monthSel.options[monthSel.selectedIndex].text
+	    
+	    var yearSel=document.getElementById('year');
+	    var strYear=yearSel.options[yearSel.selectedIndex].text
+
+
+
+	  // var strCrime=d3.select('#crime').node().text;
+//var strMonth=d3.select('#months').node().text;
+//var strYear=d3.select('#year').node().text;
+d3.select('h2').text(function() {return "Milwaukee "+strCrime +" Map for "+strMonth +" "+strYear});
+	    };
+
+var legend=svg.append('svg');
+d3.select('legend').attr('x', d3.select('svg').x)
+		   .attr('y',
     </script>
 </body>
 
