@@ -24,6 +24,8 @@
     <script src='bias.js'></script>
 <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
 	 <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+	<script src='d3.legend.js'></script>
+
 </head>
 <style>
     div.tooltip {
@@ -169,6 +171,7 @@
 
     <!-- <script type='text/javascript' src=all.js></script> -->
     <script type="text/javascript">
+	randomStart()
 	    rename()
 		// dataA is the name of the variable in the halfA.js file
         var both = dataA[0];
@@ -746,7 +749,9 @@
 
 
             });
-        d3.select('#months')
+
+
+	d3.select('#months')
             .on('change', function () {
 		rename();
 		    
@@ -788,7 +793,11 @@
                 d3.select('#months').dispatch('change');
            	rename();
 	    })
-
+	d3.select('#distMet')
+		.on('change', function(){
+			//functionality to change which metric is show
+			rename();
+		})
 
 
         function overlapCalculation(cluster, polygon) {
@@ -1228,7 +1237,13 @@
             });
         }
         //draw_graph([], []);
-        //draw_bias_graph();
+	    //draw_bias_graph();
+/*
+legend=svg.append('g')
+	    .attr("class","legend")
+	//    .attr("transform"
+	    .call(d3.legend);
+*/	    
 <!--sidebar functionality from w3schools.com--> 
 function w3_open() {
   //document.getElementById("main").style.marginLeft = "30%";
@@ -1350,7 +1365,7 @@ function svgString2Image( svgString, width, height, format, callback ) {
 image.src = imgsrc;
 };
 
-//dynamically changes the displayed title on the page
+//dynamically changes the displayed title on the page and eventually the legend
 	    function rename(){
 var crimeSel=document.getElementById('crime')
 var strCrime=crimeSel.options[crimeSel.selectedIndex].text
@@ -1370,9 +1385,14 @@ var monthSel=document.getElementById('months');
 d3.select('h2').text(function() {return "Milwaukee "+strCrime +" Map for "+strMonth +" "+strYear});
 	    };
 
-var legend=svg.append('svg');
-d3.select('legend').attr('x', d3.select('svg').x)
-		   .attr('y',
+
+	    function randomStart(){
+	document.getElementById("months").value=Math.floor(Math.random()*12)
+	document.getElementById("year").value=Math.floor(Math.random()*12)
+	document.getElementById("crime").value=Math.floor(Math.random()*4)
+	document.getElementById("distMet").value=Math.floor(Math.random()*3)
+	document.getElementById("cluster").value = 'K'+Math.floor((Math.random()*9)+2)
+	    }
     </script>
 </body>
 
