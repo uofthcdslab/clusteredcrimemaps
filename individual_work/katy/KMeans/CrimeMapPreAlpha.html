@@ -1263,9 +1263,29 @@ d3.select('#saveButton').on('click', function(){
 	var svgString=getSVGString(d3.select('svg').node());
 	svgString2Image(svgString,width,height, 'png', save);
 	function save(dataBlob, filesize){
-		saveAs(dataBlob, 'CrimeMap.png');
-	}
+		saveAs(dataBlob, function(){
+		var crimeSel=document.getElementById('crime')
+		var strCrime=crimeSel.options[crimeSel.selectedIndex].text
+
+
+	var monthSel=document.getElementById('months');
+            var strMonth=monthSel.options[monthSel.selectedIndex].text.substring(0,3);
+            
+            var yearSel=document.getElementById('year');
+            var strYear=yearSel.options[yearSel.selectedIndex].text
+
+			var distSel=document.getElementById('distMet');
+			var strDist=distSel.options[distSel.selectedIndex].text.substring(0,3);
+		var clusterSel=document.getElementById('cluster');
+		var strCluster=clusterSel.options[clusterSel.selectedIndex].text
+		
+		var str=strCluster.concat(strDist, strCrime, strMonth, strYear, '.png');
+
+		return str;
+	})
+}
 });
+
 function getSVGString( svgNode ) {
 	svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
 	var cssStyleText = getCSSStyles( svgNode );

@@ -1263,7 +1263,7 @@ d3.select('#saveButton').on('click', function(){
 	var svgString=getSVGString(d3.select('svg').node());
 	svgString2Image(svgString,width,height, 'png', save);
 	function save(dataBlob, filesize){
-		saveAs(dataBlob, 'CrimeMap.png');
+		saveAs(dataBlob,'CrimeMap.png)
 	}
 });
 function getSVGString( svgNode ) {
