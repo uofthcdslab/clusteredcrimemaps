@@ -1,304 +1,704 @@
 <!DOCTYPE html>
 <html lang='en'>
-	<head>
-		<meta charset="utf-8">
-		<title>Milwaukee Crime Map</title>
-		<script src='../resources/d3/d3.min.js'></script>
-		<link rel='stylesheet' href='../resources/billboard/billboard.css'>
-		<script src='../resources/billboard/billboard.js'></script>
 
-		<link rel='stylesheet' href="https://www.w3schools.com/w3css/4/w3.css">
-		<script src='../resources/cityLimit.js'></script>
-		<script src='../resources/zipcodes.js'></script>
-		<script src='../resources/turf.min.js'></script>
-		<script src='../data/bias_data/bias.js'></script>
-		<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
-         	<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+<head>
+	<meta charset="utf-8">
+	<title>Milwaukee Crime Map</title>
+	<script src='../resources/d3/d3.min.js'></script>
+	<link rel='stylesheet' href='../resources/billboard/billboard.css'>
+	<script src='../resources/billboard/billboard.js'></script>
 
-	</head>
+	<link rel='stylesheet' href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src='../resources/cityLimit.js'></script>
+	<script src='../resources/zipcodes.js'></script>
+	<script src='../resources/turf.min.js'></script>
+	<script src='../data/bias_data/bias.js'></script>
+	<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+	<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+
+	<script src='../data/clustered_data/2005_01_mtheft_clustered.js'></script>
+</head>
 <style>
-	div.tooltip{
-		position:absolute;
+	div.tooltip {
+		position: absolute;
 		text-align: left;
-		width:200px;
+		width: 200px;
 		height: 60px;
-       		padding: 2px;
-        	font: 12px sans-serif;
-        	background: lightsteelblue;
-        	border: 0px;
-        	border-radius: 8px;
-        	pointer-events: none;
-        	line-height: 40%
-    	}
+		padding: 2px;
+		font: 12px sans-serif;
+		background: lightsteelblue;
+		border: 0px;
+		border-radius: 8px;
+		pointer-events: none;
+		line-height: 40%
+	}
+
 	svg {
-		position:absolute;
+		position: absolute;
 	}
 
 	.hull {
 		stroke: black;
 		stroke-width: 2px;
-		stroke-linejoin:round;
+		stroke-linejoin: round;
 		opacity: 0.3;
 		pointer-events: none;
 	}
+
 	.bar {
-		fill:steelblue;
+		fill: steelblue;
 	}
 </style>
+
 <body>
-       <!--expandable sidebar-->
+	<!--expandable sidebar-->
 	<div class="w3-sidebar w3-animate-left w3-bar-block w3-dark-grey" style="display:none" id="sidebar">
-   	<button class="w3-bar-item w3-red w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
+		<button class="w3-bar-item w3-red w3-button w3-large" onclick="w3_close()">Close &times;</button>
 
-	<h3> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
-	<p>Clusters:
-	<select id="cluster">
-   		 <option value="2">2</option>
-   		 <option value="3">3</option>
-   		 <option value="4">4</option>
-   		 <option value="5">5</option>
-   		 <option value="6">6</option>
-   		 <option value="7">7</option>
-   		 <option value="8">8</option>
-   		 <option value="9">9</option>
-   		 <option value="10">10</option>
-	</select>
-	</p>	
+		<h3> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
+		<p>Clusters:
+			<select id="cluster">
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</p>
 
-	<p>Crime:
-		<select id="crime">
-			<option value="0">Theft</option>
-			<option value="1">Motor Theft</option>
-			<option value="2">Simple Assault</option>
-			<option value="3">Robbery</option>
-		</select>
-	</p>
+		<p>Crime:
+			<select id="crime">
+				<option value="0">Theft</option>
+				<option value="1" selected="selected">Motor Theft</option>
+				<option value="2">Simple Assault</option>
+				<option value="3">Robbery</option>
+			</select>
+		</p>
 
-	<p>Distance Metric:
-		<select id="distMet">
-        		<option value="0">Euclidian</option>
-        		<option value="1">Geodesic</option>
-        		<option value="2">Manhattan</option>
-		</select>
-	</p>
+		<p>Distance Metric:
+			<select id="distMet">
+				<option value="0" selected="selected">Euclidian</option>
+				<option value="1">Geodesic</option>
+				<option value="2">Manhattan</option>
+			</select>
+		</p>
 
-	<p>Month:
-        	<select id="months">
-    			<option value="0">January</option>
-    			<option value="1">February</option>
-    			<option value="2">March</option>
-    			<option value="3">April</option>
-    			<option value="4">May</option>
-    			<option value="5">June</option>
-    			<option value="6">July</option>
-    			<option value="7">August</option>
-    			<option value="8">September</option>
-    			<option value="9">October</option>
-    			<option value="10">November</option>
-    			<option value="11">December</option>
-		</select>
-	</p>
+		<p>Month:
+			<select id="months">
+				<option value="0" selected="selected">January</option>
+				<option value="1">February</option>
+				<option value="2">March</option>
+				<option value="3">April</option>
+				<option value="4">May</option>
+				<option value="5">June</option>
+				<option value="6">July</option>
+				<option value="7">August</option>
+				<option value="8">September</option>
+				<option value="9">October</option>
+				<option value="10">November</option>
+				<option value="11">December</option>
+			</select>
+		</p>
 
-<p>Year:
-        <select id="year">
-    <option value="0">2005</option>
-    <option value="1">2006</option>
-    <option value="2">2007</option>
-    <option value="3">2008</option>
-    <option value="4">2009</option>
-    <option value="5">2010</option>
-    <option value="6">2011</option>
-    <option value="7">2012</option>
-    <option value="8">2013</option>
-    <option value="9">2014</option>
-    <option value="10">2015</option>
-    <option value="11">2016</option>
-	</select>
-</p>
-</div>
+		<p>Year:
+			<select id="year">
+				<option value="0" selected="selected">2005 </option>
+				<option value="1">2006</option>
+				<option value="2">2007</option>
+				<option value="3">2008</option>
+				<option value="4">2009</option>
+				<option value="5">2010</option>
+				<option value="6">2011</option>
+				<option value="7">2012</option>
+				<option value="8">2013</option>
+				<option value="9">2014</option>
+				<option value="10">2015</option>
+				<option value="11">2016</option>
+			</select>
+		</p>
+	</div>
 
-<div>
-	<button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
-	<h2>Milwaukee Crime Clusters</h2>
-</div>
+	<div>
+		<button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+		<h2>Milwaukee Crime Clusters</h2>
+	</div>
 
-<div>
-	<button id='saveButton'>Save</button>
-</div>
+	<div>
+		<button id='saveButton'>Save</button>
+	</div>
 
 
-<script type='text/javascript'>
-//create starting conditions
-randomStart()
-rename()
+	<script type='text/javascript'>
+		//create starting conditions
+		//randomStart()
+		rename()
 
-//core functionality and svg should go here
-//get data
-
-var numFiles = 575;
-var crimeTypes = ['mtheft', 'robbery', 'theft', 'assault']
-for (i = 2005; i <= 2016 ; i++) { 
-    for (j = 1; j <= 12; j++){
-	for (k = 0; k < crimeTypes.length; k++){
-		month = j + '';
-		if (month.length == 1){
-			month = '0' + month;
+		//core functionality and svg should go here
+		//get data
+		function concatGeoJSON(geoJSON1, geoJSON2) {
+			return {
+				"type": "FeatureCollection",
+				"features": [...g1.features, ...g2.features]
+			}
 		}
-		fileName = '../data/clustered_data/' + i + "_" + month + "_" + crimeTypes[k] + "_clustered.js";
-		var jsData = document.createElement('script');
-		jsData.setAttribute('src', fileName);
-		document.head.appendChild(jsData);
-		console.log(fileName);
-	}
-    }
-}
+
+		function loadDataFile(path, fctn) {
+			var jsData = document.createElement('script');
+			jsData.onload = fctn;
+			jsData.setAttribute('src', fileName);
+			jsData.async = true;
+			document.head.appendChild(jsData);
+		}
+
+
+		var allCrimeClusters = mtheft_2005_01[0];
+		var crimeTypes = ['mtheft', 'robbery', 'theft', 'assault']
+		for (i = 2005; i <= 2016; i++) {
+			for (j = 1; j <= 12; j++) {
+				for (k = 0; k < crimeTypes.length; k++) {
+					month = j + '';
+					if (month.length === 1) {
+						month = '0' + month;
+					}
+					fileName = '../data/clustered_data/' + i + "_" + month + "_" + crimeTypes[k] + "_clustered.js";
+					//var jsData = document.createElement('script');
+					//jsData.setAttribute('src', fileName);
+					//document.head.appendChild(jsData);
+					//console.log(fileName);
+					loadDataFile(fileName, function () {
+						var varName = crimeTypes[k] + "_" + i + "_" + month
+						if (allCrimeClusters === null) {
+							//console.log('setting')
+							allCrimeClusters = window[varName];
+							console.log(Object.keys(window));
+						} else {
+							//console.log('updating')
+							newGeoJSON = window[varName];
+							//console.log(allCrimeClusters)
+							allCrimeClusters = concatGeoJSON(allCrimeClusters, newGeoJSON)
+						}
+					});
+				}
+			}
+
+		}
+
+
+
+
+		var margin = { top: -5, right: -5, bottom: -5, left: -5 },
+			width = 450 - margin.left - margin.right,
+			height = 750 - margin.top - margin.bottom,
+			border = 2, bordercolor = 'black', gap = 30,
+			currentK = 'K0', label = 'Motor Vehicle Theft in Milwaukee';
+
+		var colorList =
+			['#d7191c', '#fdae61', '#ffffbf', '#abd9e9', '#2c7bb6',
+				'#b0395e', '#3da292', '#cffc55', '#a48d57', '#8159b2',
+				'#99ccff', '#cc00cc', '#80ff80', '#ffe6b3', '#ffb399',
+				'#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
+
+
+		var clusterPrefix = '#cluster-e'
+		var clusterLabel = 'e_cluster'
+		var clusterID = 'cluster-e'
+
+		var frame = d3.select('body').append('svg')
+			.attr('width', width * 4 + 100)
+			.attr('height', 2 * height + 60)
+			.on('click', function (d) {
+				var loc = d3.mouse(this);
+				var locSub = [loc[0] - width - gap, loc[1]];
+				var hitHull = 0;
+				if (locSub[0] > 0) {
+					child_g.selectAll('.hull')
+						.each(function (d) {
+							if (d3.polygonContains(d, locSub)) {
+								hitHull = this;
+							}
+
+						});
+				} else {
+					child.selectAll('.hull')
+						.each(function (d) {
+							if (d3.polygonContains(d, loc)) {
+								hitHull = this;
+							}
+						})
+				}
+
+				if (hitHull) {
+					d3.selectAll('.hull')
+						.style('opacity', .3);
+					var id = hitHull.id;
+					var idNum = id.slice(-1);
+
+					var e = d3.select(clusterPrefix + idNum);
+
+					var e_results = 0;
+
+					e.each(function (d) {
+
+						e_results = demographicCalculation(d);
+					})
+						.style('opacity', .65);
+
+				}
+			});
+
+		var div = d3.select('body')
+			.append('div')
+			.attr('class', 'tooltip')
+			.style('opacity', 0);
+
+		var albersProjection = d3.geoAlbers()
+			.scale(145000)
+			.rotate([87.96, 0])
+			.center([0, 43.05])
+			.translate([width / 2, height / 2]);
+
+		var geoPath = d3.geoPath().projection(albersProjection)
+			.pointRadius(4);
+
+
+		var svg = frame
+			.append('svg');
+		var child = svg.append('g');
+		var city = child.append('g');
+		city.selectAll('path')
+			.data(city_limit.features)
+			.enter()
+			.append('path')
+			.attr('fill', '#ccc')
+			.attr('d', geoPath)
+			.style('stroke', 'black')
+			.style('stroke-width', .4);
+		var crime_points = child.append('g');
+
+		svg.attr('width', width + margin.left + margin.right)
+			.attr('height', height + margin.top + margin.bottom)
+			.call(d3.zoom().scaleExtent([1, 10])
+				.translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+				.on('zoom', function () {
+					var transform = d3.zoomTransform(this);
+					child.attr('transform', 'translate(' +
+						(transform.x) + ',' + (transform.y)
+						+ ') scale(' + transform.k + ')');
+				}));
+
+
+		var zipCodes = child.append('g');
+		zipCodes.selectAll('path')
+			.data(zipcodes.features)
+			.enter()
+			.append('path')
+			.attr('d', geoPath)
+			.attr('flll', 'black')
+			.style('stroke', 'red')
+			.style('stroke-width', 1)
+			.style('opacity', 0)
+			.style('pointer-events', 'none');
+
+
+		function drawPoints(crime_points, clusterLabel) {
+			crime_points.selectAll('path')
+				.data(allCrimeClusters.features)
+				.enter()
+				.append('path')
+				.attr('stroke', '#999')
+				.attr('d', geoPath)
+				.on('mouseover', handleMouseOver)
+				.on('mouseout', handleMouseOut, clusterLabel)
+				.each(function (d) {
+					d3.select(this).attr('fill', colorAssign(d, clusterLabel))
+					//d3.select(this).attr('stroke-width', borderAssign(d, crime_points, crime_points_g))
+				});
+		}
+
+		function handleMouseOver(d, i) {
+			d3.select(this)
+				.attr('fill', '#008080');
+
+			var message = '<p>' + 'Offense: ' + d['properties']['Offense 1'] + '</p>' +
+				'<p>' + 'Time: ' + d['properties']['Date'] + ' ' + d['properties']['Time'] + '</p>' +
+				'<p>' + 'Address: ' + d['properties']['Address'] + '</p>';
+
+			div.transition()
+				.duration(200)
+				.style('opacity', .9)
+				.duration(70)
+				.style('width', adjustDisplay(message) + 'px');
+
+			div.html(message)
+				.style('left', (d3.event.pageX + 7) + 'px')
+				.style('top', (d3.event.pageY - 28) + 'px');
+
+		}
+
+		function handleMouseOut(d, i, clusterLabel) {
+			d3.select(this)
+				.attr('fill', colorAssign(d, clusterLabel + currentK));
+			div.transition()
+				.duration(500)
+				.style('opacity', 0)
+		}
+
+		function adjustDisplay(word) {
+			var lines = word.split('</p>');
+			var len = lines.map(function (d) {
+				return d.length / 2;
+			});
+			return (d3.max(len) + 3) * 12;
+		}
+
+		function colorAssign(d, currentK) {
+			if (currentK.includes('K0')) {
+				return '#900';
+			}
+			var val = d['properties'][currentK];
+			return colorList[val];
+		}
+
+		function setAllColors(crime_points, currentK) {
+
+			crime_points.selectAll('path').transition()
+				.duration(400)
+				.each(function (d) {
+					d3.select(this).attr('fill', colorAssign(d, currentK));
+				});
+		}
+
+		function hullCreation(child, k, crime_points, currentK) {
+			child.selectAll('.hull').remove();
+			//  var k = parseInt(currentK.charAt(1));
+			//        if (currentK.includes('K10')) {
+			//            k = 10;
+			//        }
+			for (var i = 0; i < k; i++) {
+
+				var points = [];
+				crime_points.selectAll('path')
+					.each(function (d) {
+						var cluster = d['properties'][currentK];
+						if (cluster === i) {
+							var coord = d['properties']['Location'];
+							coord = coord.reverse();
+							points.push(coord);
+						}
+					}
+					);
+				var hullPoints = d3.polygonHull(points);
+
+				var mappedPoints = hullPoints.map(function (d) {
+					return albersProjection(d);
+				});
+
+				while (mappedPoints[0][0] > 2000) {
+					points = [];
+					crime_points.selectAll('path')
+						.each(function (d) {
+							var cluster = d['properties'][currentK];
+							if (cluster === i) {
+								var coord = d['properties']['Location'];
+								coord = coord.reverse();
+								points.push(coord);
+							}
+						}
+						);
+					hullPoints = d3.polygonHull(points);
+
+
+					mappedPoints = hullPoints.map(function (d) {
+						return albersProjection(d);
+					});
+				}
+
+				var hull = child.append('path')
+					.attr('class', 'hull')
+					.datum(mappedPoints)
+					.attr('d', function (d) {
+						return 'M' + d.join('L') + 'Z';
+					})
+					.attr('fill', colorList[i])
+					.style('opacity', 0);
+
+				hull.transition()
+					.duration(400)
+					.style('opacity', .3);
+			}
+		}
 
 
 
 
 
-//non core functionalities
-		function randomStart(){
-			document.getElementById("months").value=Math.floor(Math.random()*12)
-		        document.getElementById("year").value=Math.floor(Math.random()*12)
-		        document.getElementById("crime").value=Math.floor(Math.random()*4)
-		        document.getElementById("distMet").value=Math.floor(Math.random()*3)
-		        document.getElementById("cluster").value =Math.floor((Math.random()*9)+2)
-            }
+		drawPoints(crime_points, clusterLabel);
+		//	drawPoints(crime_points);
 
-		function rename(){
-			var crimeSel=document.getElementById('crime')
-			var strCrime=crimeSel.options[crimeSel.selectedIndex].text
+		var k = parseInt(currentK.split('K')[1]);
+		setAllColors(crime_points, clusterLabel + currentK);
 
-			var monthSel=document.getElementById('months');
-			var strMonth=monthSel.options[monthSel.selectedIndex].text
-            
-			var yearSel=document.getElementById('year');
-			var strYear=yearSel.options[yearSel.selectedIndex].text
-			
-			d3.select('h2').text(function() {return "Milwaukee "+strCrime +" Map for "+strMonth +" "+strYear});
-            };
 
-	//<!-- sidebar functionality from w3schools.com--> 
+
+
+
+		d3.select('#cluster')
+			.on('change', function () {
+				var sect = document.getElementById('cluster');
+				currentK = sect.options[sect.selectedIndex].value;
+				console.log(parseInt(currentK.split('K')[1]));
+
+				var k = parseInt(currentK.split('K')[1]);
+				setAllColors(crime_points, clusterLabel + currentK);
+				hullCreation(child, k, crime_points, clusterLabel + currentK);
+
+				child.selectAll('.hull')
+					.each(function (d, i) {
+						d3.select(this).attr('id', clusterID + i);
+					});
+			});
+
+
+		d3.select('#months')
+			.on('change', function () {
+				rename();
+
+				var sect = document.getElementById('months');
+				var index = parseInt(sect.options[sect.selectedIndex].value);
+
+				var crime_sect = document.getElementById('crime');
+				var c_type = parseInt(crime_sect.options[crime_sect.selectedIndex].value);
+
+				var year_sect = document.getElementById('year');
+				var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
+
+
+
+				crime_points.selectAll('path').remove();
+
+
+				//		if (year > 5) {
+				//			allCrimeClusters = dataB[24 * (year - 6) + 12 * c_type + index];
+				//		} else {
+				//			allCrimeClusters = dataA[24 * year + 12 * c_type + index];
+				//		}
+
+				drawPoints(crime_points, clusterLabel);
+				//  drawPoints(crime_points);
+				d3.select('#cluster').dispatch('change');
+
+			});
+
+		d3.select('#crime')
+			.on('change', function () {
+				d3.select('#months').dispatch('change');
+				rename();
+			});
+
+		d3.select('#year')
+			.on('change', function () {
+				d3.select('#months').dispatch('change');
+				rename();
+			})
+		d3.select('#distMet')
+			.on('change', function () {
+				//functionality to change which metric is show
+				rename();
+			})
+
+		function overlapCalculation(cluster, polygon) {
+			var inter = turf.intersect(cluster, polygon);
+			return inter;
+		}
+
+		function demographicCalculation(d) {
+			var results = [0, 0, 0, 0, 0, 0, 0];
+
+			zipCodes.selectAll('path')
+				.each(function (a) {
+					var data = d;
+					data = data.map(albersProjection.invert);
+
+					var overlap = overlapCalculation(turf.lineStringToPolygon(turf.lineString(data)), a);
+
+					if (overlap) {
+						var over_area = turf.area(overlap);
+						var zip_area = turf.area(a);
+						var percent_overlap = over_area / zip_area;
+						//    console.log(a['properties']['TRACTCE'] + " " + percent_overlap);
+						results[0] += a['properties']['White'] * percent_overlap;
+						results[1] += a['properties']['Black or African American'] * percent_overlap;
+						results[2] += a['properties']['American Indian and Ala Native'] * percent_overlap;
+						results[3] += a['properties']['Asian'] * percent_overlap;
+						results[4] += a['properties']['Native Hawaiian/other Pac Isl'] * percent_overlap;
+						results[5] += a['properties']['Multiple Race'] * percent_overlap;
+						results[6] += a['properties']['Other Race'] * percent_overlap;
+						//   console.log(results);
+					}
+
+				});
+			results = results.map(Math.floor);
+			var id = this.id;
+			console.log(id);
+			d3.selectAll('#' + id).style('opacity', .5);
+			console.log(results);
+		//	draw_graph(euclid_graph, results);
+	//		draw_graph(geodesic_graph, results);
+//			draw_graph(manhattan_graph, results);
+
+
+			results = results.map(Math.floor);
+			return results;
+		}
+
+
+
+		//non core functionalities
+		function randomStart() {
+			document.getElementById("months").value = Math.floor(Math.random() * 12)
+			document.getElementById("year").value = Math.floor(Math.random() * 12)
+			document.getElementById("crime").value = Math.floor(Math.random() * 4)
+			document.getElementById("distMet").value = Math.floor(Math.random() * 3)
+			document.getElementById("cluster").value = Math.floor((Math.random() * 9) + 2)
+		}
+
+		function rename() {
+			var crimeSel = document.getElementById('crime')
+			var strCrime = crimeSel.options[crimeSel.selectedIndex].text
+
+			var monthSel = document.getElementById('months');
+			var strMonth = monthSel.options[monthSel.selectedIndex].text
+
+			var yearSel = document.getElementById('year');
+			var strYear = yearSel.options[yearSel.selectedIndex].text
+
+			d3.select('h2').text(function () { return "Milwaukee " + strCrime + " Map for " + strMonth + " " + strYear });
+		};
+
+		//<!-- sidebar functionality from w3schools.com--> 
 		function w3_open() {
-  		//document.getElementById("main").style.marginLeft = "30%";
-  		document.getElementById("sidebar").style.width = "30%";
-  		document.getElementById("sidebar").style.display = "block";
-  		//document.getElementById("openNav").style.display = 'none';
-	}
+			//document.getElementById("main").style.marginLeft = "30%";
+			document.getElementById("sidebar").style.width = "30%";
+			document.getElementById("sidebar").style.display = "block";
+			//document.getElementById("openNav").style.display = 'none';
+		}
 
 		function w3_close() {
-		  //document.getElementById("main").style.marginLeft = "0%";
-		  document.getElementById("sidebar").style.display = "none";
-		  document.getElementById("openNav").style.display = "inline-block";
-}    
+			//document.getElementById("main").style.marginLeft = "0%";
+			document.getElementById("sidebar").style.display = "none";
+			document.getElementById("openNav").style.display = "inline-block";
+		}
 
-d3.select('#saveButton').on('click', function(){
-        var svgString=getSVGString(d3.select('svg').node());
-        svgString2Image(svgString,width,height, 'png', save);
-        function save(dataBlob, filesize){
-                saveAs(dataBlob,'CrimeMap.png')
-        }
-});
-function getSVGString( svgNode ) {
-        svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
-        var cssStyleText = getCSSStyles( svgNode );
-        appendCSS( cssStyleText, svgNode );
+		d3.select('#saveButton').on('click', function () {
+			var svgString = getSVGString(d3.select('svg').node());
+			svgString2Image(svgString, width, height, 'png', save);
+			function save(dataBlob, filesize) {
+				saveAs(dataBlob, 'CrimeMap.png')
+			}
+		});
+		function getSVGString(svgNode) {
+			svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
+			var cssStyleText = getCSSStyles(svgNode);
+			appendCSS(cssStyleText, svgNode);
 
-        var serializer = new XMLSerializer();
-        var svgString = serializer.serializeToString(svgNode);
-        svgString = svgString.replace(/(\w+)?:?xlink=/g, 'xmlns:xlink='); // Fix root xlink without namespace
-        svgString = svgString.replace(/NS\d+:href/g, 'xlink:href'); // Safari NS namespace fix
+			var serializer = new XMLSerializer();
+			var svgString = serializer.serializeToString(svgNode);
+			svgString = svgString.replace(/(\w+)?:?xlink=/g, 'xmlns:xlink='); // Fix root xlink without namespace
+			svgString = svgString.replace(/NS\d+:href/g, 'xlink:href'); // Safari NS namespace fix
 
-        return svgString;
+			return svgString;
 
-        function getCSSStyles( parentElement ) {
-                var selectorTextArr = [];
+			function getCSSStyles(parentElement) {
+				var selectorTextArr = [];
 
-                // Add Parent element Id and Classes to the list
-                selectorTextArr.push( '#'+parentElement.id );
-                for (var c = 0; c < parentElement.classList.length; c++)
-                                if ( !contains('.'+parentElement.classList[c], selectorTextArr) )
-                                        selectorTextArr.push( '.'+parentElement.classList[c] );
+				// Add Parent element Id and Classes to the list
+				selectorTextArr.push('#' + parentElement.id);
+				for (var c = 0; c < parentElement.classList.length; c++)
+					if (!contains('.' + parentElement.classList[c], selectorTextArr))
+						selectorTextArr.push('.' + parentElement.classList[c]);
 
-                // Add Children element Ids and Classes to the list
-                var nodes = parentElement.getElementsByTagName("*");
-                for (var i = 0; i < nodes.length; i++) {
-                        var id = nodes[i].id;
-                        if ( !contains('#'+id, selectorTextArr) )
-                                selectorTextArr.push( '#'+id );
+				// Add Children element Ids and Classes to the list
+				var nodes = parentElement.getElementsByTagName("*");
+				for (var i = 0; i < nodes.length; i++) {
+					var id = nodes[i].id;
+					if (!contains('#' + id, selectorTextArr))
+						selectorTextArr.push('#' + id);
 
-                        var classes = nodes[i].classList;
-                        for (var c = 0; c < classes.length; c++)
-                                if ( !contains('.'+classes[c], selectorTextArr) )
-                                        selectorTextArr.push( '.'+classes[c] );
-                }
+					var classes = nodes[i].classList;
+					for (var c = 0; c < classes.length; c++)
+						if (!contains('.' + classes[c], selectorTextArr))
+							selectorTextArr.push('.' + classes[c]);
+				}
 
-                // Extract CSS Rules
-                var extractedCSSText = "";
-                for (var i = 0; i < document.styleSheets.length; i++) {
-                        var s = document.styleSheets[i];
-                        
-                        try {
-                            if(!s.cssRules) continue;
- } catch( e ) {
-                                if(e.name !== 'SecurityError') throw e; // for Firefox
-                                continue;
-                        }
+				// Extract CSS Rules
+				var extractedCSSText = "";
+				for (var i = 0; i < document.styleSheets.length; i++) {
+					var s = document.styleSheets[i];
 
-                        var cssRules = s.cssRules;
-                        for (var r = 0; r < cssRules.length; r++) {
-                                if ( contains( cssRules[r].selectorText, selectorTextArr ) )
-                                        extractedCSSText += cssRules[r].cssText;
-                        }
-                }
-                
+					try {
+						if (!s.cssRules) continue;
+					} catch (e) {
+						if (e.name !== 'SecurityError') throw e; // for Firefox
+						continue;
+					}
 
-                return extractedCSSText;
-
-                function contains(str,arr) {
-                        return arr.indexOf( str ) === -1 ? false : true;
-                }
-
-        }
-
-        function appendCSS( cssText, element ) {
-                var styleElement = document.createElement("style");
-                styleElement.setAttribute("type","text/css"); 
-                styleElement.innerHTML = cssText;
-                var refNode = element.hasChildNodes() ? element.children[0] : null;
-                element.insertBefore( styleElement, refNode );
-        }
-}
+					var cssRules = s.cssRules;
+					for (var r = 0; r < cssRules.length; r++) {
+						if (contains(cssRules[r].selectorText, selectorTextArr))
+							extractedCSSText += cssRules[r].cssText;
+					}
+				}
 
 
-	function svgString2Image( svgString, width, height, format, callback ) {
-        	var format = format ? format : 'png';
+				return extractedCSSText;
 
-        	var imgsrc = 'data:image/svg+xml;base64,'+ btoa( unescape( encodeURIComponent( svgString ) ) ); // Convert SVG string to data URL
+				function contains(str, arr) {
+					return arr.indexOf(str) === -1 ? false : true;
+				}
 
-        	var canvas = document.createElement("canvas");
-        	var context = canvas.getContext("2d");
+			}
 
-        	canvas.width = width;
-        	canvas.height = height;
+			function appendCSS(cssText, element) {
+				var styleElement = document.createElement("style");
+				styleElement.setAttribute("type", "text/css");
+				styleElement.innerHTML = cssText;
+				var refNode = element.hasChildNodes() ? element.children[0] : null;
+				element.insertBefore(styleElement, refNode);
+			}
+		}
 
-        	var image = new Image();
-        	image.onload = function() {
-                context.clearRect ( 0, 0, width, height );
-                context.drawImage(image, 0, 0, width, height);
 
-                canvas.toBlob( function(blob) {
-                        var filesize = Math.round( blob.length/1024 ) + ' KB';
-			 if ( callback ) callback( blob, filesize );
-                });
+		function svgString2Image(svgString, width, height, format, callback) {
+			var format = format ? format : 'png';
 
-                
-        };
+			var imgsrc = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgString))); // Convert SVG string to data URL
 
-image.src = imgsrc;
-};
+			var canvas = document.createElement("canvas");
+			var context = canvas.getContext("2d");
+
+			canvas.width = width;
+			canvas.height = height;
+
+			var image = new Image();
+			image.onload = function () {
+				context.clearRect(0, 0, width, height);
+				context.drawImage(image, 0, 0, width, height);
+
+				canvas.toBlob(function (blob) {
+					var filesize = Math.round(blob.length / 1024) + ' KB';
+					if (callback) callback(blob, filesize);
+				});
+
+
+			};
+
+			image.src = imgsrc;
+		};
 	</script>
 </body>
+
 </html>
