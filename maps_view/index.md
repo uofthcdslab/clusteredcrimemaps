@@ -7,6 +7,8 @@ title: {{ site.name }}
 Here you can find the maps created for the project.
 
 ## Distance Metric Comparison
+[Interactive Analysis Tool](./alpha.html) -- An interactive comparison tool
+
 [Street Distance](../individual_work/marielle/KMeans/MKEComparisonStreet.html) -- A comparison of Euclidean, Geodesic, Manhattan and Street distances using a smaller data set
 
 [Crime in Milwaukee](../individual_work/marielle/KMeans/MKEMapComparisonEucGeoMan.html) -- An interactive map comparing Euclidean, Geodesic, and Manhattan distance metrics
