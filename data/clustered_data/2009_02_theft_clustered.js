@@ -1,4 +1,4 @@
-{
+var theft_2009_02 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 90590028, "Date": "02\/28\/2009", "Time": "08:59 AM", "Police District": 5.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.094484, -87.946814 ], "Address": "4276 N 27TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 0, "m_clusterK4": 2, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 2, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.946813893531271, 43.094484136274474 ] } },
@@ -866,3 +866,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 862, "Incident Number": 90330144, "Date": "02\/02\/2009", "Time": "05:29 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.113312, -87.972601 ], "Address": "5261 N 48TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.972601183074389, 43.113312167638071 ] } }
 ]
 }
+,];

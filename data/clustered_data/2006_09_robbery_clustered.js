@@ -1,4 +1,4 @@
-{
+var robbery_2006_09 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 62440022, "Date": "09\/01\/2006", "Time": "01:10 AM", "Police District": 5.0, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.063488, -87.886839 ], "Address": "2497 N CRAMER ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.886838628108805, 43.063488031363619 ] } },
@@ -350,3 +350,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 346, "Incident Number": 62440184, "Date": "09\/01\/2006", "Time": "09:29 PM", "Police District": 3.0, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.061480, -87.974837 ], "Address": "2333 N 49TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 4, "g_clusterK7": 4, "m_clusterK7": 4, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 2, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.974836913640729, 43.061479796795325 ] } }
 ]
 }
+,];

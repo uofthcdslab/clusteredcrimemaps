@@ -1,4 +1,4 @@
-{
+var theft_2016_01 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 160310047, "Date": "01\/31\/2016", "Time": "10:08 AM", "Police District": 5.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.094291, -87.926876 ], "Address": "4224 N 13TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 7, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.926875886317916, 43.094291070777295 ] } },
@@ -735,3 +735,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 731, "Incident Number": 160020098, "Date": "01\/02\/2016", "Time": "03:24 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.173617, -88.025169 ], "Address": "9201 W HEATHER AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 5, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 6, "g_clusterK9": 6, "m_clusterK9": 6, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -88.02516899589645, 43.173617084131998 ] } }
 ]
 }
+,];

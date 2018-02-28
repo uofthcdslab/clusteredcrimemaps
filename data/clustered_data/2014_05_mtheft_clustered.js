@@ -1,4 +1,4 @@
-{
+var mtheft_2014_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 141510085, "Date": "05\/31\/2014", "Time": "11:39 AM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.112690, -87.966266 ], "Address": "5230 N SHERMAN BL #11", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.966265881845857, 43.112689522621025 ] } },
@@ -551,3 +551,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 548, "Incident Number": 141210167, "Date": "05\/01\/2014", "Time": "11:47 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.119507, -87.988253 ], "Address": "5560 N 62ND ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 4, "g_clusterK10": 9, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.988253080803361, 43.119506772281859 ] } }
 ]
 }
+,];

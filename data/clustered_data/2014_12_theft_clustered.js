@@ -1,4 +1,4 @@
-{
+var theft_2014_12 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 143650047, "Date": "12\/31\/2014", "Time": "10:22 AM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.127865, -87.952135 ], "Address": "6073 N TEUTONIA AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 1, "g_clusterK6": 2, "m_clusterK6": 1, "e_clusterK7": 3, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 6 }, "geometry": { "type": "Point", "coordinates": [ -87.952135250318662, 43.127865352903463 ] } },
@@ -719,3 +719,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 716, "Incident Number": 143350078, "Date": "12\/01\/2014", "Time": "12:38 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.181010, -88.030027 ], "Address": "8952 N MICHELE ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 1, "g_clusterK9": 1, "m_clusterK9": 1, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -88.030026563419952, 43.181009503042908 ] } }
 ]
 }
+,];

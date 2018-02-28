@@ -1,4 +1,4 @@
-{
+var theft_2011_01 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 110310053, "Date": "01\/31\/2011", "Time": "12:59 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.148727, -87.960915 ], "Address": "3926 W GOOD HOPE RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 4, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 2, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 4, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 1, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.960915246900328, 43.148726580816167 ] } },
@@ -716,3 +716,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 713, "Incident Number": 110030143, "Date": "01\/03\/2011", "Time": "02:27 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.183623, -88.044003 ], "Address": "9120 N 107TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -88.044003355013487, 43.183623447400336 ] } }
 ]
 }
+,];

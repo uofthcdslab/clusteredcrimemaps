@@ -1,4 +1,4 @@
-{
+var theft_2014_07 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 142120117, "Date": "07\/31\/2014", "Time": "04:44 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.144797, -87.956353 ], "Address": "3605 W KILEY AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 0, "e_clusterK8": 1, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.956352627762982, 43.144796683243932 ] } },
@@ -929,3 +929,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 925, "Incident Number": 141820145, "Date": "07\/01\/2014", "Time": "07:55 PM", "Police District": 4.0, "Offense 1": "THEFT FROM BUILDING", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.117501, -87.991003 ], "Address": "5460 N 64TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 5, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 6, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 6, "e_clusterK10": 8, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.99100315269817, 43.117501395209267 ] } }
 ]
 }
+,];

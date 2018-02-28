@@ -1,4 +1,4 @@
-{
+var assault_2006_11 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 63050111, "Date": "11\/01\/2006", "Time": "01:56 PM", "Police District": 4, "Offense 1": "SIMPLE ASSAULT", "Offense 2": "DESTRUCTION\/DAMAGE\/VANDALISM OF PROPERTY", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.113960, -88.024522 ], "Address": "5303 N 90TH ST #3", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 1, "m_clusterK4": 3, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -88.024521664752527, 43.11396 ] } },
@@ -422,3 +422,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 418, "Incident Number": 63050220, "Date": "11\/01\/2006", "Time": "10:41 PM", "Police District": 5, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.070706, -87.925292 ], "Address": "2862 N 11TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 5, "g_clusterK10": 6, "m_clusterK10": 6 }, "geometry": { "type": "Point", "coordinates": [ -87.925292364100912, 43.070706387731548 ] } }
 ]
 }
+,];

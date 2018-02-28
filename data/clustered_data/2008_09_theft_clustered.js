@@ -1,4 +1,4 @@
-{
+var theft_2008_09 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 82740005, "Date": "09\/30\/2008", "Time": "12:10 AM", "Police District": 5.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": "DESTRUCTION\/DAMAGE\/VANDALISM OF PROPERTY", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.104351, -87.944209 ], "Address": "2501 W HAMPTON AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 4, "g_clusterK7": 4, "m_clusterK7": 4, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.944208826449312, 43.104351303679003 ] } },
@@ -1173,3 +1173,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 1170, "Incident Number": 82450109, "Date": "09\/01\/2008", "Time": "02:10 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.126978, -87.990851 ], "Address": "6018 N 64TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 4, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.990850881116444, 43.126977763821984 ] } }
 ]
 }
+,];

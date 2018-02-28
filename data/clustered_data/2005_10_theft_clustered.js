@@ -1,4 +1,4 @@
-{
+var theft_2005_10 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 53040137, "Date": "10\/31\/2005", "Time": "03:25 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.117965, -87.957550 ], "Address": "5525 N 36TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 2, "m_clusterK5": 0, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.957549573720144, 43.117965115182642 ] } },
@@ -1349,3 +1349,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 1345, "Incident Number": 52740096, "Date": "10\/01\/2005", "Time": "12:58 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.134121, -87.994561 ], "Address": "6644 W MILL RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 6, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 5, "g_clusterK10": 1, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -87.994561164723876, 43.134120533181282 ] } }
 ]
 }
+,];

@@ -1,4 +1,4 @@
-{
+var mtheft_2005_02 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 50590536, "Date": "02\/28\/2005", "Time": "05:49 PM", "Police District": 5.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.096644, -87.929310 ], "Address": "4381 N 15TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 1, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 2, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 5, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.929310124790575, 43.096644366639737 ] } },
@@ -431,3 +431,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 429, "Incident Number": 50660966, "Date": "02\/02\/2005", "Time": "10:32 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.122960, -87.988941 ], "Address": "6231 W CARMEN AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 1, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.988941, 43.122959510098887 ] } }
 ]
 }
+,];

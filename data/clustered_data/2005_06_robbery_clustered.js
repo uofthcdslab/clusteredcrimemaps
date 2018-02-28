@@ -1,4 +1,4 @@
-{
+var robbery_2005_06 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 51530008, "Date": "06\/01\/2005", "Time": "03:14 PM", "Police District": 5, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.071396, -87.886638 ], "Address": "2918 N CRAMER ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -87.886638152337483, 43.07139603112315 ] } },
@@ -254,3 +254,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 250, "Incident Number": 51560009, "Date": "06\/04\/2005", "Time": "11:56 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.059211, -87.952860 ], "Address": "3109 W GARFIELD AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 5, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 6, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.952859832361938, 43.059210539529253 ] } }
 ]
 }
+,];

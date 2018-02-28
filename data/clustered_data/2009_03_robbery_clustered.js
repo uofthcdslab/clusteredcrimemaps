@@ -1,4 +1,4 @@
-{
+var robbery_2009_03 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 90600084, "Date": "03\/01\/2009", "Time": "12:00 PM", "Police District": 1, "Offense 1": "ROBBERY", "Offense 2": "DESTRUCTION\/DAMAGE\/VANDALISM OF PROPERTY", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.048230, -87.903403 ], "Address": "700 E OGDEN AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.903403306408222, 43.048230193591799 ] } },
@@ -241,3 +241,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 237, "Incident Number": 90610079, "Date": "03\/02\/2009", "Time": "01:46 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.059301, -87.963581 ], "Address": "4004 W GARFIELD AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 8, "g_clusterK10": 8, "m_clusterK10": 8 }, "geometry": { "type": "Point", "coordinates": [ -87.963580972949828, 43.059301123163799 ] } }
 ]
 }
+,];

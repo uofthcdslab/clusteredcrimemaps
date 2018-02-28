@@ -1,4 +1,4 @@
-{
+var mtheft_2007_02 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 70590099, "Date": "02\/28\/2007", "Time": "01:34 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.113185, -87.947646 ], "Address": "5260 N 28TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 1, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.947645937388359, 43.113184826533569 ] } },
@@ -501,3 +501,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 497, "Incident Number": 70320184, "Date": "02\/01\/2007", "Time": "11:34 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.177608, -88.023010 ], "Address": "8975 W BROWN DEER RD", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -88.023010248542903, 43.177607531738985 ] } }
 ]
 }
+,];

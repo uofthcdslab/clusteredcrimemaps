@@ -1,4 +1,4 @@
-{
+var robbery_2007_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 71220034, "Date": "05\/01\/2007", "Time": "07:18 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.044446, -87.952301 ], "Address": "3017 W HIGHLAND BL", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 1, "g_clusterK9": 1, "m_clusterK9": 1, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.95230102553522, 43.044445542847484 ] } },
@@ -258,3 +258,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 254, "Incident Number": 71220160, "Date": "05\/02\/2007", "Time": "08:45 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.057116, -87.957545 ], "Address": "2032 N 35TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.957544922384713, 43.057116 ] } }
 ]
 }
+,];

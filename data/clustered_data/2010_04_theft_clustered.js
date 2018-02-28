@@ -1,4 +1,4 @@
-{
+var theft_2010_04 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 101200054, "Date": "04\/30\/2010", "Time": "09:14 AM", "Police District": 5.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.096221, -87.930493 ], "Address": "4356 N 16TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.930492911853136, 43.096220800998339 ] } },
@@ -1141,3 +1141,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 1138, "Incident Number": 100920079, "Date": "04\/02\/2010", "Time": "11:50 AM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.182226, -87.997373 ], "Address": "8949 N 70TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 6 }, "geometry": { "type": "Point", "coordinates": [ -87.997372734490611, 43.182225859136985 ] } }
 ]
 }
+,];

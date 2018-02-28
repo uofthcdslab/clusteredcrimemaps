@@ -1,4 +1,4 @@
-{
+var mtheft_2014_08 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 142430118, "Date": "08\/31\/2014", "Time": "06:57 PM", "Police District": 5.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.104117, -87.952952 ], "Address": "4777 N 32ND ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.952952067644276, 43.104117274478639 ] } },
@@ -922,3 +922,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 919, "Incident Number": 142130159, "Date": "08\/01\/2014", "Time": "02:59 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.170453, -88.023417 ], "Address": "9020 W DEAN RD", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -88.023417163861211, 43.170453263395473 ] } }
 ]
 }
+,];

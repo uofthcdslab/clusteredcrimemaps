@@ -1,4 +1,4 @@
-{
+var assault_2010_03 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 100630108, "Date": "03\/01\/2010", "Time": "05:06 PM", "Police District": 7, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.099242, -87.928585 ], "Address": "4519 N GREEN BAY AV", "e_clusterK2": 1, "g_clusterK2": 0, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 1, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 6, "g_clusterK7": 0, "m_clusterK7": 6, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.928584679496367, 43.099242056062117 ] } },
@@ -457,3 +457,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 453, "Incident Number": 100600208, "Date": "03\/01\/2010", "Time": "08:52 PM", "Police District": 3, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.065044, -87.944503 ], "Address": "2475 W FOND DU LAC AV #3", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 3, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 1, "g_clusterK8": 3, "m_clusterK8": 1, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 3, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.944502680708467, 43.065044362456142 ] } }
 ]
 }
+,];

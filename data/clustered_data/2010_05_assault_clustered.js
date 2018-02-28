@@ -1,4 +1,4 @@
-{
+var assault_2010_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 101210025, "Date": "05\/01\/2010", "Time": "02:34 AM", "Police District": 4, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.119416, -88.028671 ], "Address": "9307 W SILVER SPRING DR", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -88.028671332361938, 43.119415521207408 ] } },
@@ -498,3 +498,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 494, "Incident Number": 101210138, "Date": "05\/01\/2010", "Time": "03:36 PM", "Police District": 3, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.066449, -87.948615 ], "Address": "2620 N 28TH ST #UPR", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 6, "g_clusterK8": 1, "m_clusterK8": 6, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 8, "g_clusterK10": 8, "m_clusterK10": 8 }, "geometry": { "type": "Point", "coordinates": [ -87.948614889636133, 43.066448664723879 ] } }
 ]
 }
+,];

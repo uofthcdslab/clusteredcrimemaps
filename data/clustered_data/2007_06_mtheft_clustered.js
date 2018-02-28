@@ -1,4 +1,4 @@
-{
+var mtheft_2007_06 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 71800136, "Date": "06\/29\/2007", "Time": "02:42 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.118885, -87.936551 ], "Address": "1935 W SILVER SPRING DR", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 2, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 1, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 6, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.936550637803677, 43.118884542847496 ] } },
@@ -532,3 +532,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 528, "Incident Number": 71530141, "Date": "06\/02\/2007", "Time": "02:47 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.161308, -87.989565 ], "Address": "7901 N 64TH CT", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 3, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.989565463252475, 43.16130842152667 ] } }
 ]
 }
+,];

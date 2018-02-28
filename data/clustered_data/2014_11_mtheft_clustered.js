@@ -1,4 +1,4 @@
-{
+var mtheft_2014_11 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 143340042, "Date": "11\/30\/2014", "Time": "09:37 AM", "Police District": 5.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.091463, -87.938565 ], "Address": "2100 W ATKINSON AV", "e_clusterK2": 1, "g_clusterK2": 0, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 3, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.938564658607035, 43.091462807115171 ] } },
@@ -403,3 +403,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 399, "Incident Number": 143060045, "Date": "11\/02\/2014", "Time": "08:59 AM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.182718, -88.002626 ], "Address": "9001 N 75TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -88.002626059408996, 43.182718480985649 ] } }
 ]
 }
+,];

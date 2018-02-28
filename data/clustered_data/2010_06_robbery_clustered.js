@@ -1,4 +1,4 @@
-{
+var robbery_2010_06 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 101520159, "Date": "06\/01\/2010", "Time": "06:18 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.045730, -87.928073 ], "Address": "1227 W JUNEAU AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 6, "g_clusterK9": 6, "m_clusterK9": 6, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.928073025535227, 43.045729513994047 ] } },
@@ -259,3 +259,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 255, "Incident Number": 101520172, "Date": "06\/01\/2010", "Time": "06:02 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.054829, -87.930773 ], "Address": "1400 W FOND DU LAC AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 2, "g_clusterK6": 4, "m_clusterK6": 2, "e_clusterK7": 5, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 6, "g_clusterK9": 6, "m_clusterK9": 4, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.930772743811033, 43.054829464625698 ] } }
 ]
 }
+,];

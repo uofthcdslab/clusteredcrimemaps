@@ -1,4 +1,4 @@
-{
+var mtheft_2006_08 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 62420071, "Date": "08\/30\/2006", "Time": "09:38 AM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Location": [ 43.123576, -87.951447 ], "Address": "5839 N TEUTONIA AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 1, "m_clusterK3": 2, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 4, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.951446940215632, 43.123576075768938 ] } },
@@ -749,3 +749,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 746, "Incident Number": 62130164, "Date": "08\/01\/2006", "Time": "03:49 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Location": [ 43.161968, -88.021245 ], "Address": "7939 N FAULKNER RD", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -88.021245186272736, 43.161968447471772 ] } }
 ]
 }
+,];

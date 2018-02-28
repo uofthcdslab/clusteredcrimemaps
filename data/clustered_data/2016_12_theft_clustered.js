@@ -1,4 +1,4 @@
-{
+var theft_2016_12 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 163650084, "Date": "12\/30\/2016", "Time": "03:07 PM", "Police District": 5.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.090479, -87.945751 ], "Address": "4027 N 26TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.945750573720147, 43.090479199001663 ] } },
@@ -525,3 +525,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 521, "Incident Number": 163360122, "Date": "12\/01\/2016", "Time": "09:05 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.134181, -87.995161 ], "Address": "6700 W MILL RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.995161386130889, 43.134180715810061 ] } }
 ]
 }
+,];

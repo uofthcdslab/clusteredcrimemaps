@@ -1,4 +1,4 @@
-{
+var mtheft_2011_02 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 110570119, "Date": "02\/26\/2011", "Time": "07:42 PM", "Police District": 7.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.107524, -87.973819 ], "Address": "4956 N 49TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 3, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -87.973819213772828, 43.107523735753269 ] } },
@@ -266,3 +266,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 262, "Incident Number": 110320075, "Date": "02\/01\/2011", "Time": "03:22 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.142411, -88.005402 ], "Address": "6800 N 76TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 6, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -88.005402384587157, 43.14241108520401 ] } }
 ]
 }
+,];

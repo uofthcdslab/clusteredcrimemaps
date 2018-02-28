@@ -1,4 +1,4 @@
-{
+var theft_2015_08 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 152430044, "Date": "08\/31\/2015", "Time": "08:46 AM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.122214, -87.957432 ], "Address": "5733 N 36TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.957431599255358, 43.122213754371302 ] } },
@@ -662,3 +662,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 659, "Incident Number": 152130101, "Date": "08\/01\/2015", "Time": "05:39 PM", "Police District": 4.0, "Offense 1": "THEFT FROM BUILDING", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.163207, -87.998943 ], "Address": "7201 W BRADLEY RD", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 5, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.998942886346583, 43.163206516735322 ] } }
 ]
 }
+,];

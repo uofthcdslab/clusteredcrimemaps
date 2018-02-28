@@ -1,4 +1,4 @@
-{
+var theft_2013_03 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 130890018, "Date": "03\/30\/2013", "Time": "02:03 AM", "Police District": 5.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.092068, -87.940039 ], "Address": "4126 N TEUTONIA AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 5, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 4, "g_clusterK9": 4, "m_clusterK9": 4, "e_clusterK10": 8, "g_clusterK10": 8, "m_clusterK10": 8 }, "geometry": { "type": "Point", "coordinates": [ -87.940039340787393, 43.092067842605054 ] } },
@@ -755,3 +755,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 751, "Incident Number": 130600076, "Date": "03\/01\/2013", "Time": "05:00 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.115597, -87.972791 ], "Address": "4805 W CUSTER AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 2, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 1, "g_clusterK5": 3, "m_clusterK5": 1, "e_clusterK6": 2, "g_clusterK6": 0, "m_clusterK6": 2, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 2, "e_clusterK8": 0, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 1, "g_clusterK9": 1, "m_clusterK9": 1, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.9727905, 43.115596513994035 ] } }
 ]
 }
+,];

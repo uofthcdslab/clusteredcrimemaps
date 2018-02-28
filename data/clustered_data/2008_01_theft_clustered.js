@@ -1,4 +1,4 @@
-{
+var theft_2008_01 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 80310041, "Date": "01\/31\/2008", "Time": "09:19 AM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.134543, -87.964722 ], "Address": "6429 N 42ND ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 0, "g_clusterK5": 3, "m_clusterK5": 0, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 3, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 3, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.964721599255355, 43.134542947544588 ] } },
@@ -1020,3 +1020,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 1017, "Incident Number": 80010127, "Date": "01\/01\/2008", "Time": "04:01 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.134320, -88.021249 ], "Address": "8800 W MILL RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 4, "g_clusterK7": 4, "m_clusterK7": 4, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -88.021249367719292, 43.134319846069559 ] } }
 ]
 }
+,];

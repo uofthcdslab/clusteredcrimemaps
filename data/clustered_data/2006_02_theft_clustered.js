@@ -1,4 +1,4 @@
-{
+var theft_2006_02 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 60590145, "Date": "02\/28\/2006", "Time": "07:16 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Location": [ 43.111909, -87.950418 ], "Address": "3030 W VILLARD AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 0, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.950417636253093, 43.111909049741278 ] } },
@@ -993,3 +993,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 989, "Incident Number": 60320066, "Date": "02\/01\/2006", "Time": "10:47 AM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Location": [ 43.123148, -87.987233 ], "Address": "5808 N 61ST ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 0, "g_clusterK6": 1, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 4, "e_clusterK8": 6, "g_clusterK8": 5, "m_clusterK8": 6, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.987232915171361, 43.12314846572221 ] } }
 ]
 }
+,];

@@ -1,4 +1,4 @@
-{
+var robbery_2007_01 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 70280102, "Date": "01\/28\/2007", "Time": "02:10 PM", "Police District": 7, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.107677, -87.976325 ], "Address": "4954 N 51ST BL", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 1, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 5, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.976325349674184, 43.107677413266771 ] } },
@@ -368,3 +368,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 364, "Incident Number": 80010164, "Date": "01\/01\/2008", "Time": "06:29 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": "DESTRUCTION\/DAMAGE\/VANDALISM OF PROPERTY", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.053999, -87.952106 ], "Address": "3033 W LISBON AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 8, "g_clusterK9": 8, "m_clusterK9": 8, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.952105838334546, 43.053998648883514 ] } }
 ]
 }
+,];

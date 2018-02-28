@@ -1,4 +1,4 @@
-{
+var theft_2014_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 141510093, "Date": "05\/31\/2014", "Time": "12:43 PM", "Police District": 7.0, "Offense 1": "THEFT FROM BUILDING", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.105176, -87.945398 ], "Address": "4831 N 26TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 4, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.945397624790587, 43.105176115182644 ] } },
@@ -789,3 +789,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 785, "Incident Number": 141210090, "Date": "05\/01\/2014", "Time": "04:22 PM", "Police District": 4.0, "Offense 1": "THEFT FROM BUILDING", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.119431, -87.987044 ], "Address": "6000 W SILVER SPRING DR", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 2, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.987043529834381, 43.119430519331488 ] } }
 ]
 }
+,];

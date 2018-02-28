@@ -1,4 +1,4 @@
-{
+var theft_2008_07 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 82130096, "Date": "07\/31\/2008", "Time": "12:54 PM", "Police District": "7.0", "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.089908, -87.950812 ], "Address": "3000 W CAPITOL DR", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 2, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.950812164723871, 43.0899075337582 ] } },
@@ -1186,3 +1186,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 1183, "Incident Number": 81830022, "Date": "07\/01\/2008", "Time": "06:41 AM", "Police District": "4.0", "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.158648, -87.988767 ], "Address": "6162 W PORT AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 1, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.988767310260499, 43.158647993652011 ] } }
 ]
 }
+,];

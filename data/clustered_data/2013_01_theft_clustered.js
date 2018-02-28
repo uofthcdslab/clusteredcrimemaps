@@ -1,4 +1,4 @@
-{
+var theft_2013_01 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 130300024, "Date": "01\/30\/2013", "Time": "08:04 AM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.148467, -87.966273 ], "Address": "4301 W GOOD HOPE RD", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 2, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 0, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 8, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.966272966674481, 43.148466546742611 ] } },
@@ -774,3 +774,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 770, "Incident Number": 130020032, "Date": "01\/02\/2013", "Time": "08:15 AM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.181707, -88.001305 ], "Address": "7339 W MARINE DR", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 0, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -88.001305241262642, 43.181707235052755 ] } }
 ]
 }
+,];

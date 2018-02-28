@@ -1,4 +1,4 @@
-{
+var assault_2006_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 61210049, "Date": "05\/01\/2006", "Time": "08:08 AM", "Police District": 5, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.080326, -87.915073 ], "Address": "3366 N 4TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 7, "g_clusterK8": 7, "m_clusterK8": 7, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 3, "g_clusterK10": 3, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -87.915073444601717, 43.080325910352599 ] } },
@@ -435,3 +435,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 431, "Incident Number": 61210253, "Date": "05\/01\/2006", "Time": "10:32 PM", "Police District": 3, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.065905, -87.936674 ], "Address": "1909-A W CLARKE ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 0, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 0, "g_clusterK7": 0, "m_clusterK7": 0, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 7, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 7, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.936673919095156, 43.06590450678069 ] } }
 ]
 }
+,];

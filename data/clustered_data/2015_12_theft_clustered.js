@@ -1,4 +1,4 @@
-{
+var theft_2015_12 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 153640056, "Date": "12\/30\/2015", "Time": "02:15 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Location": [ 43.130096, -87.952353 ], "Address": "6205 N TEUTONIA AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 5, "m_clusterK6": 3, "e_clusterK7": 3, "g_clusterK7": 5, "m_clusterK7": 3, "e_clusterK8": 3, "g_clusterK8": 0, "m_clusterK8": 3, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 3 }, "geometry": { "type": "Point", "coordinates": [ -87.95235324136894, 43.130096091193387 ] } },
@@ -816,3 +816,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 812, "Incident Number": 153350114, "Date": "12\/01\/2015", "Time": "05:37 PM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Location": [ 43.134304, -88.011801 ], "Address": "8034 W MILL RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 1, "g_clusterK4": 1, "m_clusterK4": 1, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 5, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 0, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 1, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -88.01180091618096, 43.134304493219339 ] } }
 ]
 }
+,];

@@ -1,4 +1,4 @@
-{
+var robbery_2009_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 91210083, "Date": "05\/01\/2009", "Time": "04:45 PM", "Police District": 5, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.089811, -87.940301 ], "Address": "2222 W CAPITOL DR", "e_clusterK2": 0, "g_clusterK2": 1, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 1, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.940301108579774, 43.08981144753335 ] } },
@@ -292,3 +292,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 288, "Incident Number": 91210072, "Date": "05\/01\/2009", "Time": "12:02 PM", "Police District": 7, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.068385, -87.948660 ], "Address": "2709 N 28TH ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 2, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 1, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 1, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 1, "g_clusterK9": 1, "m_clusterK9": 1, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.948659606468723, 43.068385499019051 ] } }
 ]
 }
+,];

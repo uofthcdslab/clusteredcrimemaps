@@ -1,4 +1,4 @@
-{
+var theft_2016_05 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 161510054, "Date": "05\/30\/2016", "Time": "09:03 AM", "Police District": 5.0, "Offense 1": "BURGLARY\/BREAKING AND ENTERING", "Offense 2": "THEFT FROM MOTOR VEHICLE", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.090533, -87.930749 ], "Address": "4045 N 16TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 3, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.930749066506777, 43.090533282820701 ] } },
@@ -744,3 +744,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 742, "Incident Number": 161230127, "Date": "05\/02\/2016", "Time": "07:49 PM", "Police District": 4.0, "Offense 1": "THEFT OF MOTOR VEHICLE PARTS\/ACCESSORIES", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.112996, -87.968856 ], "Address": "5244 N 45TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 5, "g_clusterK6": 0, "m_clusterK6": 5, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 4, "g_clusterK10": 6, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.968856386317924, 43.112995994171627 ] } }
 ]
 }
+,];

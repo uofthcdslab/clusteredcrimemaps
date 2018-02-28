@@ -1,4 +1,4 @@
-{
+var assault_2006_03 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 60600140, "Date": "03\/01\/2006", "Time": "06:23 PM", "Police District": 5, "Offense 1": "SIMPLE ASSAULT", "Offense 2": "ALL OTHER LARCENY", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.084054, -87.939652 ], "Address": "3621 N 22ND ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 3, "g_clusterK7": 5, "m_clusterK7": 1, "e_clusterK8": 2, "g_clusterK8": 2, "m_clusterK8": 2, "e_clusterK9": 5, "g_clusterK9": 5, "m_clusterK9": 5, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 6 }, "geometry": { "type": "Point", "coordinates": [ -87.9396515809335, 43.084054005828392 ] } },
@@ -373,3 +373,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 369, "Incident Number": 60600058, "Date": "03\/01\/2006", "Time": "10:25 AM", "Police District": 3, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.056791, -87.957545 ], "Address": "2016 N 35TH ST", "e_clusterK2": 0, "g_clusterK2": 1, "m_clusterK2": 0, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 5, "e_clusterK9": 6, "g_clusterK9": 6, "m_clusterK9": 4, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.957544922384713, 43.056791497085811 ] } }
 ]
 }
+,];

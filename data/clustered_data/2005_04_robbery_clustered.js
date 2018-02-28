@@ -1,4 +1,4 @@
-{
+var robbery_2005_04 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 50910004, "Date": "04\/01\/2005", "Time": "07:00 PM", "Police District": 5, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.045024, -87.903515 ], "Address": "1127 N VAN BUREN AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 1, "g_clusterK6": 1, "m_clusterK6": 1, "e_clusterK7": 4, "g_clusterK7": 4, "m_clusterK7": 4, "e_clusterK8": 6, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 9 }, "geometry": { "type": "Point", "coordinates": [ -87.903514591280768, 43.04502391541277 ] } },
@@ -197,3 +197,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 193, "Incident Number": 50910128, "Date": "04\/01\/2005", "Time": "03:30 PM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.060960, -87.939325 ], "Address": "2102 W FOND DU LAC AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 2, "g_clusterK5": 0, "m_clusterK5": 2, "e_clusterK6": 3, "g_clusterK6": 1, "m_clusterK6": 3, "e_clusterK7": 3, "g_clusterK7": 1, "m_clusterK7": 3, "e_clusterK8": 1, "g_clusterK8": 1, "m_clusterK8": 1, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 7, "g_clusterK10": 7, "m_clusterK10": 7 }, "geometry": { "type": "Point", "coordinates": [ -87.939325384384674, 43.06095991064106 ] } }
 ]
 }
+,];

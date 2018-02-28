@@ -1,4 +1,4 @@
-{
+var assault_2010_07 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 101820084, "Date": "07\/01\/2010", "Time": "11:20 AM", "Police District": 5, "Offense 1": "SIMPLE ASSAULT", "Offense 2": "LIQUOR LAW VIOLATIONS", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.082416, -87.935698 ], "Address": "1934 W KEEFE AV", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 2, "e_clusterK5": 2, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 1, "g_clusterK7": 1, "m_clusterK7": 1, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 3, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 2, "g_clusterK10": 2, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -87.935697705297386, 43.082416076731931 ] } },
@@ -454,3 +454,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 450, "Incident Number": 101820034, "Date": "07\/01\/2010", "Time": "07:01 AM", "Police District": 3, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.058538, -87.963434 ], "Address": "2146 N 40TH ST #UPPR", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 2, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 4, "g_clusterK6": 4, "m_clusterK6": 4, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 5, "g_clusterK8": 5, "m_clusterK8": 5, "e_clusterK9": 6, "g_clusterK9": 6, "m_clusterK9": 6, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 2 }, "geometry": { "type": "Point", "coordinates": [ -87.963433886317915, 43.05853758090484 ] } }
 ]
 }
+,];

@@ -1,4 +1,4 @@
-{
+var assault_2005_09 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 52440060, "Date": "09\/01\/2005", "Time": "09:24 AM", "Police District": 3.0, "Offense 1": "SIMPLE ASSAULT", "Offense 2": "ALL OTHER LARCENY", "Offense 3": "DESTRUCTION\/DAMAGE\/VANDALISM OF PROPERTY", "Offense 4": null, "Offense 5": null, "Location": [ 43.038636, -87.950970 ], "Address": "2919 W WISCONSIN AV #903", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 2, "g_clusterK4": 2, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 0, "g_clusterK8": 0, "m_clusterK8": 0, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.950970335276125, 43.038635502885526 ] } },
@@ -413,3 +413,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 409, "Incident Number": 52440116, "Date": "09\/01\/2005", "Time": "11:49 AM", "Police District": 3.0, "Offense 1": "SIMPLE ASSAULT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.057810, -87.947033 ], "Address": "2620-A W LLOYD ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 0, "m_clusterK5": 0, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 4, "g_clusterK10": 4, "m_clusterK10": 4 }, "geometry": { "type": "Point", "coordinates": [ -87.947032667638055, 43.057809511541194 ] } }
 ]
 }
+,];

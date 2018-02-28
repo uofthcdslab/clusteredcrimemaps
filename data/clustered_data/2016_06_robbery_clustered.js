@@ -1,4 +1,4 @@
-{
+var robbery_2016_06 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 161540003, "Date": "06\/01\/2016", "Time": "06:54 PM", "Police District": 7, "Offense 1": "ROBBERY", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.107498, -88.013454 ], "Address": "4930 N 82ND ST", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 1, "g_clusterK5": 1, "m_clusterK5": 1, "e_clusterK6": 1, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 6, "g_clusterK7": 6, "m_clusterK7": 6, "e_clusterK8": 4, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 5, "g_clusterK10": 5, "m_clusterK10": 5 }, "geometry": { "type": "Point", "coordinates": [ -88.013453652595302, 43.107497777047442 ] } },
@@ -262,3 +262,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 258, "Incident Number": 161560068, "Date": "06\/04\/2016", "Time": "11:05 AM", "Police District": 3, "Offense 1": "ROBBERY", "Offense 2": "BURGLARY\/BREAKING AND ENTERING", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.058078, -87.949833 ], "Address": "2108 N 29TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 2, "g_clusterK3": 2, "m_clusterK3": 2, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 0, "g_clusterK6": 0, "m_clusterK6": 0, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 3, "g_clusterK8": 3, "m_clusterK8": 3, "e_clusterK9": 3, "g_clusterK9": 3, "m_clusterK9": 3, "e_clusterK10": 6, "g_clusterK10": 6, "m_clusterK10": 8 }, "geometry": { "type": "Point", "coordinates": [ -87.949832937388351, 43.058078329447738 ] } }
 ]
 }
+,];

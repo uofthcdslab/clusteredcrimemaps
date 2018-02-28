@@ -29,7 +29,7 @@
         	border-radius: 8px;
         	pointer-events: none;
         	line-height: 40%
-    }
+    	}
 	svg {
 		position:absolute;
 	}
@@ -127,12 +127,34 @@
 	<button id='saveButton'>Save</button>
 </div>
 
-	<script type='text/javascript'>
-	//create starting conditions
-		randomStart()
-		rename()
+
+<script type='text/javascript'>
+//create starting conditions
+randomStart()
+rename()
 
 //core functionality and svg should go here
+//get data
+
+var numFiles = 575;
+var crimeTypes = ['mtheft', 'robbery', 'theft', 'assault']
+for (i = 2005; i <= 2016 ; i++) { 
+    for (j = 1; j <= 12; j++){
+	for (k = 0; k < crimeTypes.length; k++){
+		month = j + '';
+		if (month.length == 1){
+			month = '0' + month;
+		}
+		fileName = '../data/clustered_data/' + i + "_" + month + "_" + crimeTypes[k] + "_clustered.js";
+		var jsData = document.createElement('script');
+		jsData.setAttribute('src', fileName);
+		document.head.appendChild(jsData);
+		console.log(fileName);
+	}
+    }
+}
+
+
 
 
 
@@ -158,7 +180,7 @@
 			d3.select('h2').text(function() {return "Milwaukee "+strCrime +" Map for "+strMonth +" "+strYear});
             };
 
-	<!--sidebar functionality from w3schools.com--> 
+	//<!-- sidebar functionality from w3schools.com--> 
 		function w3_open() {
   		//document.getElementById("main").style.marginLeft = "30%";
   		document.getElementById("sidebar").style.width = "30%";

@@ -1,4 +1,4 @@
-{
+var mtheft_2010_11 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 103340050, "Date": "11\/30\/2010", "Time": "10:11 AM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.141234, -87.955480 ], "Address": "3432 W GREEN TREE RD", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 1, "e_clusterK5": 0, "g_clusterK5": 2, "m_clusterK5": 0, "e_clusterK6": 4, "g_clusterK6": 5, "m_clusterK6": 4, "e_clusterK7": 6, "g_clusterK7": 3, "m_clusterK7": 6, "e_clusterK8": 1, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 7, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -87.95547972300767, 43.141234471579239 ] } },
@@ -420,3 +420,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 416, "Incident Number": 103090135, "Date": "11\/05\/2010", "Time": "06:20 PM", "Police District": 4.0, "Offense 1": "MOTOR VEHICLE THEFT", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.126571, -87.981450 ], "Address": "5515 W FLORIST AV", "e_clusterK2": 0, "g_clusterK2": 0, "m_clusterK2": 0, "e_clusterK3": 1, "g_clusterK3": 1, "m_clusterK3": 1, "e_clusterK4": 3, "g_clusterK4": 3, "m_clusterK4": 3, "e_clusterK5": 0, "g_clusterK5": 2, "m_clusterK5": 2, "e_clusterK6": 5, "g_clusterK6": 5, "m_clusterK6": 5, "e_clusterK7": 3, "g_clusterK7": 3, "m_clusterK7": 3, "e_clusterK8": 7, "g_clusterK8": 4, "m_clusterK8": 4, "e_clusterK9": 7, "g_clusterK9": 7, "m_clusterK9": 8, "e_clusterK10": 1, "g_clusterK10": 1, "m_clusterK10": 1 }, "geometry": { "type": "Point", "coordinates": [ -87.981450076605668, 43.126570542847475 ] } }
 ]
 }
+,];

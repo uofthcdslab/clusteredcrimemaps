@@ -1,4 +1,4 @@
-{
+var theft_2016_11 = [{
 "type": "FeatureCollection",
 "features": [
 { "type": "Feature", "properties": { "Unnamed: 0": 0, "Incident Number": 163340112, "Date": "11\/29\/2016", "Time": "04:36 PM", "Police District": 7.0, "Offense 1": "BURGLARY\/BREAKING AND ENTERING", "Offense 2": "THEFT FROM BUILDING", "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.104734, -87.975181 ], "Address": "4938 W HAMPTON AV #3", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 4, "g_clusterK5": 4, "m_clusterK5": 4, "e_clusterK6": 2, "g_clusterK6": 2, "m_clusterK6": 2, "e_clusterK7": 2, "g_clusterK7": 2, "m_clusterK7": 3, "e_clusterK8": 7, "g_clusterK8": 4, "m_clusterK8": 7, "e_clusterK9": 0, "g_clusterK9": 0, "m_clusterK9": 4, "e_clusterK10": 9, "g_clusterK10": 9, "m_clusterK10": 6 }, "geometry": { "type": "Point", "coordinates": [ -87.975180974464777, 43.104733519331475 ] } },
@@ -786,3 +786,4 @@
 { "type": "Feature", "properties": { "Unnamed: 0": 782, "Incident Number": 163060060, "Date": "11\/01\/2016", "Time": "10:53 AM", "Police District": 4.0, "Offense 1": "THEFT FROM MOTOR VEHICLE", "Offense 2": null, "Offense 3": null, "Offense 4": null, "Offense 5": null, "Location": [ 43.161969, -88.029081 ], "Address": "7937 N 94TH ST", "e_clusterK2": 1, "g_clusterK2": 1, "m_clusterK2": 1, "e_clusterK3": 0, "g_clusterK3": 0, "m_clusterK3": 0, "e_clusterK4": 0, "g_clusterK4": 0, "m_clusterK4": 0, "e_clusterK5": 3, "g_clusterK5": 3, "m_clusterK5": 3, "e_clusterK6": 3, "g_clusterK6": 3, "m_clusterK6": 3, "e_clusterK7": 5, "g_clusterK7": 5, "m_clusterK7": 5, "e_clusterK8": 6, "g_clusterK8": 6, "m_clusterK8": 6, "e_clusterK9": 2, "g_clusterK9": 2, "m_clusterK9": 2, "e_clusterK10": 0, "g_clusterK10": 0, "m_clusterK10": 0 }, "geometry": { "type": "Point", "coordinates": [ -88.029081263641203, 43.161969485511143 ] } }
 ]
 }
+,];
