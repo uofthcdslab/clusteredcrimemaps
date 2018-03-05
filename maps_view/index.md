@@ -2,21 +2,14 @@
 layout: default
 title: {{ site.name }}
 ---
-#Interactive Web Apps
+# Interactive Web Apps
 
 Here you will find several interactive applets which each offer a visualizationsrelated to crime in Milwaukee. 
 
 ## Crime Clustering Applets
 
-The following applets all provide for visualizations of crime in the city of Milwaukee. Each applet in this section uses the KMeans clustering algorithm and several distance metrics, defined below. 
+The following applets all provide for visualizations of crime in the city of Milwaukee. Each applet in this section uses the KMeans clustering algorithm and several distance metrics, defined on the "About" page.
 
-|Distance Metric| Description|
-|---------------|------------|
-|Euclidean|Simple straight line distance between two points on a flat plane|
-|Geodesic|Takes into account the Earth's curvature by measuring distance between two points on a curved surface|
-|Manhattan Blocks|Distance can only be calculated on a square grid |
-|Street Distance|Measures distance as travelled on streets|
- 
 [Sandbox Crime Clustering](./alpha.html) -- An interactive comparison tool that allows the user to choose the number of clusters, from 2 to 10, the type of crime, the distance metric used in the clustering algorithm, and any month between January 2005 and December 2016. (Alpha) 
 
 [Distance Metric Comparison](../individual_work/marielle/KMeans/MKEMapComparisonEucGeoMan.html) -- Utilizing the full 2005 to 2016 crime data set, this interactive map compares clustering using Euclidean, Geodesic, and Manhattan distance metrics. (Beta)

@@ -4,7 +4,14 @@ title: About
 permalink: /about/
 ---
 
-This website hosts applets created by researchers at Marquette's Computational Social Sciences labratory in the Department of Mathematics, Statistics, and Computer Science. Our goal is to use unbiased algorithms and transparent research methods to study social questions. 
+This website hosts applets created by researchers at Marquette's Computational Social Sciences labratory in the Department of Mathematics, Statistics, and Computer Science. Our goal is to use unbiased algorithms and transparent research methods to study social questions.
+
+|Distance Metric| Description|
+|---------------|------------|
+|Euclidean|Simple straight line distance between two points on a flat plane|
+|Geodesic|Takes into account the Earth's curvature by measuring distance between two points on a curved surface|
+|Manhattan Blocks|Distance can only be calculated on a square grid |
+|Street Distance|Measures distance as travelled on streets|
 
 Researchers:
 Griffin Berlstein, Marielle Billig, Justin Miller, Katherine Weathington, and Dr. Shion Guha.
