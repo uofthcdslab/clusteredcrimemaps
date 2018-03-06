@@ -16,7 +16,7 @@
 	<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
 	<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
 
-	<script src='../data/clustered_data/2005_01_mtheft_clustered.js'></script>
+	<!-- <script src='../data/clustered_data/2005_01_mtheft_clustered.js'></script> -->
 </head>
 <style>
 	div.tooltip {
@@ -73,7 +73,7 @@
 		<p>Crime:
 			<select id="crime">
 				<option value="0">Theft</option>
-				<option value="1" selected="selected">Motor Theft</option>
+				<option value="1">Motor Theft</option>
 				<option value="2">Simple Assault</option>
 				<option value="3">Robbery</option>
 			</select>
@@ -81,7 +81,7 @@
 
 		<p>Distance Metric:
 			<select id="distMet">
-				<option value="0" selected="selected">Euclidian</option>
+				<option value="0">Euclidian</option>
 				<option value="1">Geodesic</option>
 				<option value="2">Manhattan</option>
 			</select>
@@ -89,7 +89,7 @@
 
 		<p>Month:
 			<select id="months">
-				<option value="0" selected="selected">January</option>
+				<option value="0">January</option>
 				<option value="1">February</option>
 				<option value="2">March</option>
 				<option value="3">April</option>
@@ -106,7 +106,7 @@
 
 		<p>Year:
 			<select id="year">
-				<option value="0" selected="selected">2005 </option>
+				<option value="0">2005</option>
 				<option value="1">2006</option>
 				<option value="2">2007</option>
 				<option value="3">2008</option>
@@ -134,60 +134,66 @@
 
 	<script type='text/javascript'>
 		//create starting conditions
-		//randomStart()
+		randomStart()
 		rename()
 
 		//core functionality and svg should go here
 		//get data
+
+		//this function combines two geoJSONs
 		function concatGeoJSON(geoJSON1, geoJSON2) {
 			return {
 				"type": "FeatureCollection",
-				"features": [...g1.features, ...g2.features]
+				"features": [...geoJSON1.features, ...geoJSON2.features]
 			}
 		}
 
-		function loadDataFile(path, fctn) {
+		// function to load a file for a particular crime, year and month
+		// the fctn arg is for the callbackclosure function so that the data
+		// is processed synchronously.
+		function loadDataFile(crime, year, month, fctn) {
+			var path = '../data/clustered_data/' + year + "_" + month + "_" + crime + "_clustered.js";
 			var jsData = document.createElement('script');
 			jsData.onload = fctn;
-			jsData.setAttribute('src', fileName);
+			jsData.setAttribute('src', path);
 			jsData.async = true;
 			document.head.appendChild(jsData);
 		}
 
+		// Closure function to link the correct instances of the vars to the processing
+		function processDataCallbackClosure(crime, year, month, callback){
+			return function() {
+				return callback(crime, year, month);
+			}
+		} 
 
-		var allCrimeClusters = mtheft_2005_01[0];
+		// This loop iterates through all the crimes, months, and years
+		// and load and processes the data. Each file contains one geoJSON
+		// variable, and this is added to the allCrimeClusters dataset
+		var allCrimeClusters = null;
 		var crimeTypes = ['mtheft', 'robbery', 'theft', 'assault']
 		for (i = 2005; i <= 2016; i++) {
+			year = i;
 			for (j = 1; j <= 12; j++) {
 				for (k = 0; k < crimeTypes.length; k++) {
 					month = j + '';
 					if (month.length === 1) {
 						month = '0' + month;
 					}
-					fileName = '../data/clustered_data/' + i + "_" + month + "_" + crimeTypes[k] + "_clustered.js";
-					//var jsData = document.createElement('script');
-					//jsData.setAttribute('src', fileName);
-					//document.head.appendChild(jsData);
-					//console.log(fileName);
-					loadDataFile(fileName, function () {
-						var varName = crimeTypes[k] + "_" + i + "_" + month
+					var crime = crimeTypes[k];
+					loadDataFile(crime, year, month, processDataCallbackClosure(crime, year, month, function(crime, year, month){
+						var varName = crime + "_" + year + "_" + month
 						if (allCrimeClusters === null) {
-							//console.log('setting')
-							allCrimeClusters = window[varName];
-							console.log(Object.keys(window));
+							console.log('setting ' + varName);
+							allCrimeClusters = window[varName][0];
 						} else {
-							//console.log('updating')
-							newGeoJSON = window[varName];
-							//console.log(allCrimeClusters)
+							newGeoJSON = window[varName][0];
 							allCrimeClusters = concatGeoJSON(allCrimeClusters, newGeoJSON)
 						}
-					});
+					}));
 				}
 			}
-
 		}
-
-
 
 
 		var margin = { top: -5, right: -5, bottom: -5, left: -5 },
@@ -548,7 +554,7 @@
 			console.log(results);
 		//	draw_graph(euclid_graph, results);
 	//		draw_graph(geodesic_graph, results);
-//			draw_graph(manhattan_graph, results);
+	//		draw_graph(manhattan_graph, results);
 
 
 			results = results.map(Math.floor);
