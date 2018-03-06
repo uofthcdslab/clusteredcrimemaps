@@ -145,6 +145,7 @@
 			return {
 				"type": "FeatureCollection",
 				"features": [...geoJSON1.features, ...geoJSON2.features]
+
 			}
 		}
 
@@ -200,7 +201,7 @@
 			width = 450 - margin.left - margin.right,
 			height = 750 - margin.top - margin.bottom,
 			border = 2, bordercolor = 'black', gap = 30,
-			currentK = 'K0', label = 'Motor Vehicle Theft in Milwaukee';
+			currentK = '0', label = 'Motor Vehicle Theft in Milwaukee';
 
 		var colorList =
 			['#d7191c', '#fdae61', '#ffffbf', '#abd9e9', '#2c7bb6',
@@ -220,22 +221,22 @@
 				var loc = d3.mouse(this);
 				var locSub = [loc[0] - width - gap, loc[1]];
 				var hitHull = 0;
-				if (locSub[0] > 0) {
-					child_g.selectAll('.hull')
-						.each(function (d) {
-							if (d3.polygonContains(d, locSub)) {
-								hitHull = this;
-							}
+				//if (locSub[0] > 0) {
+				//	child_g.selectAll('.hull')
+				//		.each(function (d) {
+				//			if (d3.polygonContains(d, locSub)) {
+				//				hitHull = this;
+				//			}
 
-						});
-				} else {
+				//		});
+				//} else {
 					child.selectAll('.hull')
 						.each(function (d) {
 							if (d3.polygonContains(d, loc)) {
 								hitHull = this;
 							}
 						})
-				}
+				//}
 
 				if (hitHull) {
 					d3.selectAll('.hull')
