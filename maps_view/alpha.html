@@ -81,9 +81,9 @@
 
 		<p>Distance Metric:
 			<select id="distMet">
-				<option value="0">Euclidian</option>
-				<option value="1">Geodesic</option>
-				<option value="2">Manhattan</option>
+				<option value="e">Euclidian</option>
+				<option value="g">Geodesic</option>
+				<option value="m">Manhattan</option>
 			</select>
 		</p>
 
@@ -216,10 +216,12 @@
 					'#99ccff', '#cc00cc', '#80ff80', '#ffe6b3', '#ffb399',
 					'#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
 
-
-			var clusterPrefix = '#cluster-e'
-			var clusterLabel = 'e_cluster'
-			var clusterID = 'cluster-e'
+			var dist_sect = document.getElementById('distMet');
+			var distMet = dist_sect.options[dist_sect.selectedIndex].value;var dist_sect = document.getElementById('distMet');
+			var distMet = dist_sect.options[dist_sect.selectedIndex].value;
+			var clusterPrefix = '#cluster-' + distMet;
+			var clusterLabel = distMet + '_cluster';
+			var clusterID = 'cluster-' + distMet;
 
 			var frame = d3.select('body').append('svg')
 				.attr('width', width * 4 + 100)
@@ -410,11 +412,9 @@
 			}
 
 			function hullCreation(child, k, crime_points, currentK) {
+				console.log("hull creation");
 				child.selectAll('.hull').remove();
-				//  var k = parseInt(currentK.charAt(1));
-				//        if (currentK.includes('K10')) {
-				//            k = 10;
-				//        }
+
 				for (var i = 0; i < k; i++) {
 
 					var points = [];
@@ -435,6 +435,7 @@
 					});
 
 					while (mappedPoints[0][0] > 2000) {
+						console.log("in while");
 						points = [];
 						crime_points.selectAll('path')
 							.each(function (d) {
@@ -469,6 +470,9 @@
 				}
 			}
 
+			var dist_sect = document.getElementById('distMet');
+			var distMet = dist_sect.options[dist_sect.selectedIndex].value;
+			var clusterLabel = distMet + "_cluster";
 
 			drawPoints(crime_points, clusterLabel);
 			//	drawPoints(crime_points);
@@ -507,7 +511,11 @@
 					var year_sect = document.getElementById('year');
 					var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
 
+					// var dist_sect = document.getElementById('distMet');
+					// var distMet = dist_sect.options[dist_sect.selectedIndex].value;
 
+					// var clusterLabel = distMet + "_cluster";
+					// console.log("selected " + clusterLabel);
 
 					crime_points.selectAll('path').remove();
 
@@ -520,7 +528,6 @@
 					crimeData = window[c_type + "_" + year + "_" + index];
 
 					drawPoints(crime_points, clusterLabel);
-					//  drawPoints(crime_points);
 					d3.select('#cluster').dispatch('change');
 
 				});
@@ -539,6 +546,26 @@
 			d3.select('#distMet')
 				.on('change', function () {
 					//functionality to change which metric is show
+					var sect = document.getElementById('cluster');
+					currentK = sect.options[sect.selectedIndex].value;
+
+					var k = parseInt(currentK.split('K')[1]);
+
+					var dist_sect = document.getElementById('distMet');
+					var distMet = dist_sect.options[dist_sect.selectedIndex].value;
+
+					var clusterLabel = distMet + "_cluster";
+					var clusterID = 'cluster-' + distMet;
+
+					setAllColors(crime_points, clusterLabel + currentK);
+					hullCreation(child, k, crime_points, clusterLabel + currentK);
+
+					child.selectAll('.hull')
+						.each(function (d, i) {
+							d3.select(this).attr('id', clusterID + i);
+						});
+
+					//d3.select('#months').dispatch('change');
 					rename();
 				})
 
@@ -591,11 +618,12 @@
 
 		//non core functionalities
 		function randomStart() {
-			document.getElementById("months").value = Math.floor(Math.random() * 12)
-			document.getElementById("year").value = Math.floor(Math.random() * 12)
-			document.getElementById("crime").value = Math.floor(Math.random() * 4)
-			document.getElementById("distMet").value = Math.floor(Math.random() * 3)
-			document.getElementById("cluster").value = Math.floor((Math.random() * 9) + 2)
+			document.getElementById("months").value = Math.floor(Math.random() * 12);
+			document.getElementById("year").value = Math.floor(Math.random() * 12);
+			document.getElementById("crime").value = Math.floor(Math.random() * 4);
+			var possibleDistMetrics = 'egm';
+			document.getElementById("distMet").value = possibleDistMetrics.charAt(Math.floor(Math.random() * possibleDistMetrics.length));
+			document.getElementById("cluster").value = "K" + Math.floor((Math.random() * 9) + 2);
 		}
 
 		function rename() {
