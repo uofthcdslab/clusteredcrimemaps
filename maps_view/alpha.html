@@ -474,11 +474,23 @@
 			var distMet = dist_sect.options[dist_sect.selectedIndex].value;
 			var clusterLabel = distMet + "_cluster";
 
+			var sect = document.getElementById('cluster');
+			currentK = sect.options[sect.selectedIndex].value;
+
+			var k = parseInt(currentK.split('K')[1]);
+
+			var dist_sect = document.getElementById('distMet');
+			var distMet = dist_sect.options[dist_sect.selectedIndex].value;
+
+			var clusterLabel = distMet + "_cluster";
+			var clusterID = 'cluster-' + distMet;
+
 			drawPoints(crime_points, clusterLabel);
 			//	drawPoints(crime_points);
 
 			var k = parseInt(currentK.split('K')[1]);
 			setAllColors(crime_points, clusterLabel + currentK);
+			hullCreation(child, k, crime_points, clusterLabel + currentK);
 
 
 			d3.select('#cluster')
@@ -624,6 +636,7 @@
 			var possibleDistMetrics = 'egm';
 			document.getElementById("distMet").value = possibleDistMetrics.charAt(Math.floor(Math.random() * possibleDistMetrics.length));
 			document.getElementById("cluster").value = "K" + Math.floor((Math.random() * 9) + 2);
+		
 		}
 
 		function rename() {
