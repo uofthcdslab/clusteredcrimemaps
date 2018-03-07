@@ -58,15 +58,15 @@
 		<h3> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
 		<p>Clusters:
 			<select id="cluster">
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
+				<option value="K2">2</option>
+				<option value="K3">3</option>
+				<option value="K4">4</option>
+				<option value="K5">5</option>
+				<option value="K6">6</option>
+				<option value="K7">7</option>
+				<option value="K8">8</option>
+				<option value="K9">9</option>
+				<option value="K10">10</option>
 			</select>
 		</p>
 
@@ -129,6 +129,7 @@
 
 	<div>
 		<button id='saveButton'>Save</button>
+		<button id='showButton'>Show Data</button>
 	</div>
 
 
@@ -196,216 +197,227 @@
 			}
 		}
 
-
-		var margin = { top: -5, right: -5, bottom: -5, left: -5 },
-			width = 450 - margin.left - margin.right,
-			height = 750 - margin.top - margin.bottom,
-			border = 2, bordercolor = 'black', gap = 30,
-			currentK = '0', label = 'Motor Vehicle Theft in Milwaukee';
-
-		var colorList =
-			['#d7191c', '#fdae61', '#ffffbf', '#abd9e9', '#2c7bb6',
-				'#b0395e', '#3da292', '#cffc55', '#a48d57', '#8159b2',
-				'#99ccff', '#cc00cc', '#80ff80', '#ffe6b3', '#ffb399',
-				'#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
+		function plotSetup(){
 
 
-		var clusterPrefix = '#cluster-e'
-		var clusterLabel = 'e_cluster'
-		var clusterID = 'cluster-e'
+		}
 
-		var frame = d3.select('body').append('svg')
-			.attr('width', width * 4 + 100)
-			.attr('height', 2 * height + 60)
-			.on('click', function (d) {
-				var loc = d3.mouse(this);
-				var locSub = [loc[0] - width - gap, loc[1]];
-				var hitHull = 0;
-				//if (locSub[0] > 0) {
-				//	child_g.selectAll('.hull')
-				//		.each(function (d) {
-				//			if (d3.polygonContains(d, locSub)) {
-				//				hitHull = this;
-				//			}
+		function everythingElse(){
+			console.log("hello")
+			var margin = { top: -5, right: -5, bottom: -5, left: -5 },
+				width = 450 - margin.left - margin.right,
+				height = 750 - margin.top - margin.bottom,
+				border = 2, bordercolor = 'black', gap = 30,
+				currentK = '0', label = 'Motor Vehicle Theft in Milwaukee';
 
-				//		});
-				//} else {
-					child.selectAll('.hull')
-						.each(function (d) {
-							if (d3.polygonContains(d, loc)) {
-								hitHull = this;
-							}
+			var colorList =
+				['#d7191c', '#fdae61', '#ffffbf', '#abd9e9', '#2c7bb6',
+					'#b0395e', '#3da292', '#cffc55', '#a48d57', '#8159b2',
+					'#99ccff', '#cc00cc', '#80ff80', '#ffe6b3', '#ffb399',
+					'#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
+
+
+			var clusterPrefix = '#cluster-e'
+			var clusterLabel = 'e_cluster'
+			var clusterID = 'cluster-e'
+
+			var frame = d3.select('body').append('svg')
+				.attr('width', width * 4 + 100)
+				.attr('height', 2 * height + 60)
+				.on('click', function (d) {
+					var loc = d3.mouse(this);
+					var locSub = [loc[0] - width - gap, loc[1]];
+					var hitHull = 0;
+					//if (locSub[0] > 0) {
+					//	child_g.selectAll('.hull')
+					//		.each(function (d) {
+					//			if (d3.polygonContains(d, locSub)) {
+					//				hitHull = this;
+					//			}
+
+					//		});
+					//} else {
+						child.selectAll('.hull')
+							.each(function (d) {
+								if (d3.polygonContains(d, loc)) {
+									hitHull = this;
+								}
+							})
+					//}
+
+					if (hitHull) {
+						d3.selectAll('.hull')
+							.style('opacity', .3);
+						var id = hitHull.id;
+						var idNum = id.slice(-1);
+
+						var e = d3.select(clusterPrefix + idNum);
+
+						var e_results = 0;
+
+						e.each(function (d) {
+
+							e_results = demographicCalculation(d);
 						})
-				//}
+							.style('opacity', .65);
 
-				if (hitHull) {
-					d3.selectAll('.hull')
-						.style('opacity', .3);
-					var id = hitHull.id;
-					var idNum = id.slice(-1);
+					}
+				});
 
-					var e = d3.select(clusterPrefix + idNum);
+			var div = d3.select('body')
+				.append('div')
+				.attr('class', 'tooltip')
+				.style('opacity', 0);
 
-					var e_results = 0;
+			var albersProjection = d3.geoAlbers()
+				.scale(145000)
+				.rotate([87.96, 0])
+				.center([0, 43.05])
+				.translate([width / 2, height / 2]);
 
-					e.each(function (d) {
-
-						e_results = demographicCalculation(d);
-					})
-						.style('opacity', .65);
-
-				}
-			});
-
-		var div = d3.select('body')
-			.append('div')
-			.attr('class', 'tooltip')
-			.style('opacity', 0);
-
-		var albersProjection = d3.geoAlbers()
-			.scale(145000)
-			.rotate([87.96, 0])
-			.center([0, 43.05])
-			.translate([width / 2, height / 2]);
-
-		var geoPath = d3.geoPath().projection(albersProjection)
-			.pointRadius(4);
+			var geoPath = d3.geoPath().projection(albersProjection)
+				.pointRadius(4);
 
 
-		var svg = frame
-			.append('svg');
-		var child = svg.append('g');
-		var city = child.append('g');
-		city.selectAll('path')
-			.data(city_limit.features)
-			.enter()
-			.append('path')
-			.attr('fill', '#ccc')
-			.attr('d', geoPath)
-			.style('stroke', 'black')
-			.style('stroke-width', .4);
-		var crime_points = child.append('g');
-
-		svg.attr('width', width + margin.left + margin.right)
-			.attr('height', height + margin.top + margin.bottom)
-			.call(d3.zoom().scaleExtent([1, 10])
-				.translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
-				.on('zoom', function () {
-					var transform = d3.zoomTransform(this);
-					child.attr('transform', 'translate(' +
-						(transform.x) + ',' + (transform.y)
-						+ ') scale(' + transform.k + ')');
-				}));
-
-
-		var zipCodes = child.append('g');
-		zipCodes.selectAll('path')
-			.data(zipcodes.features)
-			.enter()
-			.append('path')
-			.attr('d', geoPath)
-			.attr('flll', 'black')
-			.style('stroke', 'red')
-			.style('stroke-width', 1)
-			.style('opacity', 0)
-			.style('pointer-events', 'none');
-
-
-		function drawPoints(crime_points, clusterLabel) {
-			crime_points.selectAll('path')
-				.data(allCrimeClusters.features)
+			var svg = frame
+				.append('svg');
+			var child = svg.append('g');
+			var city = child.append('g');
+			city.selectAll('path')
+				.data(city_limit.features)
 				.enter()
 				.append('path')
-				.attr('stroke', '#999')
+				.attr('fill', '#ccc')
 				.attr('d', geoPath)
-				.on('mouseover', handleMouseOver)
-				.on('mouseout', handleMouseOut, clusterLabel)
-				.each(function (d) {
-					d3.select(this).attr('fill', colorAssign(d, clusterLabel))
-					//d3.select(this).attr('stroke-width', borderAssign(d, crime_points, crime_points_g))
-				});
-		}
+				.style('stroke', 'black')
+				.style('stroke-width', .4);
+			var crime_points = child.append('g');
 
-		function handleMouseOver(d, i) {
-			d3.select(this)
-				.attr('fill', '#008080');
+			svg.attr('width', width + margin.left + margin.right)
+				.attr('height', height + margin.top + margin.bottom)
+				.call(d3.zoom().scaleExtent([1, 10])
+					.translateExtent([[-width * 50, -height * 50], [width * 40, height * 40]])
+					.on('zoom', function () {
+						var transform = d3.zoomTransform(this);
+						child.attr('transform', 'translate(' +
+							(transform.x) + ',' + (transform.y)
+							+ ') scale(' + transform.k + ')');
+					}));
 
-			var message = '<p>' + 'Offense: ' + d['properties']['Offense 1'] + '</p>' +
-				'<p>' + 'Time: ' + d['properties']['Date'] + ' ' + d['properties']['Time'] + '</p>' +
-				'<p>' + 'Address: ' + d['properties']['Address'] + '</p>';
 
-			div.transition()
-				.duration(200)
-				.style('opacity', .9)
-				.duration(70)
-				.style('width', adjustDisplay(message) + 'px');
-
-			div.html(message)
-				.style('left', (d3.event.pageX + 7) + 'px')
-				.style('top', (d3.event.pageY - 28) + 'px');
-
-		}
-
-		function handleMouseOut(d, i, clusterLabel) {
-			d3.select(this)
-				.attr('fill', colorAssign(d, clusterLabel + currentK));
-			div.transition()
-				.duration(500)
+			var zipCodes = child.append('g');
+			zipCodes.selectAll('path')
+				.data(zipcodes.features)
+				.enter()
+				.append('path')
+				.attr('d', geoPath)
+				.attr('flll', 'black')
+				.style('stroke', 'red')
+				.style('stroke-width', 1)
 				.style('opacity', 0)
-		}
+				.style('pointer-events', 'none');
 
-		function adjustDisplay(word) {
-			var lines = word.split('</p>');
-			var len = lines.map(function (d) {
-				return d.length / 2;
-			});
-			return (d3.max(len) + 3) * 12;
-		}
 
-		function colorAssign(d, currentK) {
-			if (currentK.includes('K0')) {
-				return '#900';
-			}
-			var val = d['properties'][currentK];
-			return colorList[val];
-		}
-
-		function setAllColors(crime_points, currentK) {
-
-			crime_points.selectAll('path').transition()
-				.duration(400)
-				.each(function (d) {
-					d3.select(this).attr('fill', colorAssign(d, currentK));
-				});
-		}
-
-		function hullCreation(child, k, crime_points, currentK) {
-			child.selectAll('.hull').remove();
-			//  var k = parseInt(currentK.charAt(1));
-			//        if (currentK.includes('K10')) {
-			//            k = 10;
-			//        }
-			for (var i = 0; i < k; i++) {
-
-				var points = [];
-				crime_points.selectAll('path')
-					.each(function (d) {
-						var cluster = d['properties'][currentK];
-						if (cluster === i) {
-							var coord = d['properties']['Location'];
-							coord = coord.reverse();
-							points.push(coord);
-						}
+			function drawPoints(crime_points, clusterLabel) {
+				if (typeof crimeClusters === 'undefined'){
+					var month_sect = document.getElementById('months');
+					var index = parseInt(month_sect.options[month_sect.selectedIndex].value);
+					var month = index + 1;
+					if (month < 10){
+						month = '0' + month;
 					}
-					);
-				var hullPoints = d3.polygonHull(points);
 
-				var mappedPoints = hullPoints.map(function (d) {
-					return albersProjection(d);
+					var crime_sect = document.getElementById('crime');
+					var c_type = parseInt(crime_sect.options[crime_sect.selectedIndex].value);
+					var crime = crime_sect.children[c_type].innerText;
+					crime = crime.toLowerCase();
+					crime = crime.replace('otor ', '');
+					crime = crime.replace('simple ', '');
+
+					var year_sect = document.getElementById('year');
+					var year_index = parseInt(year_sect.options[year_sect.selectedIndex].value);
+					var year = year_sect.children[year_index].innerText;
+
+					var crimeClusters = window[crime + "_" + year + "_" + month][0];
+					console.log(crime + "_" + year + "_" + month);
+					console.log(crimeClusters);
+				}
+				crime_points.selectAll('path')
+					.data(crimeClusters.features)
+					.enter()
+					.append('path')
+					.attr('stroke', '#999')
+					.attr('d', geoPath)
+					.on('mouseover', handleMouseOver)
+					.on('mouseout', handleMouseOut, clusterLabel)
+					.each(function (d) {
+						d3.select(this).attr('fill', colorAssign(d, clusterLabel))
+						//d3.select(this).attr('stroke-width', borderAssign(d, crime_points, crime_points_g))
+					});
+			}
+
+			function handleMouseOver(d, i) {
+				d3.select(this)
+					.attr('fill', '#008080');
+
+				var message = '<p>' + 'Offense: ' + d['properties']['Offense 1'] + '</p>' +
+					'<p>' + 'Time: ' + d['properties']['Date'] + ' ' + d['properties']['Time'] + '</p>' +
+					'<p>' + 'Address: ' + d['properties']['Address'] + '</p>';
+
+				div.transition()
+					.duration(200)
+					.style('opacity', .9)
+					.duration(70)
+					.style('width', adjustDisplay(message) + 'px');
+
+				div.html(message)
+					.style('left', (d3.event.pageX + 7) + 'px')
+					.style('top', (d3.event.pageY - 28) + 'px');
+
+			}
+
+			function handleMouseOut(d, i, clusterLabel) {
+				d3.select(this)
+					.attr('fill', colorAssign(d, clusterLabel + currentK));
+				div.transition()
+					.duration(500)
+					.style('opacity', 0)
+			}
+
+			function adjustDisplay(word) {
+				var lines = word.split('</p>');
+				var len = lines.map(function (d) {
+					return d.length / 2;
 				});
+				return (d3.max(len) + 3) * 12;
+			}
 
-				while (mappedPoints[0][0] > 2000) {
-					points = [];
+			function colorAssign(d, currentK) {
+				if (currentK.includes('K0')) {
+					return '#900';
+				}
+				var val = d['properties'][currentK];
+				return colorList[val];
+			}
+
+			function setAllColors(crime_points, currentK) {
+
+				crime_points.selectAll('path').transition()
+					.duration(400)
+					.each(function (d) {
+						d3.select(this).attr('fill', colorAssign(d, currentK));
+					});
+			}
+
+			function hullCreation(child, k, crime_points, currentK) {
+				child.selectAll('.hull').remove();
+				//  var k = parseInt(currentK.charAt(1));
+				//        if (currentK.includes('K10')) {
+				//            k = 10;
+				//        }
+				for (var i = 0; i < k; i++) {
+
+					var points = [];
 					crime_points.selectAll('path')
 						.each(function (d) {
 							var cluster = d['properties'][currentK];
@@ -416,152 +428,165 @@
 							}
 						}
 						);
-					hullPoints = d3.polygonHull(points);
+					var hullPoints = d3.polygonHull(points);
 
-
-					mappedPoints = hullPoints.map(function (d) {
+					var mappedPoints = hullPoints.map(function (d) {
 						return albersProjection(d);
 					});
-				}
 
-				var hull = child.append('path')
-					.attr('class', 'hull')
-					.datum(mappedPoints)
-					.attr('d', function (d) {
-						return 'M' + d.join('L') + 'Z';
-					})
-					.attr('fill', colorList[i])
-					.style('opacity', 0);
-
-				hull.transition()
-					.duration(400)
-					.style('opacity', .3);
-			}
-		}
+					while (mappedPoints[0][0] > 2000) {
+						points = [];
+						crime_points.selectAll('path')
+							.each(function (d) {
+								var cluster = d['properties'][currentK];
+								if (cluster === i) {
+									var coord = d['properties']['Location'];
+									coord = coord.reverse();
+									points.push(coord);
+								}
+							}
+							);
+						hullPoints = d3.polygonHull(points);
 
 
-
-
-
-		drawPoints(crime_points, clusterLabel);
-		//	drawPoints(crime_points);
-
-		var k = parseInt(currentK.split('K')[1]);
-		setAllColors(crime_points, clusterLabel + currentK);
-
-
-
-
-
-		d3.select('#cluster')
-			.on('change', function () {
-				var sect = document.getElementById('cluster');
-				currentK = sect.options[sect.selectedIndex].value;
-				console.log(parseInt(currentK.split('K')[1]));
-
-				var k = parseInt(currentK.split('K')[1]);
-				setAllColors(crime_points, clusterLabel + currentK);
-				hullCreation(child, k, crime_points, clusterLabel + currentK);
-
-				child.selectAll('.hull')
-					.each(function (d, i) {
-						d3.select(this).attr('id', clusterID + i);
-					});
-			});
-
-
-		d3.select('#months')
-			.on('change', function () {
-				rename();
-
-				var sect = document.getElementById('months');
-				var index = parseInt(sect.options[sect.selectedIndex].value);
-
-				var crime_sect = document.getElementById('crime');
-				var c_type = parseInt(crime_sect.options[crime_sect.selectedIndex].value);
-
-				var year_sect = document.getElementById('year');
-				var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
-
-
-
-				crime_points.selectAll('path').remove();
-
-
-				//		if (year > 5) {
-				//			allCrimeClusters = dataB[24 * (year - 6) + 12 * c_type + index];
-				//		} else {
-				//			allCrimeClusters = dataA[24 * year + 12 * c_type + index];
-				//		}
-
-				drawPoints(crime_points, clusterLabel);
-				//  drawPoints(crime_points);
-				d3.select('#cluster').dispatch('change');
-
-			});
-
-		d3.select('#crime')
-			.on('change', function () {
-				d3.select('#months').dispatch('change');
-				rename();
-			});
-
-		d3.select('#year')
-			.on('change', function () {
-				d3.select('#months').dispatch('change');
-				rename();
-			})
-		d3.select('#distMet')
-			.on('change', function () {
-				//functionality to change which metric is show
-				rename();
-			})
-
-		function overlapCalculation(cluster, polygon) {
-			var inter = turf.intersect(cluster, polygon);
-			return inter;
-		}
-
-		function demographicCalculation(d) {
-			var results = [0, 0, 0, 0, 0, 0, 0];
-
-			zipCodes.selectAll('path')
-				.each(function (a) {
-					var data = d;
-					data = data.map(albersProjection.invert);
-
-					var overlap = overlapCalculation(turf.lineStringToPolygon(turf.lineString(data)), a);
-
-					if (overlap) {
-						var over_area = turf.area(overlap);
-						var zip_area = turf.area(a);
-						var percent_overlap = over_area / zip_area;
-						//    console.log(a['properties']['TRACTCE'] + " " + percent_overlap);
-						results[0] += a['properties']['White'] * percent_overlap;
-						results[1] += a['properties']['Black or African American'] * percent_overlap;
-						results[2] += a['properties']['American Indian and Ala Native'] * percent_overlap;
-						results[3] += a['properties']['Asian'] * percent_overlap;
-						results[4] += a['properties']['Native Hawaiian/other Pac Isl'] * percent_overlap;
-						results[5] += a['properties']['Multiple Race'] * percent_overlap;
-						results[6] += a['properties']['Other Race'] * percent_overlap;
-						//   console.log(results);
+						mappedPoints = hullPoints.map(function (d) {
+							return albersProjection(d);
+						});
 					}
 
+					var hull = child.append('path')
+						.attr('class', 'hull')
+						.datum(mappedPoints)
+						.attr('d', function (d) {
+							return 'M' + d.join('L') + 'Z';
+						})
+						.attr('fill', colorList[i])
+						.style('opacity', 0);
+
+					hull.transition()
+						.duration(400)
+						.style('opacity', .3);
+				}
+			}
+
+
+			drawPoints(crime_points, clusterLabel);
+			//	drawPoints(crime_points);
+
+			var k = parseInt(currentK.split('K')[1]);
+			setAllColors(crime_points, clusterLabel + currentK);
+
+
+			d3.select('#cluster')
+				.on('change', function () {
+					var sect = document.getElementById('cluster');
+					currentK = sect.options[sect.selectedIndex].value;
+					console.log(parseInt(currentK.split('K')[1]));
+
+					var k = parseInt(currentK.split('K')[1]);
+					setAllColors(crime_points, clusterLabel + currentK);
+					hullCreation(child, k, crime_points, clusterLabel + currentK);
+
+					child.selectAll('.hull')
+						.each(function (d, i) {
+							d3.select(this).attr('id', clusterID + i);
+						});
 				});
-			results = results.map(Math.floor);
-			var id = this.id;
-			console.log(id);
-			d3.selectAll('#' + id).style('opacity', .5);
-			console.log(results);
-		//	draw_graph(euclid_graph, results);
-	//		draw_graph(geodesic_graph, results);
-	//		draw_graph(manhattan_graph, results);
 
 
-			results = results.map(Math.floor);
-			return results;
+			d3.select('#months')
+				.on('change', function () {
+					rename();
+
+					var sect = document.getElementById('months');
+					var index = parseInt(sect.options[sect.selectedIndex].value);
+
+					var crime_sect = document.getElementById('crime');
+					var c_type = parseInt(crime_sect.options[crime_sect.selectedIndex].value);
+
+					var year_sect = document.getElementById('year');
+					var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
+
+
+
+					crime_points.selectAll('path').remove();
+
+
+					// if (year > 5) {
+					// 	allCrimeClusters = dataB[24 * (year - 6) + 12 * c_type + index];
+					// } else {
+					// 	allCrimeClusters = dataA[24 * year + 12 * c_type + index];
+					// }
+					crimeData = window[c_type + "_" + year + "_" + index];
+
+					drawPoints(crime_points, clusterLabel);
+					//  drawPoints(crime_points);
+					d3.select('#cluster').dispatch('change');
+
+				});
+
+			d3.select('#crime')
+				.on('change', function () {
+					d3.select('#months').dispatch('change');
+					rename();
+				});
+
+			d3.select('#year')
+				.on('change', function () {
+					d3.select('#months').dispatch('change');
+					rename();
+				})
+			d3.select('#distMet')
+				.on('change', function () {
+					//functionality to change which metric is show
+					rename();
+				})
+
+			function overlapCalculation(cluster, polygon) {
+				var inter = turf.intersect(cluster, polygon);
+				return inter;
+			}
+
+			function demographicCalculation(d) {
+				var results = [0, 0, 0, 0, 0, 0, 0];
+
+				zipCodes.selectAll('path')
+					.each(function (a) {
+						var data = d;
+						data = data.map(albersProjection.invert);
+
+						var overlap = overlapCalculation(turf.lineStringToPolygon(turf.lineString(data)), a);
+
+						if (overlap) {
+							var over_area = turf.area(overlap);
+							var zip_area = turf.area(a);
+							var percent_overlap = over_area / zip_area;
+							//    console.log(a['properties']['TRACTCE'] + " " + percent_overlap);
+							results[0] += a['properties']['White'] * percent_overlap;
+							results[1] += a['properties']['Black or African American'] * percent_overlap;
+							results[2] += a['properties']['American Indian and Ala Native'] * percent_overlap;
+							results[3] += a['properties']['Asian'] * percent_overlap;
+							results[4] += a['properties']['Native Hawaiian/other Pac Isl'] * percent_overlap;
+							results[5] += a['properties']['Multiple Race'] * percent_overlap;
+							results[6] += a['properties']['Other Race'] * percent_overlap;
+							//   console.log(results);
+						}
+
+					});
+				results = results.map(Math.floor);
+				var id = this.id;
+				console.log(id);
+				d3.selectAll('#' + id).style('opacity', .5);
+				console.log(results);
+			//	draw_graph(euclid_graph, results);
+		//		draw_graph(geodesic_graph, results);
+		//		draw_graph(manhattan_graph, results);
+
+
+				results = results.map(Math.floor);
+				return results;
+			}
 		}
-
 
 
 		//non core functionalities
@@ -607,6 +632,9 @@
 				saveAs(dataBlob, 'CrimeMap.png')
 			}
 		});
+
+		d3.select('#showButton').on('click', everythingElse);
+
 		function getSVGString(svgNode) {
 			svgNode.setAttribute('xlink', 'http://www.w3.org/1999/xlink');
 			var cssStyleText = getCSSStyles(svgNode);
