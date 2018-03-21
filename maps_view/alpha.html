@@ -53,7 +53,7 @@
 <body>
 	<!--expandable sidebar-->
 	<div class="w3-sidebar w3-animate-left w3-bar-block w3-dark-grey" style="display:none" id="sidebar">
-		<button class="w3-bar-item w3-red w3-button w3-large" onclick="w3_close()">Close &times;</button>
+		<!-- <button class="w3-bar-item w3-red w3-button w3-large" onclick="w3_close()">Close &times;</button> -->
 
 		<h3 style="margin-left:1em; margin-right:1em;"> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
 		<p style="margin-left:1em; margin-right:1em;">Clusters:
@@ -197,10 +197,6 @@
 			}
 		}
 
-		function plotSetup(){
-
-		}
-
 		function everythingElse(){
 			console.log("hello")
 			var margin = { top: -5, right: -5, bottom: -5, left: -5 },
@@ -230,22 +226,13 @@
 					var loc = d3.mouse(this);
 					var locSub = [loc[0] - width - gap, loc[1]];
 					var hitHull = 0;
-					//if (locSub[0] > 0) {
-					//	child_g.selectAll('.hull')
-					//		.each(function (d) {
-					//			if (d3.polygonContains(d, locSub)) {
-					//				hitHull = this;
-					//			}
 
-					//		});
-					//} else {
-						child.selectAll('.hull')
-							.each(function (d) {
-								if (d3.polygonContains(d, loc)) {
-									hitHull = this;
-								}
-							})
-					//}
+					child.selectAll('.hull')
+						.each(function (d) {
+							if (d3.polygonContains(d, loc)) {
+								hitHull = this;
+							}
+						})
 
 					if (hitHull) {
 						d3.selectAll('.hull')
@@ -265,6 +252,10 @@
 
 					}
 				});
+
+			document.getElementById('mapSVG').addEventListener('click', w3_close);
+			document.getElementById('buttons').addEventListener('click', w3_close);
+			document.getElementById('title').addEventListener('click', w3_close);
 
 			var div = d3.select('body')
 				.append('div')
@@ -412,7 +403,6 @@
 			}
 
 			function hullCreation(child, k, crime_points, currentK) {
-				console.log("hull creation");
 				child.selectAll('.hull').remove();
 
 				for (var i = 0; i < k; i++) {
@@ -435,7 +425,6 @@
 					});
 
 					while (mappedPoints[0][0] > 2000) {
-						console.log("in while");
 						points = [];
 						crime_points.selectAll('path')
 							.each(function (d) {
@@ -448,7 +437,6 @@
 							}
 							);
 						hullPoints = d3.polygonHull(points);
-
 
 						mappedPoints = hullPoints.map(function (d) {
 							return albersProjection(d);
@@ -497,7 +485,6 @@
 				.on('change', function () {
 					var sect = document.getElementById('cluster');
 					currentK = sect.options[sect.selectedIndex].value;
-					console.log(parseInt(currentK.split('K')[1]));
 
 					var k = parseInt(currentK.split('K')[1]);
 					setAllColors(crime_points, clusterLabel + currentK);
@@ -522,12 +509,6 @@
 
 					var year_sect = document.getElementById('year');
 					var year = parseInt(year_sect.options[year_sect.selectedIndex].value);
-
-					// var dist_sect = document.getElementById('distMet');
-					// var distMet = dist_sect.options[dist_sect.selectedIndex].value;
-
-					// var clusterLabel = distMet + "_cluster";
-					// console.log("selected " + clusterLabel);
 
 					crime_points.selectAll('path').remove();
 
@@ -594,7 +575,6 @@
 							var over_area = turf.area(overlap);
 							var zip_area = turf.area(a);
 							var percent_overlap = over_area / zip_area;
-							//    console.log(a['properties']['TRACTCE'] + " " + percent_overlap);
 							results[0] += a['properties']['White'] * percent_overlap;
 							results[1] += a['properties']['Black or African American'] * percent_overlap;
 							results[2] += a['properties']['American Indian and Ala Native'] * percent_overlap;
@@ -602,7 +582,6 @@
 							results[4] += a['properties']['Native Hawaiian/other Pac Isl'] * percent_overlap;
 							results[5] += a['properties']['Multiple Race'] * percent_overlap;
 							results[6] += a['properties']['Other Race'] * percent_overlap;
-							//   console.log(results);
 						}
 
 					});
@@ -611,10 +590,6 @@
 				console.log(id);
 				d3.selectAll('#' + id).style('opacity', .5);
 				console.log(results);
-			//	draw_graph(euclid_graph, results);
-		//		draw_graph(geodesic_graph, results);
-		//		draw_graph(manhattan_graph, results);
-
 
 				results = results.map(Math.floor);
 				return results;
@@ -772,7 +747,6 @@
 					var filesize = Math.round(blob.length / 1024) + ' KB';
 					if (callback) callback(blob, filesize);
 				});
-
 
 			};
 
