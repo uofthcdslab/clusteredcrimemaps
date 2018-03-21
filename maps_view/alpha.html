@@ -212,7 +212,6 @@
 					'#d27979', '#ff80aa', '#e6b3ff', '#b3ffff', '#47476b'];
 
 			var dist_sect = document.getElementById('distMet');
-			var distMet = dist_sect.options[dist_sect.selectedIndex].value;var dist_sect = document.getElementById('distMet');
 			var distMet = dist_sect.options[dist_sect.selectedIndex].value;
 			var clusterPrefix = '#cluster-' + distMet;
 			var clusterLabel = distMet + '_cluster';
@@ -370,8 +369,9 @@
 			}
 
 			function handleMouseOut(d, i, clusterLabel) {
+				var clusterChar = document.getElementById('distMet').options[document.getElementById('distMet').selectedIndex].value;
 				d3.select(this)
-					.attr('fill', colorAssign(d, clusterLabel + currentK));
+					.attr('fill', colorAssign(d, clusterChar + "_cluster" + currentK));
 				div.transition()
 					.duration(500)
 					.style('opacity', 0)
