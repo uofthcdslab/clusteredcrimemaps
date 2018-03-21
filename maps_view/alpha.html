@@ -669,7 +669,9 @@
 		}
 
 		d3.select('#saveButton').on('click', function () {
-			var svgString = getSVGString(d3.select('svg').node());
+			var width=d3.select('svg').select('svg').attr('width');
+			var height=d3.select('svg').select('svg').attr('height');
+			var svgString = getSVGString(d3.select('svg').select('svg').node());
 			svgString2Image(svgString, width, height, 'png', save);
 			function save(dataBlob, filesize) {
 				saveAs(dataBlob, 'CrimeMap.png')
@@ -758,8 +760,8 @@
 			var canvas = document.createElement("canvas");
 			var context = canvas.getContext("2d");
 
-			canvas.width = width;
-			canvas.height = height;
+			canvas.width = d3.select('svg').select('svg').attr('width');
+			canvas.height = d3.select('svg').select('svg').attr('height');
 
 			var image = new Image();
 			image.onload = function () {
