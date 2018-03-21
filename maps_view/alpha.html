@@ -55,8 +55,8 @@
 	<div class="w3-sidebar w3-animate-left w3-bar-block w3-dark-grey" style="display:none" id="sidebar">
 		<button class="w3-bar-item w3-red w3-button w3-large" onclick="w3_close()">Close &times;</button>
 
-		<h3> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
-		<p>Clusters:
+		<h3 style="margin-left:1em; margin-right:1em;"> Select a number of clusters, a crime type, a distance metric, a month, and a year. </h3>
+		<p style="margin-left:1em; margin-right:1em;">Clusters:
 			<select id="cluster">
 				<option value="K2">2</option>
 				<option value="K3">3</option>
@@ -70,7 +70,7 @@
 			</select>
 		</p>
 
-		<p>Crime:
+		<p style="margin-left:1em; margin-right:1em;">Crime:
 			<select id="crime">
 				<option value="0">Theft</option>
 				<option value="1">Motor Theft</option>
@@ -79,7 +79,7 @@
 			</select>
 		</p>
 
-		<p>Distance Metric:
+		<p style="margin-left:1em; margin-right:1em;">Distance Metric:
 			<select id="distMet">
 				<option value="e">Euclidian</option>
 				<option value="g">Geodesic</option>
@@ -87,7 +87,7 @@
 			</select>
 		</p>
 
-		<p>Month:
+		<p style="margin-left:1em; margin-right:1em;">Month:
 			<select id="months">
 				<option value="0">January</option>
 				<option value="1">February</option>
@@ -104,7 +104,7 @@
 			</select>
 		</p>
 
-		<p>Year:
+		<p style="margin-left:1em; margin-right:1em;">Year:
 			<select id="year">
 				<option value="0">2005</option>
 				<option value="1">2006</option>
@@ -127,8 +127,8 @@
 		<h2>Milwaukee Crime Clusters</h2>
 	</div>
 
-	<div>
-		<button id='saveButton'>Save</button>
+	<div id="buttons">
+		<button id='saveButton' style="margin-left:3%">Save</button>
 		<button id='showButton'>Show Data</button>
 	</div>
 
@@ -199,7 +199,6 @@
 
 		function plotSetup(){
 
-
 		}
 
 		function everythingElse(){
@@ -224,6 +223,7 @@
 			var clusterID = 'cluster-' + distMet;
 
 			var frame = d3.select('body').append('svg')
+				.attr('id', "mapSVG")
 				.attr('width', width * 4 + 100)
 				.attr('height', 2 * height + 60)
 				.on('click', function (d) {
@@ -531,12 +531,6 @@
 
 					crime_points.selectAll('path').remove();
 
-
-					// if (year > 5) {
-					// 	allCrimeClusters = dataB[24 * (year - 6) + 12 * c_type + index];
-					// } else {
-					// 	allCrimeClusters = dataA[24 * year + 12 * c_type + index];
-					// }
 					crimeData = window[c_type + "_" + year + "_" + index];
 
 					drawPoints(crime_points, clusterLabel);
@@ -649,20 +643,28 @@
 			var yearSel = document.getElementById('year');
 			var strYear = yearSel.options[yearSel.selectedIndex].text
 
-			d3.select('h2').text(function () { return "Milwaukee " + strCrime + " Map for " + strMonth + " " + strYear });
+			d3.select('h2')
+				.attr("id", "title")
+				.text(function () { return "Milwaukee " + strCrime + " Map for " + strMonth + " " + strYear })
+				.style("margin-left", "3%");
 		};
 
 		//<!-- sidebar functionality from w3schools.com--> 
 		function w3_open() {
-			//document.getElementById("main").style.marginLeft = "30%";
 			document.getElementById("sidebar").style.width = "30%";
+			document.getElementById("title").style.marginLeft = "33%";
+			document.getElementById("buttons").style.marginLeft = "30%";
+			document.getElementById("mapSVG").style.marginLeft = "30%";
 			document.getElementById("sidebar").style.display = "block";
 			//document.getElementById("openNav").style.display = 'none';
+
 		}
 
 		function w3_close() {
-			//document.getElementById("main").style.marginLeft = "0%";
 			document.getElementById("sidebar").style.display = "none";
+			document.getElementById("title").style.marginLeft = "3%";
+			document.getElementById("buttons").style.marginLeft = "0%";
+			document.getElementById("mapSVG").style.marginLeft = "0%";
 			document.getElementById("openNav").style.display = "inline-block";
 		}
 
