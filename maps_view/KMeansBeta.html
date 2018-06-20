@@ -272,7 +272,8 @@
 
 
 			var svg = frame
-				.append('svg');
+				.append('svg')
+				.attr('id', 'actual');
 			var child = svg.append('g');
 			var city = child.append('g');
 			city.selectAll('path')
@@ -295,7 +296,13 @@
 							(transform.x) + ',' + (transform.y)
 							+ ') scale(' + transform.k + ')');
 					}));
+			var leg=d3.select('#mapSVG').append('svg').attr('id','legend');
 
+					leg//.attr('id', 'legend')
+					.attr('width', 100)
+					.attr('height', 150)
+					.attr('align','hanging')
+					.attr('color', 'ffffff');
 
 			var zipCodes = child.append('g');
 			zipCodes.selectAll('path')

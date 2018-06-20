@@ -6,11 +6,11 @@ title: {{ site.name }}
 
 Here you will find several interactive apps which each offer a visualizations related to crime in Milwaukee. 
 
-## Crime Clustering Apps
+## KMeans Crime Clustering Apps
 
 The following apps provide for visualizations of crime in the city of Milwaukee. Each app in this section uses the KMeans clustering algorithm and several distance metrics, defined on the "About" page.
 
-[Sandbox Crime Clustering](./alpha.html) -- An interactive comparison tool that allows the user to choose the number of clusters, from 2 to 10, the type of crime, the distance metric used in the clustering algorithm, and any month between January 2005 and December 2016. **(Alpha)** 
+[Sandbox Crime Clustering](./alpha.html) -- An interactive comparison tool that allows the user to choose the number of clusters, from 2 to 10, the type of crime, the distance metric used in the clustering algorithm, and any month between January 2005 and December 2016. **(Beta)** 
 
 [Distance Metric Comparison](../individual_work/marielle/KMeans/MKEMapComparisonEucGeoMan.html) -- Utilizing the full 2005 to 2016 crime data set, this interactive map compares clustering using Euclidean, Geodesic, and Manhattan distance metrics. **(Beta)**
 
